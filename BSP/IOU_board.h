@@ -1,0 +1,184 @@
+/*
+ * PDU_board.h
+ *
+ * Created: 5/15/2024 11:17:18 AM
+ *  Author: Admin
+ */ 
+
+
+#ifndef IOU_BOARD_H_
+#define IOU_BOARD_H_
+
+#define F_CPU 8000000UL
+#include "IOU_version.h"
+
+#ifdef FIRMWARE_VERSION
+	#if FIRMWARE_VERSION == '1.0.0'
+		#define IOU_HW_V1_0_0
+		#define MAX_CHANNEL 2
+	#elif FIRMWARE_VERSION == '1.2.0'
+		#define IOU_HW_V1_2_0
+		#define MAX_CHANNEL 4
+	#endif
+#endif
+
+
+
+/*==========================================================================================*/
+#ifdef	IOU_HW_V1_0_0
+	#define LED1_DATA_PORT		PORTF
+	#define LED1_DIR_PORT		DDRF
+	#define LED1_PIN			PINF2
+
+	#define LED2_DATA_PORT		PORTF
+	#define LED2_DIR_PORT		DDRF
+	#define LED2_PIN			PINF3
+
+	#define SPI_DDR				DDRB
+	#define SPI_PORT			PORTB
+	#define SPI_MISO			PINB3
+	#define SPI_MOSI			PINB2
+	#define SPI_SCK				PINB1
+
+	#define MCP2515_SS0_PORT	PORTB
+	#define MCP2515_SS0_DDR		DDRB
+	#define MCP2515_SS0_PIN		PINB0
+
+	#define MCP4921_SS0_PORT	PORTB
+	#define MCP4921_SS0_DDR		DDRB
+	#define MCP4921_SS0_PIN		PINB4
+
+	#define MCP4921_SS1_PORT	PORTD
+	#define MCP4921_SS1_DDR		DDRD
+	#define MCP4921_SS1_PIN		PIND6
+
+	#define MCP4921_SS2_PORT	PORTC
+	#define MCP4921_SS2_DDR		DDRC
+	#define MCP4921_SS2_PIN		PINC4
+
+	#define MCP4921_SS3_PORT	PORTC
+	#define MCP4921_SS3_DDR		DDRC
+	#define MCP4921_SS3_PIN		PINC5
+
+	#define MCP4921_LDAC_PORT	PORTD
+	#define MCP4921_LDAC_DDR	DDRD
+	#define MCP4921_LDAC_PIN	PINC7
+
+	#define TEC_SHUTDOWN_TEC0_PORT	PORTG
+	#define TEC_SHUTDOWN_TEC0_DDR	DDRG
+	#define TEC_SHUTDOWN_TEC0_PIN	PING0
+
+	#define TEC_SHUTDOWN_TEC1_PORT	PORTA
+	#define TEC_SHUTDOWN_TEC1_DDR	DDRA
+	#define TEC_SHUTDOWN_TEC1_PIN	PINA7
+
+	#define TEC_SHUTDOWN_TEC2_PORT	PORTA
+	#define TEC_SHUTDOWN_TEC2_DDR	DDRA
+	#define TEC_SHUTDOWN_TEC2_PIN	PINA4
+
+	#define TEC_SHUTDOWN_TEC3_PORT	PORTC
+	#define TEC_SHUTDOWN_TEC3_DDR	DDRC
+	#define TEC_SHUTDOWN_TEC3_PIN	PINC6
+
+	#define TPL5010_DONE_PORT		PORTE
+	#define TPL5010_DONE_DDR		DDRE
+	#define TPL5010_DONE_PIN		PINE2
+
+	#define TPL5010_WAKE_PORT		PORTE
+	#define TPL5010_WAKE_DDR		DDRE
+	#define TPL5010_WAKE_PIN		PINE6
+
+	#define	IR_LED_PORT				PORTB
+	#define	IR_LED_PIN				PINB6
+	#define IR_LED_DDR				DDRB
+
+	#define ONEWIRE_PORT			PORTA
+	#define ONEWIRE_DDR				DDRA
+	#define ONEWIRE_PIN				PINA
+
+	#define RINGLED_DDR				DDRB
+	#define RINGLED_PORT			PORTB
+	#define RINGLED_DQ				PINB7
+
+#endif
+
+
+
+/*==========================================================================================*/
+#ifdef  IOU_HW_V1_2_0
+	#define LED1_DATA_PORT		PORTC
+	#define LED1_DIR_PORT		DDRC
+	#define LED1_PIN			PIND3
+
+	#define LED2_DATA_PORT		PORTC
+	#define LED2_DIR_PORT		DDRC
+	#define LED2_PIN			PINC2
+
+	#define SPI_DDR			DDRB
+	#define SPI_PORT		PORTB
+	#define SPI_MISO		PINB3
+	#define SPI_MOSI		PINB2
+	#define SPI_SCK			PINB1
+
+	#define MCP2515_SS0_PORT	PORTC
+	#define MCP2515_SS0_DDR		DDRC
+	#define MCP2515_SS0_PIN		PINC6
+
+	#define MCP4921_SS0_PORT	PORTB
+	#define MCP4921_SS0_DDR		DDRB
+	#define MCP4921_SS0_PIN		PINB4
+
+	#define MCP4921_SS1_PORT	PORTA
+	#define MCP4921_SS1_DDR		DDRA
+	#define MCP4921_SS1_PIN		PINA7
+
+	#define MCP4921_SS2_PORT	PORTE
+	#define MCP4921_SS2_DDR		DDRE
+	#define MCP4921_SS2_PIN		PINE3
+
+	#define MCP4921_SS3_PORT	PORTA
+	#define MCP4921_SS3_DDR		DDRA
+	#define MCP4921_SS3_PIN		PINA1
+
+	#define MCP4921_LDAC_PORT	PORTA
+	#define MCP4921_LDAC_DDR	DDRA
+	#define MCP4921_LDAC_PIN	PINA0
+
+	#define TEC_SHUTDOWN_TEC0_PORT	PORTG
+	#define TEC_SHUTDOWN_TEC0_DDR	DDRG
+	#define TEC_SHUTDOWN_TEC0_PIN	PING4
+
+	#define TEC_SHUTDOWN_TEC1_PORT	PORTG
+	#define TEC_SHUTDOWN_TEC1_DDR	DDRG
+	#define TEC_SHUTDOWN_TEC1_PIN	PING2
+
+	#define TEC_SHUTDOWN_TEC2_PORT	PORTA
+	#define TEC_SHUTDOWN_TEC2_DDR	DDRA
+	#define TEC_SHUTDOWN_TEC2_PIN	PINA4
+
+	#define TEC_SHUTDOWN_TEC3_PORT	PORTB
+	#define TEC_SHUTDOWN_TEC3_DDR	DDRB
+	#define TEC_SHUTDOWN_TEC3_PIN	PINB0
+
+	#define TPL5010_DONE_PORT		PORTG
+	#define TPL5010_DONE_DDR		DDRG
+	#define TPL5010_DONE_PIN		PING0
+
+	#define TPL5010_WAKE_PORT		PORTG
+	#define TPL5010_WAKE_DDR		DDRG
+	#define TPL5010_WAKE_PIN		PING1
+
+	#define	IR_LED_PORT				PORTB
+	#define	IR_LED_PIN				PINB7
+	#define IR_LED_DDR				DDRB
+
+//	#define ONEWIRE_PORT			PORTC
+//	#define ONEWIRE_DDR				DDRC
+//	#define ONEWIRE_PIN				PINC
+
+	#define RINGLED_DDR				DDRD
+	#define RINGLED_PORT			PORTD
+	#define RINGLED_DQ				PIND4
+#endif
+
+#endif /* IOU_BOARD_H_ */
