@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.C</ToolchainName>
+    <ProjectGuid>dce6c7e3-ee26-4d79-826b-08594b9ad897</ProjectGuid>
+    <avrdevice>ATmega64</avrdevice>
+    <avrdeviceseries>mega</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>PDUFirmware</AssemblyName>
+    <Name>IOUFirmware</Name>
+    <RootNamespace>PDUFirmware</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <BootSegment>2</BootSegment>
+    <ResetRule>0</ResetRule>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <EraseKey />
+    <AsfFrameworkConfig>
+      <framework-data>
+        <options>
+          <option id="common.applications.user_application" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="common.boards" value="Add" config="" content-id="Atmel.ASF" />
+        </options>
+        <configurations />
+        <files>
+          <file path="src/config/conf_board.h" framework="" version="" source="common/applications/user_application/atmega64_stk600-mega/config/conf_board.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/main.c" framework="" version="" source="common/applications/user_application/main.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/boards/board.h" framework="" version="" source="common/boards/board.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/utils/interrupt.h" framework="" version="" source="common/utils/interrupt.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/utils/interrupt/interrupt_avr8.h" framework="" version="" source="common/utils/interrupt/interrupt_avr8.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/utils/make/Makefile.avr.in" framework="" version="" source="common/utils/make/Makefile.avr.in" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/utils/parts.h" framework="" version="" source="common/utils/parts.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/mega/boards/stk600/rcx_x/init.c" framework="" version="" source="mega/boards/stk600/rcx_x/init.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/mega/utils/assembler.h" framework="" version="" source="mega/utils/assembler.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/mega/utils/assembler/gas.h" framework="" version="" source="mega/utils/assembler/gas.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/mega/utils/compiler.h" framework="" version="" source="mega/utils/compiler.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/mega/utils/preprocessor/mrepeat.h" framework="" version="" source="mega/utils/preprocessor/mrepeat.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/mega/utils/preprocessor/preprocessor.h" framework="" version="" source="mega/utils/preprocessor/preprocessor.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/mega/utils/preprocessor/stringz.h" framework="" version="" source="mega/utils/preprocessor/stringz.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/mega/utils/preprocessor/tpaste.h" framework="" version="" source="mega/utils/preprocessor/tpaste.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/mega/utils/progmem.h" framework="" version="" source="mega/utils/progmem.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/mega/utils/status_codes.h" framework="" version="" source="mega/utils/status_codes.h" changed="False" content-id="Atmel.ASF" />
+        </files>
+        <documentation help="https://asf.microchip.com/docs/3.52.0/common.applications.user_application.stk600-mega.atmega64/html/index.html" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.52.0" />
+        </dependencies>
+        <project id="common.applications.user_application.stk600-mega.atmega64" value="Add" config="" content-id="Atmel.ASF" />
+        <board id="board.stk600-mega.atmega64" value="Add" config="" content-id="Atmel.ASF" />
+      </framework-data>
+    </AsfFrameworkConfig>
+    <avrtool>com.atmel.avrdbg.tool.pickit4</avrtool>
+    <avrtoolserialnumber>BUR222277016</avrtoolserialnumber>
+    <avrdeviceexpectedsignature>0x1E9602</avrdeviceexpectedsignature>
+    <com_atmel_avrdbg_tool_simulator>
+      <ToolOptions>
+        <InterfaceProperties>
+        </InterfaceProperties>
+        <InterfaceName>
+        </InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.simulator</ToolType>
+      <ToolNumber>
+      </ToolNumber>
+      <ToolName>Simulator</ToolName>
+    </com_atmel_avrdbg_tool_simulator>
+    <avrtoolinterface>JTAG</avrtoolinterface>
+    <com_atmel_avrdbg_tool_pickit4>
+      <ToolOptions>
+        <InterfaceProperties>
+          <JtagDbgClock>1000000</JtagDbgClock>
+        </InterfaceProperties>
+        <InterfaceName>JTAG</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.pickit4</ToolType>
+      <ToolNumber>BUR222277016</ToolNumber>
+      <ToolName>MPLAB® PICkit 4</ToolName>
+    </com_atmel_avrdbg_tool_pickit4>
+    <avrtoolinterfaceclock>1000000</avrtoolinterfaceclock>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.Device>-mmcu=atmega64 -B "%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega64"</avrgcc.common.Device>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>NDEBUG</Value>
+            <Value>BOARD=STK600_MEGA</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\include\</Value>
+            <Value>../src/ASF/common/boards</Value>
+            <Value>../src/ASF/mega/utils/preprocessor</Value>
+            <Value>../src/ASF/mega/utils</Value>
+            <Value>../src/ASF/common/utils</Value>
+            <Value>../src</Value>
+            <Value>../src/config</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.OtherFlags>-fdata-sections</avrgcc.compiler.optimization.OtherFlags>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -fno-strict-aliasing -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax</avrgcc.compiler.miscellaneous.OtherFlags>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.linker.miscellaneous.LinkerFlags>-Wl,--relax</avrgcc.linker.miscellaneous.LinkerFlags>
+        <avrgcc.assembler.general.AssemblerFlags>-mrelax -DBOARD=STK600_MEGA</avrgcc.assembler.general.AssemblerFlags>
+        <avrgcc.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\include\</Value>
+            <Value>../src/ASF/common/boards</Value>
+            <Value>../src/ASF/mega/utils/preprocessor</Value>
+            <Value>../src/ASF/mega/utils</Value>
+            <Value>../src/ASF/common/utils</Value>
+            <Value>../src</Value>
+            <Value>../src/config</Value>
+          </ListValues>
+        </avrgcc.assembler.general.IncludePaths>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.Device>-mmcu=atmega64 -B "%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega64"</avrgcc.common.Device>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>DEBUG</Value>
+            <Value>BOARD=STK600_MEGA</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\include\</Value>
+            <Value>../src/ASF/common/boards</Value>
+            <Value>../src/ASF/mega/utils/preprocessor</Value>
+            <Value>../src/ASF/mega/utils</Value>
+            <Value>../src/ASF/common/utils</Value>
+            <Value>../src</Value>
+            <Value>../src/config</Value>
+            <Value>../Application/Common/inc</Value>
+            <Value>../BSP</Value>
+            <Value>../Scheduler</Value>
+            <Value>../Application/LED</Value>
+            <Value>../Application/SYS</Value>
+            <Value>../Application/COPC</Value>
+            <Value>../ThirdParty/libsfp</Value>
+            <Value>../BSP/UART</Value>
+            <Value>../BSP/Timer</Value>
+            <Value>../BSP/SPI</Value>
+            <Value>../Devices/MCP4921</Value>
+            <Value>../BSP/TWI</Value>
+            <Value>../Application/CMDLine</Value>
+            <Value>../Devices/NTC</Value>
+            <Value>../BSP/ADC</Value>
+            <Value>../Devices/TEC</Value>
+            <Value>../Application/Temperature</Value>
+            <Value>../Data_struct</Value>
+            <Value>../Devices/TPL5010</Value>
+            <Value>../Application/WATCHDOG</Value>
+            <Value>../Devices/LED_RING</Value>
+            <Value>../BSP/PWM</Value>
+            <Value>../Application/Accel_Gyro</Value>
+            <Value>../Devices/LSM6DSOX</Value>
+            <Value>../Devices/BMP390</Value>
+            <Value>../Application/Pressure</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.OtherFlags>-fdata-sections</avrgcc.compiler.optimization.OtherFlags>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Maximum (-g3)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -fno-strict-aliasing -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax</avrgcc.compiler.miscellaneous.OtherFlags>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.linker.miscellaneous.LinkerFlags>-Wl,-u,vfprintf -lprintf_flt -lm</avrgcc.linker.miscellaneous.LinkerFlags>
+        <avrgcc.assembler.general.AssemblerFlags>-mrelax -DBOARD=STK600_MEGA</avrgcc.assembler.general.AssemblerFlags>
+        <avrgcc.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\include\</Value>
+            <Value>../src/ASF/common/boards</Value>
+            <Value>../src/ASF/mega/utils/preprocessor</Value>
+            <Value>../src/ASF/mega/utils</Value>
+            <Value>../src/ASF/common/utils</Value>
+            <Value>../src</Value>
+            <Value>../src/config</Value>
+          </ListValues>
+        </avrgcc.assembler.general.IncludePaths>
+        <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Application\Accel_Gyro\Accel_Gyro.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\Accel_Gyro\Accel_Gyro.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\CMDLine\cmdline.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\CMDLine\cmdline.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\CMDLine\command.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\CMDLine\command.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\Common\inc\basetypedef.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\COPC\COPC.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\COPC\COPC.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\LED\ir_led.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\LED\ir_led.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\LED\ring_led.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\LED\ring_led.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\LED\status_led.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\LED\status_led.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\Pressure\Pressure.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\Pressure\Pressure.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\SYS\sys.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\SYS\sys.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\Temperature\temperature.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\Temperature\temperature.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\WATCHDOG\watchdog.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\WATCHDOG\watchdog.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\ADC\AD.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\ADC\AD.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\IOU_board.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\PWM\PWM.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\PWM\PWM.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\SPI\spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\SPI\spi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\Timer\timer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\Timer\timer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\TWI\i2c.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\TWI\i2c.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\TWI\twi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\TWI\twi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\UART\uart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\UART\uart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\IOU_version.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Data_struct\IOU_data.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Data_struct\IOU_data.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\BMP390\BMP390.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\BMP390\BMP390.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\LSM6DSOX\LSM6DSOX.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\LSM6DSOX\LSM6DSOX.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\MCP4921\MCP4921.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\MCP4921\MCP4921.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\NTC\ntc_10k.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\NTC\ntc_10k.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\onewire\DS18B20.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\onewire\DS18B20.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\LED_RING\SK6812.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\LED_RING\SK6812.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\TEC\TEC.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\TEC\TEC.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\TPL5010\TPL5010.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\TPL5010\TPL5010.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Scheduler\scheduler.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Scheduler\scheduler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\libsfp\crc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\libsfp\crc16.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\libsfp\fsp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\libsfp\fsp.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Application\Common\inc" />
+    <Folder Include="Application\LED" />
+    <Folder Include="Application\Common" />
+    <Folder Include="Application\COPC" />
+    <Folder Include="Application\CMDLine" />
+    <Folder Include="Application\Accel_Gyro" />
+    <Folder Include="Application\Pressure" />
+    <Folder Include="Application\WATCHDOG" />
+    <Folder Include="Application\Temperature" />
+    <Folder Include="Application\SYS" />
+    <Folder Include="BSP" />
+    <Folder Include="Application" />
+    <Folder Include="BSP\ADC" />
+    <Folder Include="BSP\PWM" />
+    <Folder Include="BSP\TWI" />
+    <Folder Include="BSP\SPI" />
+    <Folder Include="BSP\UART" />
+    <Folder Include="BSP\Timer" />
+    <Folder Include="Devices" />
+    <Folder Include="Devices\MCP4921" />
+    <Folder Include="Devices\LED_RING" />
+    <Folder Include="Devices\LSM6DSOX" />
+    <Folder Include="Devices\BMP390" />
+    <Folder Include="Devices\onewire" />
+    <Folder Include="Devices\TPL5010" />
+    <Folder Include="Devices\TEC" />
+    <Folder Include="Devices\NTC" />
+    <Folder Include="Data_struct" />
+    <Folder Include="ThirdParty" />
+    <Folder Include="Scheduler" />
+    <Folder Include="ThirdParty\libsfp" />
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
