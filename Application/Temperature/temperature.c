@@ -11,10 +11,13 @@
 
 const	uint16_t Kp = 2;
 //#define	DAC_at_2_5					1551
-#define	DAC_at_2_5					3103
+//#define	DAC_at_2_5					3103
+
+#define	DAC_at_2_5					2048
+
 #define	INCREASE_DECREASE_TIMES		500
 #define TEMPERATURE_LOG_PERIOD		1000
-#define TEC_OUT_DEFAULT						50	//	(1V)
+#define TEC_OUT_DEFAULT						0	//	(1V)
 void	temperature_TEC_hysteris_control_heating(uint16_t	NTC_temperature, uint8_t NTC_channel, uint8_t	double_output);
 void	temperature_TEC_hysteris_control_cooling(uint16_t	NTC_temperature, uint8_t NTC_channel, uint8_t	double_output);
 static	void	temperature_task_update(void);
@@ -318,9 +321,15 @@ void	temperature_disable_auto_control_TEC(uint8_t	channel)
 //@param	channel: 0-3
 //@param	HeatCool: 0 HEAT, 1 COOL
 //@voltage	Real Voltage multiply with 100
+//V= 2.3 (Vdac – 2.5)
+//
+//Delta = Vdac-2.5 = V/2.3
+//
+//DACeltaVal = (4096 * V/2.3) / 5 =4096*V / 11.5
+
 void    temperature_set_TEC_output(uint8_t channel, uint8_t HeatCool, uint16_t	voltage)
 {
-	uint32_t	_delta = ((uint32_t)voltage * 4096) / 759;
+	uint32_t	_delta = ((uint32_t)voltage * 4096) / 1150;
 	uint32_t	_adcVal ;
 	if (HeatCool == HEATING)		//want HEAT
 	{
@@ -330,8 +339,8 @@ void    temperature_set_TEC_output(uint8_t channel, uint8_t HeatCool, uint16_t	v
 	{
 		_adcVal = DAC_at_2_5 + _delta;
 	}
-	_adcVal = _adcVal >> 1;
-	MCP4291_set_output((uint16_t)_adcVal, 0, 1, 1, channel);
+
+	MCP4291_set_output((uint16_t)_adcVal, 0, 0, 1, channel);
 }
 
 uint16_t	temperature_get_setpoint(uint8_t	channel)

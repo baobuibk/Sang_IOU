@@ -31,8 +31,8 @@ int main(void)
 	watchdog_init();
 	temperature_init();
 	ringled_init();
-	Accel_and_Gyro_init();
-	Pressure_init();
+//	Accel_and_Gyro_init();
+//	Pressure_init();
 	
 	SCH_Initialize();
 	status_led_create_task();
@@ -40,8 +40,8 @@ int main(void)
 	watchdog_create_timer();
 	temperature_create_task();
 	ringled_create_task();
-	Accel_and_Gyro_create_task();
-	Pressure_create_task();
+//	Accel_and_Gyro_create_task();
+//	Pressure_create_task();
 //	COPC_create_task();
 	SCH_StartSchedular();
 

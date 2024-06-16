@@ -12,14 +12,14 @@
 #define F_CPU 8000000UL
 #include "IOU_version.h"
 
-#ifdef FIRMWARE_VERSION
-	#if FIRMWARE_VERSION == '1.0.0'
+
+#if (FIRMWARE_VERSION_MAJOR == 1) && (FIRMWARE_VERSION_MINOR == 0)
 		#define IOU_HW_V1_0_0
 		#define MAX_CHANNEL 2
-	#elif FIRMWARE_VERSION == '1.2.0'
+#endif
+#if (FIRMWARE_VERSION_MAJOR == 1) && (FIRMWARE_VERSION_MINOR == 2)
 		#define IOU_HW_V1_2_0
-		#define MAX_CHANNEL 4
-	#endif
+		#define MAX_CHANNEL 4	
 #endif
 
 
@@ -172,9 +172,9 @@
 	#define	IR_LED_PIN				PINB7
 	#define IR_LED_DDR				DDRB
 
-//	#define ONEWIRE_PORT			PORTC
-//	#define ONEWIRE_DDR				DDRC
-//	#define ONEWIRE_PIN				PINC
+	#define ONEWIRE_PORT			PORTC
+	#define ONEWIRE_DDR				DDRC
+	#define ONEWIRE_PIN				PINC4
 
 	#define RINGLED_DDR				DDRD
 	#define RINGLED_PORT			PORTD
