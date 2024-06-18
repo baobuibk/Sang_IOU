@@ -32,6 +32,7 @@ void	temperature_enable_channel(uint8_t channel);
 void	temperature_disable_channel(uint8_t channel);
 void    temperature_set_TEC_output(uint8_t channel, uint8_t HeatCool, uint16_t	voltage);
 uint16_t	temperature_get_setpoint(uint8_t channel);
+uint16_t	temperature_get_voltage(uint8_t	channel);
 void	temperature_set_auto_voltage(uint8_t channel, uint16_t voltage);
 void	temperature_get_status(void);
 void	temperature_enable_log(void);

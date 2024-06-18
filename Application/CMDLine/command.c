@@ -394,7 +394,7 @@ int
 Cmd_ringled_get_RGB(int argc, char *argv[])
 {
 	if (argc > 1) return CMDLINE_TOO_MANY_ARGS;
-	rgb_color RGB = ringled_get_RGB();
+	rgbw_color RGB = ringled_get_RGBW();
 	UARTprintf("Ringled: RED = %d, GREEN = %d, BLUE = %d, WHITE = %d \r\n", RGB.red, RGB.green, RGB.blue, RGB.white);
 	return CMDLINE_OK;
 }
@@ -461,8 +461,9 @@ Cmd_get_parameters(int argc, char *argv[])
 	}
 	UARTprintf("Status TEC:");
 	temperature_get_status();
-// 	UARTprintf("Ring LED mode: %d \r\n", ringled_get_mode());
-// 	UARTprintf("Brightness of IR LED: %d \r\n", IR_led_get_Current_DutyCyclesPercent());
+	rgbw_color RGBW = ringled_get_RGBW();
+	UARTprintf("RINLED: R=%d, G=%d, B=%d, W=%d\r\n", RGBW.red, RGBW.green, RGBW.blue, RGBW.white);
+	UARTprintf("IRLED: duty %d %%\r\n", IR_led_get_Current_DutyCyclesPercent());
 	return CMDLINE_OK;
 }
 

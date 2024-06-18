@@ -11,7 +11,7 @@
 #include <avr/interrupt.h>
 #include <stdlib.h>
 
-rgb_color status_rgb_color;
+rgbw_color status_rgbw_color;
 
 void ringled_init(void)
 {
@@ -19,7 +19,7 @@ void ringled_init(void)
 	ringled_show(colorMap, LED_COUNT);
 }
 
-void __attribute__((noinline)) ringled_show(const rgb_color *colors, uint8_t pixels)
+void __attribute__((noinline)) ringled_show(const rgbw_color *colors, uint8_t pixels)
 {
 	RINGLED_PORT &= ~(1 << RINGLED_DQ);
 	RINGLED_DDR  |= (1 << RINGLED_DQ);
@@ -81,18 +81,18 @@ void __attribute__((noinline)) ringled_show(const rgb_color *colors, uint8_t pix
 void ringled_clear(void)
 {
 	for (uint8_t i = 0; i < LED_COUNT; i++)
-	colorMap[i] = (rgb_color){0, 0, 0, 0};
+	colorMap[i] = (rgbw_color){0, 0, 0, 0};
 }
 
-void ringled_set_RGB(uint8_t red, uint8_t green, uint8_t blue, uint8_t white)
+void ringled_set_RGBW(uint8_t red, uint8_t green, uint8_t blue, uint8_t white)
 {
-	status_rgb_color = (rgb_color){red, green, blue, white};
+	status_rgbw_color = (rgbw_color){red, green, blue, white};
 	for (uint8_t i = 0; i < LED_COUNT; i++)
-		colorMap[i] = (rgb_color){red, green, blue, white};
+		colorMap[i] = (rgbw_color){red, green, blue, white};
 	ringled_show(colorMap, LED_COUNT);
 }
 
-rgb_color ringled_get_RGB(void)
+rgbw_color ringled_get_RGBW(void)
 {
-	return status_rgb_color;
+	return status_rgbw_color;
 }

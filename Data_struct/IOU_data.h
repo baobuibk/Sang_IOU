@@ -29,6 +29,7 @@ typedef struct __RingLed_DataTypeDef__
 	uint8_t	Red;			//0->255
 	uint8_t	Green;			//0->255
 	uint8_t	Blue;			//0->255
+	uint8_t	White;			//0->255
 }	RingLed_DataTypeDef_t;
 typedef	struct _Temperature_CurrentStateTypedef_
 {

@@ -16,7 +16,7 @@ const	uint16_t Kp = 2;
 
 #define	INCREASE_DECREASE_TIMES		500
 #define TEMPERATURE_LOG_PERIOD		1000
-#define TEC_OUT_DEFAULT						50	//	(1V)
+#define TEC_OUT_DEFAULT				50	//	(1V)
 void	temperature_TEC_hysteris_control_heating(uint16_t	NTC_temperature, uint8_t NTC_channel, uint8_t	double_output);
 void	temperature_TEC_hysteris_control_cooling(uint16_t	NTC_temperature, uint8_t NTC_channel, uint8_t	double_output);
 static	void	temperature_task_update(void);
@@ -40,18 +40,6 @@ static Temperature_TaskContextTypedef           s_temperature_task_context =
 	}
 };
 
-// static	Temperature_CurrentStateTypedef_t	s_Temperature_CurrentState = 
-// {
-// 	{0,	0},		//NTC_channel_temperature[2];
-// 	{0,	0},		//onewire_channel_temperature[2];
-// 	0,			//i2c_sensor_temperature
-// 	{250, 250},		//channel_temperature_setpoint[2] set point is 25.0
-// 	{TEC_OUT_DEFAULT, TEC_OUT_DEFAULT, TEC_OUT_DEFAULT,	TEC_OUT_DEFAULT},	//TEC_output_voltage
-// 	0,				//TEC_status;	// tec3_auto tec3_ena tec2_auto tec2_ena tec1_auto tec1_ena tec0_auto tec0_ena
-// 	{0,	0, 0, 0},
-// 	0,
-// 	{HEATING, HEATING}
-// };
 	
 static	Temperature_CurrentStateTypedef_t	s_Temperature_CurrentState =
 {
@@ -349,6 +337,7 @@ void	temperature_disable_auto_control_TEC(uint8_t	channel)
 //@voltage	Real Voltage multiply with 100
 void    temperature_set_TEC_output(uint8_t channel, uint8_t HeatCool, uint16_t	voltage)
 {
+	s_Temperature_CurrentState.TEC_output_voltage[channel] = voltage;
 	uint32_t	_delta = ((uint32_t)voltage * 4096) / 1150;
 	uint32_t	_adcVal ;
 	if (HeatCool == HEATING)		//want HEAT
@@ -368,6 +357,11 @@ uint16_t	temperature_get_setpoint(uint8_t	channel)
 	return s_Temperature_CurrentState.channel_temperature_setpoint[channel];
 }
 
+uint16_t	temperature_get_voltage(uint8_t	channel)
+{
+	return s_Temperature_CurrentState.TEC_output_voltage[channel];
+}
+
 void	temperature_set_auto_voltage(uint8_t	channel, uint16_t voltage)
 {
 	 s_Temperature_CurrentState.TEC_output_voltage[channel] = voltage;
@@ -376,10 +370,11 @@ void	temperature_set_auto_voltage(uint8_t	channel, uint16_t voltage)
 void	temperature_get_status(void)
 {
 	uint8_t	_status = s_Temperature_CurrentState.TEC_status;
-	UARTprintf("%d %d %d %d %d %d %d %d\r\n", ((_status & (1 << TEC0_ENA)) >> TEC0_ENA), ((_status & (1 << TEC1_ENA)) >> TEC1_ENA),
+	UARTprintf("%d %d %d %d %d %d %d %d %d %d %d %d\r\n", ((_status & (1 << TEC0_ENA)) >> TEC0_ENA), ((_status & (1 << TEC1_ENA)) >> TEC1_ENA),
 									 ((_status & (1 << TEC2_ENA)) >> TEC2_ENA), ((_status & (1 <<TEC3_ENA)) >> TEC3_ENA),
-									s_Temperature_CurrentState.mode[0], s_Temperature_CurrentState.mode[1],	
-									s_Temperature_CurrentState.channel_temperature_setpoint[0], s_Temperature_CurrentState.channel_temperature_setpoint[1]);
+									s_Temperature_CurrentState.mode[0], s_Temperature_CurrentState.mode[1],	s_Temperature_CurrentState.mode[2],	s_Temperature_CurrentState.mode[3],
+									s_Temperature_CurrentState.channel_temperature_setpoint[0], s_Temperature_CurrentState.channel_temperature_setpoint[1],
+									s_Temperature_CurrentState.channel_temperature_setpoint[2], s_Temperature_CurrentState.channel_temperature_setpoint[3]);
 }
 
 void	temperature_enable_log(void)

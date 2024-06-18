@@ -5,6 +5,7 @@
 void init_adc(void)
 {
 	ADMUX = (0);
+	ADMUX |= (1 << REFS0);
 	//Prescaler of 128. 16Mhz/128 = 125kHz
 	ADCSRA |= (1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0)|(1<<ADEN);
 }

@@ -12,18 +12,18 @@
 #include <stdint.h>
 #include <IOU_board.h>
 
-typedef struct rgb_color
+typedef struct rgbw_color
 {
 	uint8_t red, green, blue, white;
-} rgb_color;
+} rgbw_color;
 
 #define LED_COUNT 10
-rgb_color colorMap[LED_COUNT];
+rgbw_color colorMap[LED_COUNT];
 
-void ringled_show(const rgb_color *colors, uint8_t pixels);
+void ringled_show(const rgbw_color *colors, uint8_t pixels);
 void ringled_clear(void);
 void ringled_init(void);
-void ringled_set_RGB(uint8_t red, uint8_t green, uint8_t blue, uint8_t white);
-rgb_color ringled_get_RGB(void);
+void ringled_set_RGBW(uint8_t red, uint8_t green, uint8_t blue, uint8_t white);
+rgbw_color ringled_get_RGBW(void);
 
 #endif /* RINGLED_H_ */
