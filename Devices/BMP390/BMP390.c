@@ -129,7 +129,7 @@ void BMP390_set_mode(BMP390_Mode mode) {
 }
 
 // Function to initialize BMP390 sensor
-void BMP390_init() 
+void BMP390_init(void) 
 {
 	BMP390_set_mode(BMP390_MODE_NORMAL);
 	BMP390_read_raw_calibration(&TempPress_data);
@@ -216,7 +216,7 @@ void BMP390_compensate_pressure(BMP390_Data *data) {
 	data->pressure *=10;
 }
 
-void BMP390_temp_press_update()
+void BMP390_temp_press_update(void)
 {
 	BMP390_init();
 	BMP390_read_raw_temp_press(&TempPress_data);

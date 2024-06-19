@@ -117,10 +117,15 @@
 #define FSP_PKT_INVALID                 2       /**< Packet invalid. */
 #define FSP_PKT_WRONG_ADR               3       /**< Packet with wrong address. */
 #define FSP_PKT_ERROR                   4       /**< Packet with error. */
+#define FSP_PKT_CRC_FAIL                5       /**< Packet with error. */
+#define FSP_PKT_WRONG_LENGTH            6       /**< Packet with error. */
 
 // Config.
 #define FSP_PKT_WITH_ACK                1       /**< Packet with acknowledgement. */
 #define FSP_PKT_WITHOUT_ACK             0       /**< Packet without acknowledgement. */
+
+#define FSP_PKT_HEADER_LENGTH			4
+#define FSP_PKT_CRC_LENGTH              2
 
 /**
  * \brief FSP packet struct.
@@ -252,6 +257,11 @@ void fsp_encode(fsp_packet_t *fsp, uint8_t *pkt, uint8_t *pkt_len);
  * \endparblock
  */
 uint8_t fsp_decode(uint8_t byte, fsp_packet_t *fsp);
+
+void frame_encode(fsp_packet_t *fsp, uint8_t *frame, uint8_t *frame_len);
+
+int frame_decode(uint8_t *buffer, uint8_t length, fsp_packet_t *pkt);
+
 
 void fsp_gen_cmd_w_data_pkt(uint8_t cmd, uint8_t *data, uint8_t data_len, uint8_t dst_adr, uint8_t ack, fsp_packet_t *fsp);
 #endif // FSP_H_

@@ -72,11 +72,11 @@ typedef struct _BMP390_Data_
 void	BMP390_read_raw_calibration(BMP390_Data *data);
 void	BMP390_convert_calibration(BMP390_Data *data);
 void	BMP390_set_mode(BMP390_Mode mode);
-void	BMP390_init();
+void	BMP390_init(void);
 void	BMP390_read_raw_temp_press(BMP390_Data *data);
 void	BMP390_compensate_temperature(BMP390_Data *data);
 void	BMP390_compensate_pressure(BMP390_Data *data);
-void	BMP390_temp_press_update();
+void	BMP390_temp_press_update(void);
 int16_t	get_BMP390_temperature(void);
 int16_t	get_BMP390_pressure(void);
 

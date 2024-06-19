@@ -10,7 +10,7 @@
 #define IOU_VERSION_H_
 
 #define FIRMWARE_VERSION_MAJOR            1
-#define FIRMWARE_VERSION_MINOR            2
+#define FIRMWARE_VERSION_MINOR            0
 #define FIRMWARE_STATUS             "Development"
 
 #define FIRMWARE_AUTHOR             "LiinSpace"

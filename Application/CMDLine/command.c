@@ -386,7 +386,7 @@ Cmd_ringled_set_RGB(int argc, char *argv[])
 	uint8_t _green = atoi(argv[2]);
 	uint8_t _blue = atoi(argv[3]);
 	uint8_t _white = atoi(argv[4]);
-	ringled_set_RGB(_red, _green, _blue, _white);
+	ringled_set_RGBW(_red, _green, _blue, _white);
 	return CMDLINE_OK;
 }
 

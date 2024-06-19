@@ -31,7 +31,8 @@ Application/COPC/COPC.d Application/COPC/COPC.o: \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  ../Application/Accel_Gyro/Accel_Gyro.h ../Devices/LSM6DSOX/LSM6DSOX.h \
  ../Application/LED/ring_led.h ../Devices/LED_RING/SK6812.h \
- ../Application/LED/ir_led.h ../Application/Pressure/Pressure.h
+ ../Application/LED/ir_led.h ../Application/Pressure/Pressure.h \
+ ../ThirdParty/libsfp/crc.h
 
 ../Scheduler/scheduler.h:
 
@@ -116,3 +117,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../Application/LED/ir_led.h:
 
 ../Application/Pressure/Pressure.h:
+
+../ThirdParty/libsfp/crc.h:
