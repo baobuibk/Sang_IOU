@@ -258,11 +258,6 @@ void fsp_encode(fsp_packet_t *fsp, uint8_t *pkt, uint8_t *pkt_len);
  */
 uint8_t fsp_decode(uint8_t byte, fsp_packet_t *fsp);
 
-void frame_encode(fsp_packet_t *fsp, uint8_t *frame, uint8_t *frame_len);
-
-int frame_decode(uint8_t *buffer, uint8_t length, fsp_packet_t *pkt);
-
-
 void fsp_gen_cmd_w_data_pkt(uint8_t cmd, uint8_t *data, uint8_t data_len, uint8_t dst_adr, uint8_t ack, fsp_packet_t *fsp);
 #endif // FSP_H_
 

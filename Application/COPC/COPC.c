@@ -429,8 +429,8 @@ void copc_iou_get_param(void)
 	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_onewire_channel_1_low = (uint8_t)_temp;
 	// GET TEMP BMP390
 	_temp = temperature_get_bmp390();
-		s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_i2c_sensor_high = (uint8_t)(_temp >> 8);
-		s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_i2c_sensor_low = (uint8_t)_temp;
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_i2c_sensor_high = (uint8_t)(_temp >> 8);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_i2c_sensor_low = (uint8_t)_temp;
 	// GET TEMP SETPOINT
 	_temp = (uint16_t)temperature_get_setpoint(0);
 	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_setpoint_channel_0_high = (uint8_t)(_temp >> 8);

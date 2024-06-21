@@ -63,7 +63,6 @@ void	temperature_init(void)
 	TEC_init();
 	MCP4921_init();
 	SPI_Init();
-
 	for(idx =0; idx < 4; idx ++)	
 	{
 		TEC_shutdown(idx);

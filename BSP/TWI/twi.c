@@ -95,7 +95,7 @@ int twi_check_master_txBuffer ()
 	for (int i = 0; i<TWI_BUFFER_LENGTH; i++ )
 	{
 		if (twi_master_txBuffer[i] != 0x00)
-		{ return 1;} 		
+			return 1;		
 	}
 	return 0;
 }
@@ -104,7 +104,7 @@ uint8_t twi_check_master_rxBuffer ()
 	for (int i = 0; i<TWI_BUFFER_LENGTH; i++ )
 	{
 		if (twi_master_rxBuffer[i] != 0x00)
-		{ return 1;}	
+			return 1;	
 	}
 	return 0;
 }
@@ -113,7 +113,7 @@ uint8_t twi_check_slv_txBuffer ()
 	for (int i = 0; i<TWI_BUFFER_LENGTH; i++ )
 	{
 		if (twi_slv_txBuffer[i] != 0x00)
-		{ return 1;} 	
+			return 1;
 	}
 	return 0;
 }
@@ -122,42 +122,61 @@ uint8_t twi_check_slv_rxBuffer ()
 	for (int i = 0; i<TWI_BUFFER_LENGTH; i++ )
 	{
 		if (twi_slv_rxBuffer[i] != 0x00)
-		{ return 1;}		
+			return 1;	
 	}
 	return 0;
 }
 
-//void twi_init(void) {
-	//TWSR = 0x00;
-	//TWBR = ((F_CPU / SCL_CLOCK) - 16) / 2;
-	//TWCR = (1 << TWEN);
-//}
-
 void twi_start(void) {
 	TWCR = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
-	while (!(TWCR & (1 << TWINT)));
+	uint16_t timeout = 8000;
+	while (!(TWCR & (1 << TWINT)))
+	{
+		if(-- timeout == 0)
+			return;
+	}
 }
 
 void twi_stop(void) {
 	TWCR = (1 << TWINT) | (1 << TWSTO) | (1 << TWEN);
-	while (TWCR & (1 << TWSTO));
+	uint16_t timeout = 8000;
+	while (TWCR & (1 << TWSTO))
+	{
+		if(-- timeout == 0)
+		return;
+	}
 }
 
 void twi_write(uint8_t data) {
 	TWDR = data;
 	TWCR = (1 << TWINT) | (1 << TWEN);
-	while (!(TWCR & (1 << TWINT)));
+	uint16_t timeout = 8000;
+	while (!(TWCR & (1 << TWINT)))
+	{
+		if(-- timeout == 0)
+		return;
+	}
 }
 
 uint8_t twi_read_ack(void) {
 	TWCR = (1 << TWINT) | (1 << TWEA) | (1 << TWEN);
-	while (!(TWCR & (1 << TWINT)));
+	uint16_t timeout = 8000;
+	while (!(TWCR & (1 << TWINT)))
+	{
+		if(-- timeout == 0)
+		return;
+	}
 	return TWDR;
 }
 
 uint8_t twi_read_nack(void) {
 	TWCR = (1 << TWINT) | (1 << TWEN);
-	while (!(TWCR & (1 << TWINT)));
+	uint16_t timeout = 8000;
+	while (!(TWCR & (1 << TWINT)))
+	{
+		if(-- timeout == 0)
+		return;
+	}
 	return TWDR;
 }
 
