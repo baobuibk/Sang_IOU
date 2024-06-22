@@ -4,41 +4,45 @@
  * Created: 6/14/2024 1:19:01 AM
  *  Author: HTSANG
  */ 
-
+#define F_CPU 8000000UL
 #include "LSM6DSOX.h"
-#include "i2c.h"
 #include "math.h"
 #include "twi.h"
-#include "uart.h"
-#include "scheduler.h"
 #include "IOU_board.h"
+#include "uart.h"
 
-void lsm6dsox_write_register(uint8_t _reg, uint8_t _value) {
+bool lsm6dsox_write_register(uint8_t _reg, uint8_t _value) {
 	twi_start();
 	twi_write(LSM6DSOX_ADDRESS << 1);
 	twi_write(_reg);
 	twi_write(_value);
 	twi_stop();
+	return true;
 }
 
+uint8_t result;
+
 uint8_t lsm6dsox_read_register(uint8_t _reg) {
-	uint8_t result;
 	twi_start();
 	twi_write(LSM6DSOX_ADDRESS << 1);
 	twi_write(_reg);
 	twi_start();
 	twi_write((LSM6DSOX_ADDRESS << 1) | 0x01);
 	result = twi_read_nack();
-	i2c_stop();
+	twi_stop();
 	return result;
 }
 
-void lsm6dsox_init(void) {
+bool lsm6dsox_init(void) {
 	// Accelerometer: 104 Hz, 2g
 	lsm6dsox_write_register(LSM6DSOX_CTRL1_XL, 0x40);
 	// Gyroscope: 104 Hz, 250 dps
 	lsm6dsox_write_register(LSM6DSOX_CTRL2_G, 0x40);
+	if (!lsm6dsox_read_register(LSM6DSOX_OUTZ_H_A))
+		return false;
+	return true;
 }
+
 
 void read_accel(Accel_Gyro_DataTypedef* _accel)
 {

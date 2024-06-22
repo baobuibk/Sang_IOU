@@ -25,9 +25,9 @@
 
 // BMP390 data
 BMP390_Data TempPress_data;
-
+uint16_t tmp;
 // Function to read raw calibration data from BMP390 sensor
-void BMP390_read_raw_calibration(BMP390_Data *data) {
+bool BMP390_read_raw_calibration(BMP390_Data *data) {
 	uint8_t calib[21];
 
 	twi_start();
@@ -49,7 +49,8 @@ void BMP390_read_raw_calibration(BMP390_Data *data) {
 		calib[i] = twi_read_ack();
 	}
 	calib[20] = twi_read_nack();
-	
+	if (!calib[20])
+		return false;
 	// Store the raw calibration data into the _BMP390_Raw_Calib_Data_ structure
 	data->NVM.u16_NVM_T1 = ((uint16_t)calib[1] << 8) | (uint16_t)calib[0];
 	data->NVM.u16_NVM_T2 = ((uint16_t)calib[3] << 8) | (uint16_t)calib[2];
@@ -68,6 +69,7 @@ void BMP390_read_raw_calibration(BMP390_Data *data) {
 	
 	// Send stop condition
 	twi_stop();
+	return true;
 }
 
 // Function to convert raw calibration data to floating-point calibration data
@@ -91,7 +93,6 @@ void BMP390_convert_calibration(BMP390_Data *data) {
 //
 void BMP390_set_mode(BMP390_Mode mode) {
 	uint8_t reg_value;
-
 	twi_start();
 
 	// Send device address with write flag
@@ -126,14 +127,16 @@ void BMP390_set_mode(BMP390_Mode mode) {
 	twi_write(BMP390_REG_PWR_CTRL);
 	twi_write(reg_value);
 	twi_stop();
+	return true;
 }
 
 // Function to initialize BMP390 sensor
-void BMP390_init(void) 
+bool BMP390_init(void) 
 {
 	BMP390_set_mode(BMP390_MODE_NORMAL);
-	BMP390_read_raw_calibration(&TempPress_data);
+	bool err = BMP390_read_raw_calibration(&TempPress_data);
 	BMP390_convert_calibration(&TempPress_data);
+	return err;
 }
 
 // Function to read temperature and pressure data from BMP390 sensor
@@ -212,8 +215,8 @@ void BMP390_compensate_pressure(BMP390_Data *data) {
 	//partial_out2=(float)data->pressure_raw*(data->PAR.f_PAR_P1 + partial_data1 + partial_data2 + partial_data3);
 
 	data->pressure = partial_out1 + partial_out2 + partial_data4;
-	//Pressure 10 times
-	data->pressure *=10;
+	//Pressure in 10 times hPa, value is 10.000 mean 1.000 hPa (hPa = Pa/100, 10xhPa = Pa/10)
+	data->pressure /=10.0;
 }
 
 void BMP390_temp_press_update(void)
@@ -228,7 +231,7 @@ int16_t	get_BMP390_temperature(void)
 {
 	return (int16_t)TempPress_data.temperature;
 }
-int16_t	get_BMP390_pressure(void)
+uint16_t get_BMP390_pressure(void)
 {
-	return (int16_t)TempPress_data.pressure;
+	return (uint16_t)TempPress_data.pressure;
 }

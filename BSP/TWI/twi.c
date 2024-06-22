@@ -45,9 +45,6 @@
 #define sbi(sfr, bit) (_SFR_BYTE(sfr) |= (1<<bit))
 #endif
 
-//#include "pins_arduino.h"
-#include "twi.h"
-
 static volatile uint8_t twi_state;
 static volatile uint8_t twi_slarw;
 //static volatile uint8_t twi_slarr;
@@ -129,7 +126,7 @@ uint8_t twi_check_slv_rxBuffer ()
 
 void twi_start(void) {
 	TWCR = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
-	uint16_t timeout = 8000;
+	uint8_t timeout = 250;			//250*(625ns) = 0.15ms
 	while (!(TWCR & (1 << TWINT)))
 	{
 		if(-- timeout == 0)
@@ -139,8 +136,8 @@ void twi_start(void) {
 
 void twi_stop(void) {
 	TWCR = (1 << TWINT) | (1 << TWSTO) | (1 << TWEN);
-	uint16_t timeout = 8000;
-	while (TWCR & (1 << TWSTO))
+	uint8_t timeout = 250;
+ 	while (TWCR & (1 << TWSTO))
 	{
 		if(-- timeout == 0)
 		return;
@@ -150,32 +147,33 @@ void twi_stop(void) {
 void twi_write(uint8_t data) {
 	TWDR = data;
 	TWCR = (1 << TWINT) | (1 << TWEN);
-	uint16_t timeout = 8000;
+	uint8_t timeout = 250;
 	while (!(TWCR & (1 << TWINT)))
 	{
 		if(-- timeout == 0)
 		return;
 	}
+	
 }
 
 uint8_t twi_read_ack(void) {
 	TWCR = (1 << TWINT) | (1 << TWEA) | (1 << TWEN);
-	uint16_t timeout = 8000;
+	uint8_t timeout = 250;
 	while (!(TWCR & (1 << TWINT)))
 	{
 		if(-- timeout == 0)
-		return;
+			return 0;
 	}
 	return TWDR;
 }
 
 uint8_t twi_read_nack(void) {
 	TWCR = (1 << TWINT) | (1 << TWEN);
-	uint16_t timeout = 8000;
+	uint8_t timeout = 250;
 	while (!(TWCR & (1 << TWINT)))
 	{
 		if(-- timeout == 0)
-		return;
+			return 0;
 	}
 	return TWDR;
 }

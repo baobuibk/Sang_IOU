@@ -9,13 +9,14 @@
 #ifndef PRESSURE_H_
 #define PRESSURE_H_
 
+#include <stdbool.h>
 #include "scheduler.h"
 #include "BMP390.h"
 #include "IOU_board.h"
 #include "IOU_data.h"
 
-void	Pressure_init(void);
+bool	Pressure_init(void);
 void	Pressure_create_task(void);
-int16_t	get_pressure(void);
+uint16_t	get_pressure(void);
 
 #endif /* PRESSURE_H_ */

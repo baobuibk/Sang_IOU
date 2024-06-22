@@ -289,9 +289,9 @@ void copc_iou_ringled_set_RGBW(void)
 
 void copc_iou_irled_set_bright(void)
 {
-	uint8_t _duty = s_pCOPC_Sfp_Payload->IrSetCommandFrame.duty;
-	if (_duty > 100) _duty = 100;
-	IR_led_set_DutyCyclesPercent(_duty);
+	uint8_t duty = s_pCOPC_Sfp_Payload->IrSetCommandFrame.duty;
+	if (duty > 100) duty = 100;
+	IR_led_set_DutyCyclesPercent(duty);
 	OK_Send();
 }
 
@@ -370,21 +370,21 @@ void copc_iou_get_accel_gyro(void)
 {	
 	uint8_t encode_frame[FSP_PKT_MAX_LENGTH];
 	uint8_t frame_len;
-	Accel_Gyro_DataTypedef _accel_data = get_acceleration();
-	Accel_Gyro_DataTypedef _gyro_data = get_gyroscope();
+	Accel_Gyro_DataTypedef accel_data = get_acceleration();
+	Accel_Gyro_DataTypedef gyro_data = get_gyroscope();
 	s_pIOU_Sfp_Payload->iouIRledGetBrightResponseFrame.Cmd = s_pCOPC_Sfp_Payload->commonFrame.Cmd;
-	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.accel_x_high = (uint8_t)(_accel_data.x >> 8);
-	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.accel_x_low = (uint8_t)_accel_data.x;
-	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.accel_y_high = (uint8_t)(_accel_data.y >> 8);
-	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.accel_y_low = (uint8_t)_accel_data.y;
-	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.accel_z_high = (uint8_t)(_accel_data.z >> 8);
-	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.accel_z_low = (uint8_t)_accel_data.z;
-	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.gyro_x_high = (uint8_t)(_gyro_data.x >> 8);
-	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.gyro_x_low = (uint8_t)_gyro_data.x;
-	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.gyro_y_high = (uint8_t)(_gyro_data.y >> 8);
-	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.gyro_y_low = (uint8_t)_gyro_data.y;
-	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.gyro_z_high = (uint8_t)(_gyro_data.z >> 8);
-	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.gyro_z_low = (uint8_t)_gyro_data.z;
+	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.accel_x_high = (uint8_t)(accel_data.x >> 8);
+	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.accel_x_low = (uint8_t)accel_data.x;
+	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.accel_y_high = (uint8_t)(accel_data.y >> 8);
+	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.accel_y_low = (uint8_t)accel_data.y;
+	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.accel_z_high = (uint8_t)(accel_data.z >> 8);
+	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.accel_z_low = (uint8_t)accel_data.z;
+	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.gyro_x_high = (uint8_t)(gyro_data.x >> 8);
+	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.gyro_x_low = (uint8_t)gyro_data.x;
+	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.gyro_y_high = (uint8_t)(gyro_data.y >> 8);
+	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.gyro_y_low = (uint8_t)gyro_data.y;
+	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.gyro_z_high = (uint8_t)(gyro_data.z >> 8);
+	s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame.gyro_z_low = (uint8_t)gyro_data.z;
 	fsp_gen_pkt((void*)0, &s_pIOU_Sfp_Payload->iouGetAccelGyroResponseFrame, 13, FSP_ADR_COPC, FSP_PKT_TYPE_CMD_W_DATA, &s_IOU_FspPacket);
 	fsp_encode(&s_IOU_FspPacket, encode_frame, &frame_len);
 	usart1_send_array(encode_frame, frame_len);
@@ -393,10 +393,10 @@ void copc_iou_get_press(void)
 {
 	uint8_t encode_frame[FSP_PKT_MAX_LENGTH];
 	uint8_t frame_len;
-	uint16_t _pressure = get_pressure();
+	uint16_t pressure = get_pressure();
 	s_pIOU_Sfp_Payload->iouGetPressResponseFrame.Cmd = s_pCOPC_Sfp_Payload->commonFrame.Cmd;
-	s_pIOU_Sfp_Payload->iouGetPressResponseFrame.pressure_high = (uint8_t)(_pressure >> 8);
-	s_pIOU_Sfp_Payload->iouGetPressResponseFrame.pressure_high = (uint8_t)_pressure;
+	s_pIOU_Sfp_Payload->iouGetPressResponseFrame.pressure_high = (uint8_t)(pressure >> 8);
+	s_pIOU_Sfp_Payload->iouGetPressResponseFrame.pressure_high = (uint8_t)pressure;
 	fsp_gen_pkt((void*)0, &s_pIOU_Sfp_Payload->iouGetPressResponseFrame, 3, FSP_ADR_COPC, FSP_PKT_TYPE_CMD_W_DATA, &s_IOU_FspPacket);
 	fsp_encode(&s_IOU_FspPacket, encode_frame, &frame_len);
 	usart1_send_array(encode_frame, frame_len);
@@ -408,61 +408,61 @@ void copc_iou_get_param(void)
 	uint8_t frame_len;
 	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Cmd = s_pCOPC_Sfp_Payload->commonFrame.Cmd;
 	// GET TEMP NTC
-	uint16_t _temp = temperature_get_NTC(0);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_NTC_channel_0_high = (uint8_t)(_temp >> 8);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_NTC_channel_0_low = (uint8_t)_temp;
-	_temp = temperature_get_NTC(1);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_NTC_channel_1_high = (uint8_t)(_temp >> 8);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_NTC_channel_1_low = (uint8_t)_temp;
-	_temp = temperature_get_NTC(2);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_NTC_channel_2_high = (uint8_t)(_temp >> 8);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_NTC_channel_2_low = (uint8_t)_temp;
-	_temp = temperature_get_NTC(3);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_NTC_channel_3_high = (uint8_t)(_temp >> 8);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_NTC_channel_3_low = (uint8_t)_temp;
+	uint16_t temp = temperature_get_NTC(0);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_NTC_channel_0_high = (uint8_t)(temp >> 8);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_NTC_channel_0_low = (uint8_t)temp;
+	temp = temperature_get_NTC(1);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_NTC_channel_1_high = (uint8_t)(temp >> 8);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_NTC_channel_1_low = (uint8_t)temp;
+	temp = temperature_get_NTC(2);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_NTC_channel_2_high = (uint8_t)(temp >> 8);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_NTC_channel_2_low = (uint8_t)temp;
+	temp = temperature_get_NTC(3);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_NTC_channel_3_high = (uint8_t)(temp >> 8);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_NTC_channel_3_low = (uint8_t)temp;
 	// GET TEMP ONEWIRE
-	_temp = temperature_get_onewire(0);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_onewire_channel_0_high = (uint8_t)(_temp >> 8);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_onewire_channel_0_low = (uint8_t)_temp;
-	_temp = temperature_get_onewire(1);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_onewire_channel_1_high = (uint8_t)(_temp >> 8);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_onewire_channel_1_low = (uint8_t)_temp;
+	temp = temperature_get_onewire(0);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_onewire_channel_0_high = (uint8_t)(temp >> 8);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_onewire_channel_0_low = (uint8_t)temp;
+	temp = temperature_get_onewire(1);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_onewire_channel_1_high = (uint8_t)(temp >> 8);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_onewire_channel_1_low = (uint8_t)temp;
 	// GET TEMP BMP390
-	_temp = temperature_get_bmp390();
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_i2c_sensor_high = (uint8_t)(_temp >> 8);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_i2c_sensor_low = (uint8_t)_temp;
+	temp = temperature_get_bmp390();
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_i2c_sensor_high = (uint8_t)(temp >> 8);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_i2c_sensor_low = (uint8_t)temp;
 	// GET TEMP SETPOINT
-	_temp = (uint16_t)temperature_get_setpoint(0);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_setpoint_channel_0_high = (uint8_t)(_temp >> 8);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_setpoint_channel_0_low = (uint8_t)_temp;
-	_temp = (uint16_t)temperature_get_setpoint(1);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_setpoint_channel_1_high = (uint8_t)(_temp >> 8);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_setpoint_channel_1_low = (uint8_t)_temp;
-	_temp = (uint16_t)temperature_get_setpoint(2);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_setpoint_channel_2_high = (uint8_t)(_temp >> 8);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_setpoint_channel_2_low = (uint8_t)_temp;
-	_temp = (uint16_t)temperature_get_setpoint(3);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_setpoint_channel_3_high = (uint8_t)(_temp >> 8);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_setpoint_channel_3_low = (uint8_t)_temp;
+	temp = (uint16_t)temperature_get_setpoint(0);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_setpoint_channel_0_high = (uint8_t)(temp >> 8);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_setpoint_channel_0_low = (uint8_t)temp;
+	temp = (uint16_t)temperature_get_setpoint(1);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_setpoint_channel_1_high = (uint8_t)(temp >> 8);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_setpoint_channel_1_low = (uint8_t)temp;
+	temp = (uint16_t)temperature_get_setpoint(2);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_setpoint_channel_2_high = (uint8_t)(temp >> 8);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_setpoint_channel_2_low = (uint8_t)temp;
+	temp = (uint16_t)temperature_get_setpoint(3);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_setpoint_channel_3_high = (uint8_t)(temp >> 8);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Temp_setpoint_channel_3_low = (uint8_t)temp;
 	// GET VOLTAGE OUTPUT TEC
-	uint16_t _voltage = temperature_get_voltage(0);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Voltage_out_tec_channel_0_high = (uint8_t)(_voltage >> 8);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Voltage_out_tec_channel_0_low = (uint8_t)_voltage;
-	_voltage = temperature_get_voltage(1);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Voltage_out_tec_channel_1_high = (uint8_t)(_voltage >> 8);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Voltage_out_tec_channel_1_low = (uint8_t)_voltage;
-	_voltage = temperature_get_voltage(2);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Voltage_out_tec_channel_2_high = (uint8_t)(_voltage >> 8);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Voltage_out_tec_channel_2_low = (uint8_t)_voltage;
-	_voltage = temperature_get_voltage(3);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Voltage_out_tec_channel_3_high = (uint8_t)(_voltage >> 8);
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Voltage_out_tec_channel_3_low = (uint8_t)_voltage;
+	uint16_t voltage = temperature_get_voltage(0);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Voltage_out_tec_channel_0_high = (uint8_t)(voltage >> 8);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Voltage_out_tec_channel_0_low = (uint8_t)voltage;
+	voltage = temperature_get_voltage(1);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Voltage_out_tec_channel_1_high = (uint8_t)(voltage >> 8);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Voltage_out_tec_channel_1_low = (uint8_t)voltage;
+	voltage = temperature_get_voltage(2);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Voltage_out_tec_channel_2_high = (uint8_t)(voltage >> 8);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Voltage_out_tec_channel_2_low = (uint8_t)voltage;
+	voltage = temperature_get_voltage(3);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Voltage_out_tec_channel_3_high = (uint8_t)(voltage >> 8);
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Voltage_out_tec_channel_3_low = (uint8_t)voltage;
 	// GET NEO LED DATA
-	rgbw_color _RGBW = ringled_get_RGBW();
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Neo_led_R = (uint8_t)_RGBW.red;
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Neo_led_G = (uint8_t)_RGBW.green;
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Neo_led_B = (uint8_t)_RGBW.blue;
-	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Neo_led_W = (uint8_t)_RGBW.white;
+	rgbw_color RGBW = ringled_get_RGBW();
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Neo_led_R = (uint8_t)RGBW.red;
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Neo_led_G = (uint8_t)RGBW.green;
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Neo_led_B = (uint8_t)RGBW.blue;
+	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.Neo_led_W = (uint8_t)RGBW.white;
 	// GET IR LED BRIGHT
 	s_pIOU_Sfp_Payload->iouGetParamResponseFrame.IRled_duty = (uint8_t)IR_led_get_Current_DutyCyclesPercent();
 	// DECODE FRAME

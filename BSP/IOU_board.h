@@ -9,7 +9,6 @@
 #ifndef IOU_BOARD_H_
 #define IOU_BOARD_H_
 
-#define F_CPU 8000000UL
 #include "IOU_version.h"
 
 

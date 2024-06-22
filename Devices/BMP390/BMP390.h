@@ -10,6 +10,7 @@
 #define BMP390_H_
 
 #include <stdint.h>
+#include <stdbool.h>
 #include <util/twi.h>
 #include <avr/io.h>
 #include <stddef.h>
@@ -51,6 +52,9 @@ typedef struct {
 	float	f_PAR_P11;
 } _BMP390_Calib_Data_;
 
+#define BMP390_AVAIL	1
+#define BMP390_UNAVAIL	0
+
 typedef enum {
 	BMP390_MODE_SLEEP = 0,
 	BMP390_MODE_FORCED = 1,
@@ -69,15 +73,15 @@ typedef struct _BMP390_Data_
 	_BMP390_Calib_Data_		PAR;
 }BMP390_Data;
 
-void	BMP390_read_raw_calibration(BMP390_Data *data);
+bool	BMP390_read_raw_calibration(BMP390_Data *data);
 void	BMP390_convert_calibration(BMP390_Data *data);
 void	BMP390_set_mode(BMP390_Mode mode);
-void	BMP390_init(void);
+bool	BMP390_init(void);
 void	BMP390_read_raw_temp_press(BMP390_Data *data);
 void	BMP390_compensate_temperature(BMP390_Data *data);
 void	BMP390_compensate_pressure(BMP390_Data *data);
 void	BMP390_temp_press_update(void);
-int16_t	get_BMP390_temperature(void);
-int16_t	get_BMP390_pressure(void);
+int16_t		get_BMP390_temperature(void);
+uint16_t	get_BMP390_pressure(void);
 
 #endif /* BMP390_H_ */

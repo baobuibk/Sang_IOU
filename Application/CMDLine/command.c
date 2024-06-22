@@ -110,7 +110,7 @@ void	command_init(void)
 	memset((void *)s_commandBuffer, 0, sizeof(s_commandBuffer));
 	s_commandBufferIndex = 0;
 	usart0_send_string("IOU FIRMWARE V1.0.0 \r\n");
-	usart0_send_string(">");
+	usart0_send_string("> ");
 	command_send_splash();
 }
 
@@ -170,21 +170,13 @@ Cmd_set_temp(int argc, char *argv[])
 int
 Cmd_get_temp(int argc, char *argv[])
 {
-	// 	  if  (strcmp(argv[1], "NTC"))	return CMDLINE_INVALID_ARG;
-	// 	  if (argc < 3) return CMDLINE_TOO_FEW_ARGS;
-	// 	  if (argc >3) return CMDLINE_TOO_MANY_ARGS;
-	// 	  uint8_t channel = atoi(argv[2]);
-	// 		if (channel > 2)	return CMDLINE_INVALID_ARG;
-	// 	 UARTprintf("Temperature from NTC channel %d is %d \r\n",channel, temperature_get_NTC(channel));
-	// 	 return CMDLINE_OK;
-
-
 	if (!strcmp(argv[1], "bmp390"))
 	{
 		if (argc >2) return CMDLINE_TOO_MANY_ARGS;
 		char buffer[5];
-		sprintf(buffer, "%.0f", (float)temperature_get_bmp390());
-		UARTprintf("Temp of BMP490: %s \r\n", buffer);
+		sprintf(buffer, "Temp of BMP490: %i", temperature_get_bmp390());
+		usart0_send_string(buffer);
+		//UARTprintf("Temp of BMP490: %s \r\n", buffer);
 	}
 	else
 	{
@@ -194,15 +186,19 @@ Cmd_get_temp(int argc, char *argv[])
 		if (channel > (MAX_CHANNEL -1)) return CMDLINE_INVALID_ARG;
 		if (!strcmp(argv[1], "NTC"))
 		{
-			char buffer[5];
-			sprintf(buffer, "%.0f", (float)temperature_get_NTC(channel));
-			UARTprintf("NTC[%d]: %s \r\n", channel, buffer);
+			char buffer[20];
+			sprintf(buffer, "NTC[%d]: %i", channel, temperature_get_NTC(channel));
+//			UARTprintf("NTC[%d]: %s \r\n", channel, buffer);
+			usart0_send_array(buffer, strlen(buffer));
+
+		
 		}
 		else if (!strcmp(argv[1], "onewire"))
 		{
-			char buffer[5];
-			sprintf(buffer, "%.0f", (float)temperature_get_onewire(channel));
-			UARTprintf("Temp 1-Wire channel %d: %s \r\n", channel, buffer);
+			char buffer[20];
+			sprintf(buffer, "1-Wire[%d]: %i", channel, temperature_get_onewire(channel));
+//			UARTprintf("1-Wire[%d]: %s \r\n", channel, buffer);
+			usart0_send_array(buffer, strlen(buffer));
 		}
 		else return CMDLINE_INVALID_ARG;
 		return CMDLINE_OK;
@@ -365,18 +361,6 @@ Cmd_get_temp_setpoint(int argc, char *argv[])
 	return CMDLINE_OK;
 }
 
-// int
-// Cmd_ringled_set_mode(int argc, char *argv[])
-// {
-// 	if (argc < 2) return CMDLINE_TOO_FEW_ARGS;
-// 	if (argc > 2) return CMDLINE_TOO_MANY_ARGS;
-// 	
-// 	if (!ringled_set_mode(argv[1]))
-// 		return CMDLINE_INVALID_ARG;
-// 	UARTprintf("Led ring set mode is %s \r\n",argv[1]);
-// 	return CMDLINE_OK;
-// }
-
 int
 Cmd_ringled_set_RGB(int argc, char *argv[])
 {
@@ -431,10 +415,10 @@ Cmd_get_acceleration_gyroscope(int argc, char *argv[])
 	if (argc > 1) return CMDLINE_TOO_MANY_ARGS;
 	Accel_Gyro_DataTypedef _accel_data = get_acceleration();
 	Accel_Gyro_DataTypedef _gyro_data = get_gyroscope();
-	char buffer[50];
-	sprintf(buffer,"acceleration %.2f %.2f %.2f\r\n", _accel_data.x, _accel_data.y, _accel_data.z);
+	char buffer[20];
+	sprintf(buffer,"Acceleration %i %i %i \r\n", _accel_data.x, _accel_data.y, _accel_data.z);
 	usart0_send_array(buffer, strlen(buffer));
-	sprintf(buffer,"gyroscope %.2f %.2f %.2f\r\n", _gyro_data.x, _gyro_data.y, _gyro_data.z);
+	sprintf(buffer,"Gyroscope %i %i %i\r\n", _gyro_data.x, _gyro_data.y, _gyro_data.z);
 	usart0_send_array(buffer, strlen(buffer));
 	return CMDLINE_OK;
 }
@@ -443,27 +427,38 @@ int
 Cmd_get_pressure(int argc, char *argv[])
 {
 	if (argc > 1) return CMDLINE_TOO_MANY_ARGS;
-	int16_t _pressure = get_pressure();
-	char buffer[50];
-	sprintf(buffer, "Press: %.5f\r\n", _pressure);
-	usart0_send_array(buffer, strlen(buffer));
+	uint16_t _pressure = get_pressure();
+	UARTprintf("Press: %d\r\n", _pressure);
 	return CMDLINE_OK;
 }
 
 int
 Cmd_get_parameters(int argc, char *argv[])
 {
-	char buffer[5];
+	char buffer[20];
 	for (uint8_t i = 0; i < 4; i++)
 	{
-		sprintf(buffer, "%.0f", (float)temperature_get_NTC(i));
-		UARTprintf("NTC[%d]: %s \r\n", i, buffer);
+		sprintf(buffer, "NTC[%d]: %i", temperature_get_NTC(i));
+		usart0_send_array(buffer, strlen(buffer));
 	}
 	UARTprintf("Status TEC:");
 	temperature_get_status();
 	rgbw_color RGBW = ringled_get_RGBW();
 	UARTprintf("RINLED: R=%d, G=%d, B=%d, W=%d\r\n", RGBW.red, RGBW.green, RGBW.blue, RGBW.white);
 	UARTprintf("IRLED: duty %d %%\r\n", IR_led_get_Current_DutyCyclesPercent());
+	
+	// Accel and Gyro
+	Accel_Gyro_DataTypedef _accel_data = get_acceleration();
+	Accel_Gyro_DataTypedef _gyro_data = get_gyroscope();
+	sprintf(buffer,"Acceleration %i %i %i \r\n", _accel_data.x, _accel_data.y, _accel_data.z);
+	usart0_send_array(buffer, strlen(buffer));
+	sprintf(buffer,"Gyroscope %i %i %i\r\n", _gyro_data.x, _gyro_data.y, _gyro_data.z);
+	usart0_send_array(buffer, strlen(buffer));
+	
+	// Pressure
+	uint16_t _pressure_data = get_pressure();
+	UARTprintf("Press: %d\r\n", _pressure_data);
+	
 	return CMDLINE_OK;
 }
 
@@ -502,8 +497,7 @@ const char SPLASH[][65] PROGMEM = {
 
 void	command_send_splash(void)
 {
-	for(uint8_t i = 0 ; i < 28 ; i++) {
+	for(uint8_t i = 0 ; i < 28 ; i++) 
 		usart0_send_string_P(&SPLASH[i][0]);
-	}
 	usart0_send_string("> ");
 }

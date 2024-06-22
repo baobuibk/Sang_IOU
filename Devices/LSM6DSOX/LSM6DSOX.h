@@ -9,7 +9,8 @@
 #ifndef LSM6DSOX_H_
 #define LSM6DSOX_H_
 
-#include "stdio.h"
+#include <stdio.h>
+#include <stdbool.h>
 
 #define LSM6DSOX_ADDRESS            0x6A
 
@@ -47,9 +48,9 @@ typedef struct _Accel_Gyro_DataTypedef_
 	int16_t z;
 } Accel_Gyro_DataTypedef;
 
-void lsm6dsox_write_register(uint8_t _reg, uint8_t _value);
+bool lsm6dsox_write_register(uint8_t _reg, uint8_t _value);
 uint8_t lsm6dsox_read_register(uint8_t _reg);
-void lsm6dsox_init(void);
+bool lsm6dsox_init(void);
 void read_accel(Accel_Gyro_DataTypedef* _accel);
 void read_gyro(Accel_Gyro_DataTypedef* _gyro);
 

@@ -31,13 +31,13 @@ static LSM6DSOX_TaskContextTypedef           s_accel_gyro_task_context =
 	{
 		SCH_TASK_SYNC,                      // taskType;
 		SCH_TASK_PRIO_0,                    // taskPriority;
-		50,									// taskPeriodInMS;
+		100,									// taskPeriodInMS;
 		accel_gyro_update					// taskFunction;
 	}
 };
 
-static Accel_Gyro_DataTypedef Accel_Status;
-static Accel_Gyro_DataTypedef Gyro_Status;
+Accel_Gyro_DataTypedef Accel_Status;
+Accel_Gyro_DataTypedef Gyro_Status;
 
 void accel_gyro_update(void)
 {
@@ -45,9 +45,14 @@ void accel_gyro_update(void)
 	read_gyro(&Gyro_Status);
 }
 
-void Accel_and_Gyro_init(void)
+bool Accel_and_Gyro_init(void)
 {
-	lsm6dsox_init();
+	if (!lsm6dsox_init())
+	{
+		usart0_send_string("LSM6DSOX is unavailble \r\n> ");
+		return false;
+	}
+	return true;
 }
 
 void Accel_and_Gyro_create_task(void)

@@ -18,13 +18,13 @@ Application/main.d Application/main.o: ../Application/main.c \
  ../Application/Temperature/temperature.h ../Scheduler/scheduler.h \
  ../Application/Common/inc/basetypedef.h ../BSP/IOU_board.h \
  ../BSP/IOU_version.h ../Devices/BMP390/BMP390.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdbool.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\twi.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
- ../Devices/MCP4921/MCP4921.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdbool.h \
- ../BSP/SPI/spi.h ../Devices/TEC/TEC.h ../BSP/UART/uart.h \
+ ../Devices/MCP4921/MCP4921.h ../BSP/SPI/spi.h ../Devices/TEC/TEC.h \
+ ../BSP/UART/uart.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h \
@@ -33,7 +33,7 @@ Application/main.d Application/main.o: ../Application/main.c \
  ../Application/WATCHDOG/watchdog.h ../Application/LED/ring_led.h \
  ../Devices/LED_RING/SK6812.h ../Application/Accel_Gyro/Accel_Gyro.h \
  ../Devices/LSM6DSOX/LSM6DSOX.h ../Application/Pressure/Pressure.h \
- ../Application/LED/ir_led.h
+ ../Application/LED/ir_led.h ../Devices/TPL5010/TPL5010.h
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -83,6 +83,8 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 
 ../Devices/BMP390/BMP390.h:
 
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdbool.h:
+
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\twi.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
@@ -92,8 +94,6 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h:
 
 ../Devices/MCP4921/MCP4921.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdbool.h:
 
 ../BSP/SPI/spi.h:
 
@@ -128,3 +128,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../Application/Pressure/Pressure.h:
 
 ../Application/LED/ir_led.h:
+
+../Devices/TPL5010/TPL5010.h:

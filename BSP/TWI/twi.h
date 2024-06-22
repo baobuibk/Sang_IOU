@@ -22,6 +22,7 @@
 #ifndef twi_h
 #define twi_h
 
+#define F_CPU 8000000
 	#include <inttypes.h>
 	#include <math.h>
 	#include <stdlib.h>

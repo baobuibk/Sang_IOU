@@ -10,8 +10,9 @@
 #define ACCEL_GYRO_H_
 
 #include "LSM6DSOX.h"
+#include <stdbool.h>
 
-void Accel_and_Gyro_init(void);
+bool Accel_and_Gyro_init(void);
 void Accel_and_Gyro_create_task(void);
 Accel_Gyro_DataTypedef get_acceleration(void);
 Accel_Gyro_DataTypedef get_gyroscope(void);
