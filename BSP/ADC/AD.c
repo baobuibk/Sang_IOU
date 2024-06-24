@@ -12,8 +12,10 @@ void init_adc(void)
 
 uint16_t adc_read(unsigned char channel)
 {
-	if (channel == 0) channel = 1;
-	else if (channel == 1) channel = 0;
+	#ifdef IOU_HW_V1_2_0
+		if (channel == 0) channel = 1;
+		else if (channel == 1) channel = 0;
+	#endif
 	ADMUX = ADMUX & 0xF0;
 	ADMUX |= (channel & 0x0F);
 	ADCSRA |= (1<<ADSC);

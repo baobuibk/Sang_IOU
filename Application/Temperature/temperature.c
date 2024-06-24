@@ -326,7 +326,7 @@ void	temperature_enable_auto_control_TEC(uint8_t	channel)
 	temperature_set_TEC_output(channel , s_Temperature_CurrentState.mode[channel>>1],s_Temperature_CurrentState.TEC_output_voltage[channel] );	
 }
 
-void	temperature_disable_auto_control_TEC(uint8_t	channel)
+void	temperature_disable_auto_control_TEC(uint8_t channel)
 {
 	s_Temperature_CurrentState.TEC_status &=  ~(1 << (2*channel + 1));
 }
@@ -342,10 +342,12 @@ void    temperature_set_TEC_output(uint8_t channel, uint8_t HeatCool, uint16_t	v
 	if (HeatCool == HEATING)		//want HEAT
 	{
 		_adcVal = DAC_at_2_5 - _delta;
+		s_Temperature_CurrentState.mode[channel] = HEATING;
 	}
 	else
 	{
 		_adcVal = DAC_at_2_5 + _delta;
+		s_Temperature_CurrentState.mode[channel] = COOLING;
 	}
 
 	MCP4291_set_output((uint16_t)_adcVal, 0, 0, 1, channel);
@@ -361,7 +363,7 @@ uint16_t	temperature_get_voltage(uint8_t	channel)
 	return s_Temperature_CurrentState.TEC_output_voltage[channel];
 }
 
-void	temperature_set_auto_voltage(uint8_t	channel, uint16_t voltage)
+void	temperature_set_auto_voltage(uint8_t channel, uint16_t voltage)
 {
 	 s_Temperature_CurrentState.TEC_output_voltage[channel] = voltage;
 }

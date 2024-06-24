@@ -36,13 +36,13 @@ typedef	struct _Temperature_CurrentStateTypedef_
 	int16_t					NTC_channel_temperature[4];
 	int16_t					onewire_channel_temperature[2];
 	int16_t					i2c_sensor_temperature;
-	uint16_t					channel_temperature_setpoint[4];
-	uint16_t					TEC_output_voltage[4];		
-	uint8_t						TEC_status;	// tec3_auto tec3_ena tec2_auto tec2_ena tec1_auto tec1_ena tec0_auto tec0_ena
-	uint16_t					DAC_channel_Val[4];
-	uint8_t						DAC_status;	//x x x x DAC3_active	DAC2_active DAC1_active DAC0_active
-	uint8_t						mode[4];	//0: HEAT mode; 1: COOL mode
-	//uint8_t					tec_channel_auto_control[4];
+	uint16_t				channel_temperature_setpoint[4];
+	uint16_t				TEC_output_voltage[4];		
+	uint8_t					TEC_status;	// tec3_auto tec3_ena tec2_auto tec2_ena tec1_auto tec1_ena tec0_auto tec0_ena
+	uint16_t				DAC_channel_Val[4];
+	uint8_t					DAC_status;	//x x x x DAC3_active	DAC2_active DAC1_active DAC0_active
+	uint8_t					mode[4];	//0: HEAT mode; 1: COOL mode
+	//uint8_t				tec_channel_auto_control[4];
 }Temperature_CurrentStateTypedef_t;
 
 #define	TEC0_ENA	0

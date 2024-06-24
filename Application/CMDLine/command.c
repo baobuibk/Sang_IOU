@@ -30,10 +30,10 @@ const char  * ErrorCode[5] = {"OK\r\n", "CMDLINE_BAD_CMD\r\n", "CMDLINE_TOO_MANY
 "CMDLINE_TOO_FEW_ARGS\r\n", "CMDLINE_INVALID_ARG\r\n" };
 
 static	void	command_task_update(void);
-tCmdLineEntry g_psCmdTable[] = {{"set_temp", Cmd_set_temp," : set desired temperature"/*,format: set_temp channel setpoint (250 mean 25 Celcius) */ },
+tCmdLineEntry g_psCmdTable[] = {{"set_temp", Cmd_set_temp," : set desired temperature, format: set_temp channel setpoint (250 mean 25 Celcius)"},
 								{"help", Cmd_help," : Display list of commands, format: help" },
-								{"get_temp", Cmd_get_temp , " : Get the current temperature of TEC"/*, format: get_temp NTC channel" */},
-								{"get_temp_setpoint", Cmd_get_temp_setpoint , " : Get the current temperature setpoint of TEC"/*, format: get_temp_setpoint  channel", */},
+								{"get_temp", Cmd_get_temp , " : Get the current temperature of TEC, format: get_temp NTC channel"},
+								{"get_temp_setpoint", Cmd_get_temp_setpoint , " : Get the current temperature setpoint of TEC, format: get_temp_setpoint  channel",},
 								{"tec_ena", Cmd_TEC_enable, " : enable TEC channel, format: tec_ena channel"},
 								{"tec_dis", Cmd_TEC_disable, " : disable TEC channel, format: tec_dis channel"}	,
 								{"tec_dis_auto", Cmd_TEC_disable_auto_control, " : disable auto control, format tec_dis_auto channel"},
@@ -43,8 +43,8 @@ tCmdLineEntry g_psCmdTable[] = {{"set_temp", Cmd_set_temp," : set desired temper
 								{"tec_get_status", Cmd_tec_get_status, " :  get tec status,  format: tec_get_status, response ntc0 ntc1 tec0_stat tec1_stat tec2_stat tec3_stat H/C0 H/C1"},
 								{"tec_log_ena", Cmd_TEC_log_enable, " : enable periodic log, format: tec_log_ena"},
 								{"tec_log_dis", Cmd_TEC_log_disable, " : disable periodic log, format: tec_log_ena"},
-								{"ringled_set_RGB", Cmd_ringled_set_RGB, " : detail, format: ringled_set_RGB <R> <G> <B> <W>"},
-								{"ringled_get_RGB", Cmd_ringled_get_RGB, " : detail, format: ringled_get_RGB"},
+								{"ringled_set_RGBW", Cmd_ringled_set_RGBW, " : detail, format: ringled_set_RGB <R> <G> <B> <W>"},
+								{"ringled_get_RGBW", Cmd_ringled_get_RGBW, " : detail, format: ringled_get_RGB"},
 								{"ir_led_set_bright", Cmd_IRled_set_bright, " : set brightness (0-100%) for IR led, format: ir_led_set_bright 70"},
 								{"ir_led_get_bright", Cmd_IRled_get_bright, " : get brightness (0-100%) for IR led, format: ir_led_get_bright"},
 								{"get_accel_gyro", Cmd_get_acceleration_gyroscope, " : Get the current acceleration and gyroscope, format: get_accel_gyro"},
@@ -153,11 +153,12 @@ Cmd_set_temp(int argc, char *argv[])
 {
 	if (argc < 3) return CMDLINE_TOO_FEW_ARGS;
 	if (argc >3) return CMDLINE_TOO_MANY_ARGS;
-	if (argv[1] > "3" || argv[1] < "0") return CMDLINE_INVALID_ARG;
+	//if (argv[1] > "3" || argv[1] < "0") return CMDLINE_INVALID_ARG;
 	uint8_t channel = atoi(argv[1]);
-	uint16_t	_setpoint = atoi(argv[2]);
-	temperature_set_point(_setpoint, channel);
-	UARTprintf("Channel %d set point: %d \r\n",channel, _setpoint);
+	if (channel > 3 || channel < 0) return CMDLINE_INVALID_ARG;
+	uint16_t setpoint = atoi(argv[2]);
+	temperature_set_point(setpoint, channel);
+	UARTprintf("Channel %d set point: %d \r\n",channel, setpoint);
 	return CMDLINE_OK;
 }
 
@@ -218,9 +219,9 @@ Cmd_tec_set_auto_voltage(int argc, char *argv[])
 	  uint8_t channel = atoi(argv[1]);
 	  if (channel > 3)	return CMDLINE_INVALID_ARG;
 	  
-	uint16_t	_voltage = atoi(argv[2]);
-	temperature_set_auto_voltage( channel, _voltage);
-	UARTprintf("Channel %d auto voltage: %d \r\n",channel, _voltage);
+	uint16_t voltage = atoi(argv[2]);
+	temperature_set_auto_voltage( channel, voltage);
+	UARTprintf("Channel %d auto voltage: %d \r\n",channel, voltage);
 	return CMDLINE_OK;
 }
 //*****************************************************************************
@@ -234,7 +235,7 @@ Cmd_TEC_enable(int argc, char *argv[])
 		  if (argc < 2) return CMDLINE_TOO_FEW_ARGS;
 		  if (argc >2) return CMDLINE_TOO_MANY_ARGS;
 		  uint8_t channel = atoi(argv[1]);
-		  if (channel > 4)	return CMDLINE_INVALID_ARG;
+		  if (channel > 3)	return CMDLINE_INVALID_ARG;
 		  temperature_enable_TEC(channel);
 		  return CMDLINE_OK;
 }
@@ -246,18 +247,18 @@ Cmd_TEC_enable(int argc, char *argv[])
 int
 Cmd_TEC_disable(int argc, char *argv[])
 {
-		  if (argc < 2) return CMDLINE_TOO_FEW_ARGS;
-		  if (argc >2) return CMDLINE_TOO_MANY_ARGS;
-		  if (!strcmp(argv[1], "a"))	
-		  {
-			  for (uint8_t udx=0; udx < 3; udx++)	 temperature_disable_TEC(udx);
-			  UARTprintf("disabled all channel\r\n");
-			  return CMDLINE_OK;
-		  }
-		  uint8_t channel = atoi(argv[1]);
-		  if (channel > 4)	return CMDLINE_INVALID_ARG;
-		  temperature_disable_TEC(channel);
-		  return CMDLINE_OK;
+	if (argc < 2) return CMDLINE_TOO_FEW_ARGS;
+	if (argc >2) return CMDLINE_TOO_MANY_ARGS;
+	if (!strcmp(argv[1], "a"))
+	{
+		for (uint8_t udx=0; udx < 3; udx++)	 temperature_disable_TEC(udx);
+		UARTprintf("disabled all channel\r\n");
+		return CMDLINE_OK;
+	}
+	uint8_t channel = atoi(argv[1]);
+	if (channel > 3)	return CMDLINE_INVALID_ARG;
+	temperature_disable_TEC(channel);
+	return CMDLINE_OK;
 }
 
 //*****************************************************************************
@@ -271,7 +272,7 @@ Cmd_TEC_enable_auto_control(int argc, char *argv[])
 		  if (argc < 2) return CMDLINE_TOO_FEW_ARGS;
 		  if (argc >2) return CMDLINE_TOO_MANY_ARGS;
 		  uint8_t channel = atoi(argv[1]);
-		  if (channel > 2)	return CMDLINE_INVALID_ARG;
+		  if (channel > 3)	return CMDLINE_INVALID_ARG;
 		  temperature_enable_auto_control_TEC(channel << 1);
 		  temperature_disable_TEC(channel*2);
 		  temperature_disable_TEC(channel*2 + 1);
@@ -289,7 +290,7 @@ Cmd_TEC_disable_auto_control(int argc, char *argv[])
 		  if (argc < 2) return CMDLINE_TOO_FEW_ARGS;
 		  if (argc >2) return CMDLINE_TOO_MANY_ARGS;
 		  uint8_t channel = atoi(argv[1]);
-		  if (channel > 2)	return CMDLINE_INVALID_ARG;
+		  if (channel > 3)	return CMDLINE_INVALID_ARG;
 		  temperature_disable_auto_control_TEC(channel << 1);
 		  
 		  return CMDLINE_OK;
@@ -337,14 +338,14 @@ int
 Cmd_TEC_set_output(int argc, char *argv[])
 {
 
-	  if (argc < 4) return CMDLINE_TOO_FEW_ARGS;
-	  if (argc >4) return CMDLINE_TOO_MANY_ARGS;
-	  uint8_t _heatCool = atoi(argv[2]);
-	  uint8_t _channel = atoi(argv[1]);
-	  uint16_t	_voltage = atoi(argv[3]);
-		if (_channel >=4 )	return CMDLINE_INVALID_ARG;
-	 temperature_set_TEC_output(_channel, _heatCool, _voltage);
-	 return CMDLINE_OK;
+	if (argc < 4) return CMDLINE_TOO_FEW_ARGS;
+	if (argc >4) return CMDLINE_TOO_MANY_ARGS;
+	uint8_t _heatCool = atoi(argv[2]);
+	uint8_t _channel = atoi(argv[1]);
+	uint16_t	_voltage = atoi(argv[3]);
+	if (_channel >=4 )	return CMDLINE_INVALID_ARG;
+	temperature_set_TEC_output(_channel, _heatCool, _voltage);
+	return CMDLINE_OK;
 	 
 }
 
@@ -362,7 +363,7 @@ Cmd_get_temp_setpoint(int argc, char *argv[])
 }
 
 int
-Cmd_ringled_set_RGB(int argc, char *argv[])
+Cmd_ringled_set_RGBW(int argc, char *argv[])
 {
 	if (argc < 5) return CMDLINE_TOO_FEW_ARGS;
 	if (argc > 5) return CMDLINE_TOO_MANY_ARGS;
@@ -375,7 +376,7 @@ Cmd_ringled_set_RGB(int argc, char *argv[])
 }
 
 int
-Cmd_ringled_get_RGB(int argc, char *argv[])
+Cmd_ringled_get_RGBW(int argc, char *argv[])
 {
 	if (argc > 1) return CMDLINE_TOO_MANY_ARGS;
 	rgbw_color RGB = ringled_get_RGBW();
@@ -438,7 +439,7 @@ Cmd_get_parameters(int argc, char *argv[])
 	char buffer[20];
 	for (uint8_t i = 0; i < 4; i++)
 	{
-		sprintf(buffer, "NTC[%d]: %i", temperature_get_NTC(i));
+		sprintf(buffer, "NTC[%d]: %i",i , temperature_get_NTC(i));
 		usart0_send_array(buffer, strlen(buffer));
 	}
 	UARTprintf("Status TEC:");

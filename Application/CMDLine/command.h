@@ -50,9 +50,9 @@ Cmd_TEC_log_enable(int argc, char *argv[]);
 int
 Cmd_TEC_log_disable(int argc, char *argv[]);
 int
-Cmd_ringled_set_RGB(int argc, char *argv[]);
+Cmd_ringled_set_RGBW(int argc, char *argv[]);
 int
-Cmd_ringled_get_RGB(int argc, char *argv[]);
+Cmd_ringled_get_RGBW(int argc, char *argv[]);
 int
 Cmd_IRled_set_bright(int argc, char *argv[]);
 int
