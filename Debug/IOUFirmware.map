@@ -93,7 +93,7 @@ s_SoftTimers        0x4               Scheduler/scheduler.o
 fsp_my_adr          0x1               ThirdParty/libsfp/fsp.o
 status_rgbw_color   0x4               Devices/LED_RING/SK6812.o
 UART0_meta          0x88              BSP/UART/uart.o
-IOU_data            0x34              Data_struct/IOU_data.o
+IOU_data            0x3c              Data_struct/IOU_data.o
 result              0x1               Devices/LSM6DSOX/LSM6DSOX.o
 Gyro_Status         0x6               Application/Accel_Gyro/Accel_Gyro.o
 Accel_Status        0x6               Application/Accel_Gyro/Accel_Gyro.o
@@ -102,6 +102,7 @@ Discarded input sections
 
  .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega64/avr5/crtatmega64.o
  .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega64/avr5/crtatmega64.o
+ .group         0x00000000        0x8 Application/Accel_Gyro/Accel_Gyro.o
  .group         0x00000000        0x8 Application/Accel_Gyro/Accel_Gyro.o
  .group         0x00000000        0x8 Application/Accel_Gyro/Accel_Gyro.o
  .group         0x00000000        0x8 Application/Accel_Gyro/Accel_Gyro.o
@@ -161,6 +162,7 @@ Discarded input sections
  .group         0x00000000        0x8 Application/CMDLine/cmdline.o
  .group         0x00000000        0x8 Application/CMDLine/cmdline.o
  .group         0x00000000        0x8 Application/CMDLine/cmdline.o
+ .group         0x00000000        0x8 Application/CMDLine/cmdline.o
  .text          0x00000000        0x0 Application/CMDLine/cmdline.o
  .data          0x00000000        0x0 Application/CMDLine/cmdline.o
  .bss           0x00000000        0x0 Application/CMDLine/cmdline.o
@@ -178,9 +180,12 @@ Discarded input sections
  .debug_macro   0x00000000       0x58 Application/CMDLine/cmdline.o
  .debug_macro   0x00000000       0x10 Application/CMDLine/cmdline.o
  .debug_macro   0x00000000       0xf2 Application/CMDLine/cmdline.o
+ .debug_macro   0x00000000       0x10 Application/CMDLine/cmdline.o
  .debug_macro   0x00000000       0x28 Application/CMDLine/cmdline.o
- .debug_macro   0x00000000      0x160 Application/CMDLine/cmdline.o
+ .debug_macro   0x00000000      0x1f6 Application/CMDLine/cmdline.o
  .debug_macro   0x00000000       0x3a Application/CMDLine/cmdline.o
+ .group         0x00000000        0x8 Application/CMDLine/command.o
+ .group         0x00000000        0x8 Application/CMDLine/command.o
  .group         0x00000000        0x8 Application/CMDLine/command.o
  .group         0x00000000        0x8 Application/CMDLine/command.o
  .group         0x00000000        0x8 Application/CMDLine/command.o
@@ -244,11 +249,14 @@ Discarded input sections
  .debug_macro   0x00000000       0x58 Application/CMDLine/command.o
  .debug_macro   0x00000000       0x10 Application/CMDLine/command.o
  .debug_macro   0x00000000       0xf2 Application/CMDLine/command.o
+ .debug_macro   0x00000000       0x10 Application/CMDLine/command.o
  .debug_macro   0x00000000       0x28 Application/CMDLine/command.o
- .debug_macro   0x00000000      0x160 Application/CMDLine/command.o
+ .debug_macro   0x00000000      0x1f6 Application/CMDLine/command.o
  .debug_macro   0x00000000       0x3a Application/CMDLine/command.o
  .debug_macro   0x00000000       0x10 Application/CMDLine/command.o
  .debug_macro   0x00000000       0x1c Application/CMDLine/command.o
+ .group         0x00000000        0x8 Application/COPC/COPC.o
+ .group         0x00000000        0x8 Application/COPC/COPC.o
  .group         0x00000000        0x8 Application/COPC/COPC.o
  .group         0x00000000        0x8 Application/COPC/COPC.o
  .group         0x00000000        0x8 Application/COPC/COPC.o
@@ -316,8 +324,9 @@ Discarded input sections
  .debug_macro   0x00000000       0x22 Application/COPC/COPC.o
  .debug_macro   0x00000000       0x16 Application/COPC/COPC.o
  .debug_macro   0x00000000       0x16 Application/COPC/COPC.o
+ .debug_macro   0x00000000       0x10 Application/COPC/COPC.o
  .debug_macro   0x00000000       0x28 Application/COPC/COPC.o
- .debug_macro   0x00000000      0x160 Application/COPC/COPC.o
+ .debug_macro   0x00000000      0x1f6 Application/COPC/COPC.o
  .debug_macro   0x00000000       0x3a Application/COPC/COPC.o
  .debug_macro   0x00000000       0x1c Application/COPC/COPC.o
  .debug_macro   0x00000000       0xdd Application/COPC/COPC.o
@@ -329,8 +338,10 @@ Discarded input sections
  .debug_macro   0x00000000       0x5a Application/COPC/COPC.o
  .debug_macro   0x00000000       0x2e Application/COPC/COPC.o
  .debug_macro   0x00000000       0x4c Application/COPC/COPC.o
+ .debug_macro   0x00000000       0x22 Application/COPC/COPC.o
  .debug_macro   0x00000000       0x8e Application/COPC/COPC.o
  .debug_macro   0x00000000       0x10 Application/COPC/COPC.o
+ .group         0x00000000        0x8 Application/LED/ir_led.o
  .group         0x00000000        0x8 Application/LED/ir_led.o
  .group         0x00000000        0x8 Application/LED/ir_led.o
  .group         0x00000000        0x8 Application/LED/ir_led.o
@@ -361,11 +372,13 @@ Discarded input sections
  .debug_macro   0x00000000       0x34 Application/LED/ir_led.o
  .debug_macro   0x00000000       0x18 Application/LED/ir_led.o
  .debug_macro   0x00000000       0x6c Application/LED/ir_led.o
+ .debug_macro   0x00000000       0x10 Application/LED/ir_led.o
  .debug_macro   0x00000000       0x28 Application/LED/ir_led.o
- .debug_macro   0x00000000      0x160 Application/LED/ir_led.o
+ .debug_macro   0x00000000      0x1f6 Application/LED/ir_led.o
  .debug_macro   0x00000000      0x16d Application/LED/ir_led.o
  .debug_macro   0x00000000       0x28 Application/LED/ir_led.o
  .debug_macro   0x00000000       0x1c Application/LED/ir_led.o
+ .group         0x00000000        0x8 Application/LED/ring_led.o
  .group         0x00000000        0x8 Application/LED/ring_led.o
  .group         0x00000000        0x8 Application/LED/ring_led.o
  .group         0x00000000        0x8 Application/LED/ring_led.o
@@ -390,8 +403,9 @@ Discarded input sections
  .bss           0x00000000        0x0 Application/LED/ring_led.o
  .debug_macro   0x00000000      0xa4e Application/LED/ring_led.o
  .debug_macro   0x00000000      0x1c9 Application/LED/ring_led.o
+ .debug_macro   0x00000000       0x10 Application/LED/ring_led.o
  .debug_macro   0x00000000       0x28 Application/LED/ring_led.o
- .debug_macro   0x00000000      0x160 Application/LED/ring_led.o
+ .debug_macro   0x00000000      0x1f6 Application/LED/ring_led.o
  .debug_macro   0x00000000       0x16 Application/LED/ring_led.o
  .debug_macro   0x00000000       0x97 Application/LED/ring_led.o
  .debug_macro   0x00000000       0x16 Application/LED/ring_led.o
@@ -407,6 +421,7 @@ Discarded input sections
  .debug_macro   0x00000000       0xf6 Application/LED/ring_led.o
  .debug_macro   0x00000000       0x28 Application/LED/ring_led.o
  .debug_macro   0x00000000       0x1c Application/LED/ring_led.o
+ .group         0x00000000        0x8 Application/LED/status_led.o
  .group         0x00000000        0x8 Application/LED/status_led.o
  .group         0x00000000        0x8 Application/LED/status_led.o
  .group         0x00000000        0x8 Application/LED/status_led.o
@@ -445,8 +460,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x6c Application/LED/status_led.o
  .debug_macro   0x00000000       0x28 Application/LED/status_led.o
  .debug_macro   0x00000000       0x1c Application/LED/status_led.o
+ .debug_macro   0x00000000       0x10 Application/LED/status_led.o
  .debug_macro   0x00000000       0x28 Application/LED/status_led.o
- .debug_macro   0x00000000      0x160 Application/LED/status_led.o
+ .debug_macro   0x00000000      0x1f6 Application/LED/status_led.o
+ .group         0x00000000        0x8 Application/main.o
+ .group         0x00000000        0x8 Application/main.o
  .group         0x00000000        0x8 Application/main.o
  .group         0x00000000        0x8 Application/main.o
  .group         0x00000000        0x8 Application/main.o
@@ -508,8 +526,9 @@ Discarded input sections
  .debug_macro   0x00000000       0x86 Application/main.o
  .debug_macro   0x00000000       0x28 Application/main.o
  .debug_macro   0x00000000       0x1c Application/main.o
+ .debug_macro   0x00000000       0x10 Application/main.o
  .debug_macro   0x00000000       0x28 Application/main.o
- .debug_macro   0x00000000      0x160 Application/main.o
+ .debug_macro   0x00000000      0x1f6 Application/main.o
  .debug_macro   0x00000000       0x22 Application/main.o
  .debug_macro   0x00000000       0xdd Application/main.o
  .debug_macro   0x00000000      0x160 Application/main.o
@@ -522,10 +541,12 @@ Discarded input sections
  .debug_macro   0x00000000       0xf2 Application/main.o
  .debug_macro   0x00000000       0x16 Application/main.o
  .debug_macro   0x00000000       0x3a Application/main.o
+ .debug_macro   0x00000000       0x22 Application/main.o
  .debug_macro   0x00000000      0x179 Application/main.o
  .debug_macro   0x00000000       0x28 Application/main.o
  .debug_macro   0x00000000       0x10 Application/main.o
  .debug_macro   0x00000000       0x8e Application/main.o
+ .group         0x00000000        0x8 Application/Pressure/Pressure.o
  .group         0x00000000        0x8 Application/Pressure/Pressure.o
  .group         0x00000000        0x8 Application/Pressure/Pressure.o
  .group         0x00000000        0x8 Application/Pressure/Pressure.o
@@ -579,8 +600,9 @@ Discarded input sections
  .debug_macro   0x00000000      0x166 Application/Pressure/Pressure.o
  .debug_macro   0x00000000       0x10 Application/Pressure/Pressure.o
  .debug_macro   0x00000000       0x10 Application/Pressure/Pressure.o
+ .debug_macro   0x00000000       0x10 Application/Pressure/Pressure.o
  .debug_macro   0x00000000       0x28 Application/Pressure/Pressure.o
- .debug_macro   0x00000000      0x160 Application/Pressure/Pressure.o
+ .debug_macro   0x00000000      0x1f6 Application/Pressure/Pressure.o
  .debug_macro   0x00000000       0x1c Application/Pressure/Pressure.o
  .debug_macro   0x00000000       0x35 Application/Pressure/Pressure.o
  .debug_macro   0x00000000       0x60 Application/Pressure/Pressure.o
@@ -648,6 +670,8 @@ Discarded input sections
  .group         0x00000000        0x8 Application/Temperature/temperature.o
  .group         0x00000000        0x8 Application/Temperature/temperature.o
  .group         0x00000000        0x8 Application/Temperature/temperature.o
+ .group         0x00000000        0x8 Application/Temperature/temperature.o
+ .group         0x00000000        0x8 Application/Temperature/temperature.o
  .text          0x00000000        0x0 Application/Temperature/temperature.o
  .data          0x00000000        0x0 Application/Temperature/temperature.o
  .bss           0x00000000        0x0 Application/Temperature/temperature.o
@@ -655,6 +679,12 @@ Discarded input sections
                 0x00000000       0x26 Application/Temperature/temperature.o
  .text.temperature_disable_channel
                 0x00000000       0x28 Application/Temperature/temperature.o
+ .text.temperature_get_voltage_now
+                0x00000000       0x12 Application/Temperature/temperature.o
+ .text.temperature_get_mode
+                0x00000000        0xc Application/Temperature/temperature.o
+ .text.temperature_tec_get_status
+                0x00000000        0x6 Application/Temperature/temperature.o
  .rodata.Kp     0x00000000        0x2 Application/Temperature/temperature.o
  .debug_macro   0x00000000      0xa4e Application/Temperature/temperature.o
  .debug_macro   0x00000000       0x10 Application/Temperature/temperature.o
@@ -670,8 +700,9 @@ Discarded input sections
  .debug_macro   0x00000000      0x16d Application/Temperature/temperature.o
  .debug_macro   0x00000000       0x28 Application/Temperature/temperature.o
  .debug_macro   0x00000000       0x1c Application/Temperature/temperature.o
+ .debug_macro   0x00000000       0x10 Application/Temperature/temperature.o
  .debug_macro   0x00000000       0x28 Application/Temperature/temperature.o
- .debug_macro   0x00000000      0x160 Application/Temperature/temperature.o
+ .debug_macro   0x00000000      0x1f6 Application/Temperature/temperature.o
  .debug_macro   0x00000000       0x1c Application/Temperature/temperature.o
  .debug_macro   0x00000000       0x22 Application/Temperature/temperature.o
  .debug_macro   0x00000000       0xdd Application/Temperature/temperature.o
@@ -689,7 +720,9 @@ Discarded input sections
  .debug_macro   0x00000000       0x5a Application/Temperature/temperature.o
  .debug_macro   0x00000000       0x2e Application/Temperature/temperature.o
  .debug_macro   0x00000000       0x4c Application/Temperature/temperature.o
+ .debug_macro   0x00000000       0x22 Application/Temperature/temperature.o
  COMMON         0x00000000        0x4 Application/Temperature/temperature.o
+ .group         0x00000000        0x8 Application/WATCHDOG/watchdog.o
  .group         0x00000000        0x8 Application/WATCHDOG/watchdog.o
  .group         0x00000000        0x8 Application/WATCHDOG/watchdog.o
  .group         0x00000000        0x8 Application/WATCHDOG/watchdog.o
@@ -738,8 +771,9 @@ Discarded input sections
  .debug_macro   0x00000000       0x22 Application/WATCHDOG/watchdog.o
  .debug_macro   0x00000000       0x16 Application/WATCHDOG/watchdog.o
  .debug_macro   0x00000000       0x16 Application/WATCHDOG/watchdog.o
+ .debug_macro   0x00000000       0x10 Application/WATCHDOG/watchdog.o
  .debug_macro   0x00000000       0x28 Application/WATCHDOG/watchdog.o
- .debug_macro   0x00000000      0x160 Application/WATCHDOG/watchdog.o
+ .debug_macro   0x00000000      0x1f6 Application/WATCHDOG/watchdog.o
  .debug_macro   0x00000000       0x3a Application/WATCHDOG/watchdog.o
  .group         0x00000000        0x8 BSP/ADC/AD.o
  .group         0x00000000        0x8 BSP/ADC/AD.o
@@ -780,6 +814,7 @@ Discarded input sections
  .group         0x00000000        0x8 BSP/PWM/PWM.o
  .group         0x00000000        0x8 BSP/PWM/PWM.o
  .group         0x00000000        0x8 BSP/PWM/PWM.o
+ .group         0x00000000        0x8 BSP/PWM/PWM.o
  .text          0x00000000        0x0 BSP/PWM/PWM.o
  .data          0x00000000        0x0 BSP/PWM/PWM.o
  .bss           0x00000000        0x0 BSP/PWM/PWM.o
@@ -798,8 +833,10 @@ Discarded input sections
  .debug_macro   0x00000000       0x34 BSP/PWM/PWM.o
  .debug_macro   0x00000000       0x18 BSP/PWM/PWM.o
  .debug_macro   0x00000000       0x6c BSP/PWM/PWM.o
+ .debug_macro   0x00000000       0x10 BSP/PWM/PWM.o
  .debug_macro   0x00000000       0x28 BSP/PWM/PWM.o
- .debug_macro   0x00000000      0x160 BSP/PWM/PWM.o
+ .debug_macro   0x00000000      0x1f6 BSP/PWM/PWM.o
+ .group         0x00000000        0x8 BSP/SPI/spi.o
  .group         0x00000000        0x8 BSP/SPI/spi.o
  .group         0x00000000        0x8 BSP/SPI/spi.o
  .group         0x00000000        0x8 BSP/SPI/spi.o
@@ -830,8 +867,9 @@ Discarded input sections
  .debug_macro   0x00000000       0x34 BSP/SPI/spi.o
  .debug_macro   0x00000000       0x18 BSP/SPI/spi.o
  .debug_macro   0x00000000       0x6c BSP/SPI/spi.o
+ .debug_macro   0x00000000       0x10 BSP/SPI/spi.o
  .debug_macro   0x00000000       0x28 BSP/SPI/spi.o
- .debug_macro   0x00000000      0x160 BSP/SPI/spi.o
+ .debug_macro   0x00000000      0x1f6 BSP/SPI/spi.o
  .debug_macro   0x00000000       0x40 BSP/SPI/spi.o
  .group         0x00000000        0x8 BSP/Timer/timer.o
  .group         0x00000000        0x8 BSP/Timer/timer.o
@@ -861,6 +899,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x34 BSP/Timer/timer.o
  .debug_macro   0x00000000       0x18 BSP/Timer/timer.o
  .debug_macro   0x00000000       0x6c BSP/Timer/timer.o
+ .group         0x00000000        0x8 BSP/TWI/i2c.o
  .group         0x00000000        0x8 BSP/TWI/i2c.o
  .group         0x00000000        0x8 BSP/TWI/i2c.o
  .group         0x00000000        0x8 BSP/TWI/i2c.o
@@ -912,7 +951,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x80 BSP/TWI/i2c.o
  .debug_ranges  0x00000000       0x70 BSP/TWI/i2c.o
- .debug_macro   0x00000000       0xc6 BSP/TWI/i2c.o
+ .debug_macro   0x00000000       0xc5 BSP/TWI/i2c.o
  .debug_macro   0x00000000      0xa4e BSP/TWI/i2c.o
  .debug_macro   0x00000000      0x1c9 BSP/TWI/i2c.o
  .debug_macro   0x00000000       0x10 BSP/TWI/i2c.o
@@ -927,10 +966,11 @@ Discarded input sections
  .debug_macro   0x00000000       0xd7 BSP/TWI/i2c.o
  .debug_macro   0x00000000      0x16d BSP/TWI/i2c.o
  .debug_macro   0x00000000       0x22 BSP/TWI/i2c.o
+ .debug_macro   0x00000000       0x10 BSP/TWI/i2c.o
  .debug_macro   0x00000000       0x28 BSP/TWI/i2c.o
- .debug_macro   0x00000000      0x160 BSP/TWI/i2c.o
+ .debug_macro   0x00000000      0x1f6 BSP/TWI/i2c.o
  .debug_line    0x00000000      0x508 BSP/TWI/i2c.o
- .debug_str     0x00000000     0x77e0 BSP/TWI/i2c.o
+ .debug_str     0x00000000     0x7a60 BSP/TWI/i2c.o
  .comment       0x00000000       0x31 BSP/TWI/i2c.o
  .debug_frame   0x00000000      0x140 BSP/TWI/i2c.o
  .group         0x00000000        0x8 BSP/TWI/twi.o
@@ -1053,6 +1093,7 @@ Discarded input sections
  .group         0x00000000        0x8 BSP/UART/uart.o
  .group         0x00000000        0x8 BSP/UART/uart.o
  .group         0x00000000        0x8 BSP/UART/uart.o
+ .group         0x00000000        0x8 BSP/UART/uart.o
  .text          0x00000000        0x0 BSP/UART/uart.o
  .data          0x00000000        0x0 BSP/UART/uart.o
  .bss           0x00000000        0x0 BSP/UART/uart.o
@@ -1065,7 +1106,7 @@ Discarded input sections
  .text.usart0_read_char
                 0x00000000       0x52 BSP/UART/uart.o
  .text.usart0_close
-                0x00000000       0x34 BSP/UART/uart.o
+                0x00000000       0x3a BSP/UART/uart.o
  .text.usart1_send_string
                 0x00000000       0x1e BSP/UART/uart.o
  .text.usart1_send_string_P
@@ -1075,7 +1116,7 @@ Discarded input sections
  .text.usart1_read_char
                 0x00000000       0x52 BSP/UART/uart.o
  .text.usart1_close
-                0x00000000       0x3e BSP/UART/uart.o
+                0x00000000       0x44 BSP/UART/uart.o
  .debug_macro   0x00000000      0xa4e BSP/UART/uart.o
  .debug_macro   0x00000000       0x10 BSP/UART/uart.o
  .debug_macro   0x00000000      0x1c9 BSP/UART/uart.o
@@ -1095,8 +1136,9 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 BSP/UART/uart.o
  .debug_macro   0x00000000       0x20 BSP/UART/uart.o
  .debug_macro   0x00000000       0x16 BSP/UART/uart.o
+ .debug_macro   0x00000000       0x10 BSP/UART/uart.o
  .debug_macro   0x00000000       0x28 BSP/UART/uart.o
- .debug_macro   0x00000000      0x160 BSP/UART/uart.o
+ .debug_macro   0x00000000      0x1f6 BSP/UART/uart.o
  .debug_macro   0x00000000       0x3a BSP/UART/uart.o
  .debug_macro   0x00000000       0x10 BSP/UART/uart.o
  .debug_macro   0x00000000       0xe2 BSP/UART/uart.o
@@ -1122,6 +1164,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x66 Data_struct/IOU_data.o
  .debug_macro   0x00000000       0x2e Data_struct/IOU_data.o
  .debug_macro   0x00000000       0x4c Data_struct/IOU_data.o
+ .group         0x00000000        0x8 Devices/BMP390/BMP390.o
  .group         0x00000000        0x8 Devices/BMP390/BMP390.o
  .group         0x00000000        0x8 Devices/BMP390/BMP390.o
  .group         0x00000000        0x8 Devices/BMP390/BMP390.o
@@ -1184,11 +1227,13 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 Devices/BMP390/BMP390.o
  .debug_macro   0x00000000       0xf2 Devices/BMP390/BMP390.o
  .debug_macro   0x00000000       0x16 Devices/BMP390/BMP390.o
+ .debug_macro   0x00000000       0x10 Devices/BMP390/BMP390.o
  .debug_macro   0x00000000       0x28 Devices/BMP390/BMP390.o
- .debug_macro   0x00000000      0x160 Devices/BMP390/BMP390.o
+ .debug_macro   0x00000000      0x1f6 Devices/BMP390/BMP390.o
  .debug_macro   0x00000000       0x3a Devices/BMP390/BMP390.o
  .debug_macro   0x00000000       0x28 Devices/BMP390/BMP390.o
  .debug_macro   0x00000000       0x1c Devices/BMP390/BMP390.o
+ .group         0x00000000        0x8 Devices/LSM6DSOX/LSM6DSOX.o
  .group         0x00000000        0x8 Devices/LSM6DSOX/LSM6DSOX.o
  .group         0x00000000        0x8 Devices/LSM6DSOX/LSM6DSOX.o
  .group         0x00000000        0x8 Devices/LSM6DSOX/LSM6DSOX.o
@@ -1246,11 +1291,13 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 Devices/LSM6DSOX/LSM6DSOX.o
  .debug_macro   0x00000000       0xdd Devices/LSM6DSOX/LSM6DSOX.o
  .debug_macro   0x00000000       0x3a Devices/LSM6DSOX/LSM6DSOX.o
+ .debug_macro   0x00000000       0x10 Devices/LSM6DSOX/LSM6DSOX.o
  .debug_macro   0x00000000       0x28 Devices/LSM6DSOX/LSM6DSOX.o
- .debug_macro   0x00000000      0x160 Devices/LSM6DSOX/LSM6DSOX.o
+ .debug_macro   0x00000000      0x1f6 Devices/LSM6DSOX/LSM6DSOX.o
  .debug_macro   0x00000000       0x16 Devices/LSM6DSOX/LSM6DSOX.o
  .debug_macro   0x00000000       0x20 Devices/LSM6DSOX/LSM6DSOX.o
  .debug_macro   0x00000000       0x3a Devices/LSM6DSOX/LSM6DSOX.o
+ .group         0x00000000        0x8 Devices/MCP4921/MCP4921.o
  .group         0x00000000        0x8 Devices/MCP4921/MCP4921.o
  .group         0x00000000        0x8 Devices/MCP4921/MCP4921.o
  .group         0x00000000        0x8 Devices/MCP4921/MCP4921.o
@@ -1284,10 +1331,12 @@ Discarded input sections
  .debug_macro   0x00000000       0x6c Devices/MCP4921/MCP4921.o
  .debug_macro   0x00000000       0x22 Devices/MCP4921/MCP4921.o
  .debug_macro   0x00000000       0x40 Devices/MCP4921/MCP4921.o
+ .debug_macro   0x00000000       0x10 Devices/MCP4921/MCP4921.o
  .debug_macro   0x00000000       0x28 Devices/MCP4921/MCP4921.o
- .debug_macro   0x00000000      0x160 Devices/MCP4921/MCP4921.o
+ .debug_macro   0x00000000      0x1f6 Devices/MCP4921/MCP4921.o
  .debug_macro   0x00000000       0x10 Devices/MCP4921/MCP4921.o
  .debug_macro   0x00000000      0x166 Devices/MCP4921/MCP4921.o
+ .group         0x00000000        0x8 Devices/NTC/ntc_10k.o
  .group         0x00000000        0x8 Devices/NTC/ntc_10k.o
  .group         0x00000000        0x8 Devices/NTC/ntc_10k.o
  .group         0x00000000        0x8 Devices/NTC/ntc_10k.o
@@ -1345,13 +1394,15 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 Devices/NTC/ntc_10k.o
  .debug_macro   0x00000000       0x20 Devices/NTC/ntc_10k.o
  .debug_macro   0x00000000       0x10 Devices/NTC/ntc_10k.o
+ .debug_macro   0x00000000       0x10 Devices/NTC/ntc_10k.o
  .debug_macro   0x00000000       0x28 Devices/NTC/ntc_10k.o
- .debug_macro   0x00000000      0x160 Devices/NTC/ntc_10k.o
+ .debug_macro   0x00000000      0x1f6 Devices/NTC/ntc_10k.o
  .debug_macro   0x00000000       0x3a Devices/NTC/ntc_10k.o
  .debug_macro   0x00000000       0x10 Devices/NTC/ntc_10k.o
  .debug_macro   0x00000000       0x12 Devices/NTC/ntc_10k.o
  .debug_macro   0x00000000       0xe2 Devices/NTC/ntc_10k.o
  .debug_macro   0x00000000       0x10 Devices/NTC/ntc_10k.o
+ .group         0x00000000        0x8 Devices/onewire/DS18B20.o
  .group         0x00000000        0x8 Devices/onewire/DS18B20.o
  .group         0x00000000        0x8 Devices/onewire/DS18B20.o
  .group         0x00000000        0x8 Devices/onewire/DS18B20.o
@@ -1397,7 +1448,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x48 Devices/onewire/DS18B20.o
  .debug_ranges  0x00000000       0x38 Devices/onewire/DS18B20.o
- .debug_macro   0x00000000      0x11a Devices/onewire/DS18B20.o
+ .debug_macro   0x00000000      0x119 Devices/onewire/DS18B20.o
  .debug_macro   0x00000000      0xa4e Devices/onewire/DS18B20.o
  .debug_macro   0x00000000      0x1c9 Devices/onewire/DS18B20.o
  .debug_macro   0x00000000       0x10 Devices/onewire/DS18B20.o
@@ -1409,8 +1460,9 @@ Discarded input sections
  .debug_macro   0x00000000       0x34 Devices/onewire/DS18B20.o
  .debug_macro   0x00000000       0x18 Devices/onewire/DS18B20.o
  .debug_macro   0x00000000       0x6c Devices/onewire/DS18B20.o
+ .debug_macro   0x00000000       0x10 Devices/onewire/DS18B20.o
  .debug_macro   0x00000000       0x28 Devices/onewire/DS18B20.o
- .debug_macro   0x00000000      0x160 Devices/onewire/DS18B20.o
+ .debug_macro   0x00000000      0x1f6 Devices/onewire/DS18B20.o
  .debug_macro   0x00000000       0x10 Devices/onewire/DS18B20.o
  .debug_macro   0x00000000      0x166 Devices/onewire/DS18B20.o
  .debug_macro   0x00000000       0x58 Devices/onewire/DS18B20.o
@@ -1423,9 +1475,10 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 Devices/onewire/DS18B20.o
  .debug_macro   0x00000000       0x3a Devices/onewire/DS18B20.o
  .debug_line    0x00000000      0x514 Devices/onewire/DS18B20.o
- .debug_str     0x00000000     0x7eba Devices/onewire/DS18B20.o
+ .debug_str     0x00000000     0x812a Devices/onewire/DS18B20.o
  .comment       0x00000000       0x31 Devices/onewire/DS18B20.o
  .debug_frame   0x00000000       0xc0 Devices/onewire/DS18B20.o
+ .group         0x00000000        0x8 Devices/LED_RING/SK6812.o
  .group         0x00000000        0x8 Devices/LED_RING/SK6812.o
  .group         0x00000000        0x8 Devices/LED_RING/SK6812.o
  .group         0x00000000        0x8 Devices/LED_RING/SK6812.o
@@ -1448,8 +1501,9 @@ Discarded input sections
  .bss           0x00000000        0x0 Devices/LED_RING/SK6812.o
  .debug_macro   0x00000000      0xa4e Devices/LED_RING/SK6812.o
  .debug_macro   0x00000000      0x1c9 Devices/LED_RING/SK6812.o
+ .debug_macro   0x00000000       0x10 Devices/LED_RING/SK6812.o
  .debug_macro   0x00000000       0x28 Devices/LED_RING/SK6812.o
- .debug_macro   0x00000000      0x160 Devices/LED_RING/SK6812.o
+ .debug_macro   0x00000000      0x1f6 Devices/LED_RING/SK6812.o
  .debug_macro   0x00000000       0x10 Devices/LED_RING/SK6812.o
  .debug_macro   0x00000000      0x302 Devices/LED_RING/SK6812.o
  .debug_macro   0x00000000       0x9e Devices/LED_RING/SK6812.o
@@ -1463,6 +1517,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x1c Devices/LED_RING/SK6812.o
  .debug_macro   0x00000000      0x10e Devices/LED_RING/SK6812.o
  .debug_macro   0x00000000       0x66 Devices/LED_RING/SK6812.o
+ .group         0x00000000        0x8 Devices/TEC/TEC.o
  .group         0x00000000        0x8 Devices/TEC/TEC.o
  .group         0x00000000        0x8 Devices/TEC/TEC.o
  .group         0x00000000        0x8 Devices/TEC/TEC.o
@@ -1490,8 +1545,10 @@ Discarded input sections
  .debug_macro   0x00000000       0x34 Devices/TEC/TEC.o
  .debug_macro   0x00000000       0x18 Devices/TEC/TEC.o
  .debug_macro   0x00000000       0x6c Devices/TEC/TEC.o
+ .debug_macro   0x00000000       0x10 Devices/TEC/TEC.o
  .debug_macro   0x00000000       0x28 Devices/TEC/TEC.o
- .debug_macro   0x00000000      0x160 Devices/TEC/TEC.o
+ .debug_macro   0x00000000      0x1f6 Devices/TEC/TEC.o
+ .group         0x00000000        0x8 Devices/TPL5010/TPL5010.o
  .group         0x00000000        0x8 Devices/TPL5010/TPL5010.o
  .group         0x00000000        0x8 Devices/TPL5010/TPL5010.o
  .group         0x00000000        0x8 Devices/TPL5010/TPL5010.o
@@ -1519,8 +1576,9 @@ Discarded input sections
  .debug_macro   0x00000000       0x34 Devices/TPL5010/TPL5010.o
  .debug_macro   0x00000000       0x18 Devices/TPL5010/TPL5010.o
  .debug_macro   0x00000000       0x6c Devices/TPL5010/TPL5010.o
+ .debug_macro   0x00000000       0x10 Devices/TPL5010/TPL5010.o
  .debug_macro   0x00000000       0x28 Devices/TPL5010/TPL5010.o
- .debug_macro   0x00000000      0x160 Devices/TPL5010/TPL5010.o
+ .debug_macro   0x00000000      0x1f6 Devices/TPL5010/TPL5010.o
  .group         0x00000000        0x8 Scheduler/scheduler.o
  .group         0x00000000        0x8 Scheduler/scheduler.o
  .group         0x00000000        0x8 Scheduler/scheduler.o
@@ -2002,7 +2060,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x6310
+.text           0x00000000     0x64e6
  *(.vectors)
  .vectors       0x00000000       0x8c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega64/avr5/crtatmega64.o
                 0x00000000                __vector_default
@@ -2321,406 +2379,406 @@ END GROUP
                 0x00002968       0x28 Application/Temperature/temperature.o
                 0x00002968                temperature_disable_auto_control_TEC
  .text.temperature_set_TEC_output
-                0x00002990       0x88 Application/Temperature/temperature.o
+                0x00002990       0x60 Application/Temperature/temperature.o
                 0x00002990                temperature_set_TEC_output
  .text.temperature_init
-                0x00002a18       0x30 Application/Temperature/temperature.o
-                0x00002a18                temperature_init
+                0x000029f0       0x30 Application/Temperature/temperature.o
+                0x000029f0                temperature_init
  .text.temperature_TEC_hysteris_control_heating
-                0x00002a48      0x1bc Application/Temperature/temperature.o
-                0x00002a48                temperature_TEC_hysteris_control_heating
+                0x00002a20      0x28c Application/Temperature/temperature.o
+                0x00002a20                temperature_TEC_hysteris_control_heating
  .text.temperature_TEC_hysteris_control_cooling
-                0x00002c04      0x1c4 Application/Temperature/temperature.o
-                0x00002c04                temperature_TEC_hysteris_control_cooling
+                0x00002cac      0x294 Application/Temperature/temperature.o
+                0x00002cac                temperature_TEC_hysteris_control_cooling
  .text.temperature_enable_auto_control_TEC
-                0x00002dc8       0x46 Application/Temperature/temperature.o
-                0x00002dc8                temperature_enable_auto_control_TEC
- .text.temperature_get_setpoint
-                0x00002e0e       0x12 Application/Temperature/temperature.o
-                0x00002e0e                temperature_get_setpoint
+                0x00002f40       0x46 Application/Temperature/temperature.o
+                0x00002f40                temperature_enable_auto_control_TEC
  .text.temperature_get_voltage
-                0x00002e20       0x12 Application/Temperature/temperature.o
-                0x00002e20                temperature_get_voltage
+                0x00002f86       0x12 Application/Temperature/temperature.o
+                0x00002f86                temperature_get_voltage
+ .text.temperature_get_setpoint
+                0x00002f98       0x12 Application/Temperature/temperature.o
+                0x00002f98                temperature_get_setpoint
  .text.temperature_set_auto_voltage
-                0x00002e32       0x12 Application/Temperature/temperature.o
-                0x00002e32                temperature_set_auto_voltage
+                0x00002faa       0x12 Application/Temperature/temperature.o
+                0x00002faa                temperature_set_auto_voltage
  .text.temperature_get_status
-                0x00002e44       0x80 Application/Temperature/temperature.o
-                0x00002e44                temperature_get_status
+                0x00002fbc       0xea Application/Temperature/temperature.o
+                0x00002fbc                temperature_get_status
  .text.temperature_task_update
-                0x00002ec4      0x122 Application/Temperature/temperature.o
+                0x000030a6      0x116 Application/Temperature/temperature.o
  .text.temperature_enable_log
-                0x00002fe6        0x8 Application/Temperature/temperature.o
-                0x00002fe6                temperature_enable_log
+                0x000031bc        0x8 Application/Temperature/temperature.o
+                0x000031bc                temperature_enable_log
  .text.temperature_disable_log
-                0x00002fee        0x6 Application/Temperature/temperature.o
-                0x00002fee                temperature_disable_log
+                0x000031c4        0x6 Application/Temperature/temperature.o
+                0x000031c4                temperature_disable_log
  .text.watchdog_pulse
-                0x00002ff4        0x6 Application/WATCHDOG/watchdog.o
+                0x000031ca        0x6 Application/WATCHDOG/watchdog.o
  .text.watchdog_init
-                0x00002ffa        0x6 Application/WATCHDOG/watchdog.o
-                0x00002ffa                watchdog_init
+                0x000031d0        0x6 Application/WATCHDOG/watchdog.o
+                0x000031d0                watchdog_init
  .text.watchdog_create_timer
-                0x00003000       0x16 Application/WATCHDOG/watchdog.o
-                0x00003000                watchdog_create_timer
+                0x000031d6       0x16 Application/WATCHDOG/watchdog.o
+                0x000031d6                watchdog_create_timer
  .text.init_adc
-                0x00003016        0xc BSP/ADC/AD.o
-                0x00003016                init_adc
+                0x000031ec        0xc BSP/ADC/AD.o
+                0x000031ec                init_adc
  .text.adc_read
-                0x00003022       0x1e BSP/ADC/AD.o
-                0x00003022                adc_read
+                0x000031f8       0x1e BSP/ADC/AD.o
+                0x000031f8                adc_read
  .text.pwm1_init
-                0x00003040       0x88 BSP/PWM/PWM.o
-                0x00003040                pwm1_init
+                0x00003216       0x88 BSP/PWM/PWM.o
+                0x00003216                pwm1_init
  .text.pwm1_set_DutyCyclePercent
-                0x000030c8       0x30 BSP/PWM/PWM.o
-                0x000030c8                pwm1_set_DutyCyclePercent
+                0x0000329e       0x30 BSP/PWM/PWM.o
+                0x0000329e                pwm1_set_DutyCyclePercent
  .text.SPI_Init
-                0x000030f8       0x14 BSP/SPI/spi.o
-                0x000030f8                SPI_Init
+                0x000032ce       0x14 BSP/SPI/spi.o
+                0x000032ce                SPI_Init
  .text.SPI_SendByte
-                0x0000310c        0xa BSP/SPI/spi.o
-                0x0000310c                SPI_SendByte
+                0x000032e2        0xa BSP/SPI/spi.o
+                0x000032e2                SPI_SendByte
  .text.timer_start_timer0
-                0x00003116       0x10 BSP/Timer/timer.o
-                0x00003116                timer_start_timer0
+                0x000032ec       0x10 BSP/Timer/timer.o
+                0x000032ec                timer_start_timer0
  .text.timer_timer0_init
-                0x00003126        0xe BSP/Timer/timer.o
-                0x00003126                timer_timer0_init
+                0x000032fc        0xe BSP/Timer/timer.o
+                0x000032fc                timer_timer0_init
  .text.twi_start
-                0x00003134       0x1a BSP/TWI/twi.o
-                0x00003134                twi_start
+                0x0000330a       0x1a BSP/TWI/twi.o
+                0x0000330a                twi_start
  .text.twi_stop
-                0x0000314e       0x1a BSP/TWI/twi.o
-                0x0000314e                twi_stop
+                0x00003324       0x1a BSP/TWI/twi.o
+                0x00003324                twi_stop
  .text.twi_write
-                0x00003168       0x1e BSP/TWI/twi.o
-                0x00003168                twi_write
+                0x0000333e       0x1e BSP/TWI/twi.o
+                0x0000333e                twi_write
  .text.twi_read_ack
-                0x00003186       0x1e BSP/TWI/twi.o
-                0x00003186                twi_read_ack
+                0x0000335c       0x1e BSP/TWI/twi.o
+                0x0000335c                twi_read_ack
  .text.twi_read_nack
-                0x000031a4       0x1e BSP/TWI/twi.o
-                0x000031a4                twi_read_nack
+                0x0000337a       0x1e BSP/TWI/twi.o
+                0x0000337a                twi_read_nack
  .text.twi_releaseBus
-                0x000031c2        0xc BSP/TWI/twi.o
-                0x000031c2                twi_releaseBus
+                0x00003398        0xc BSP/TWI/twi.o
+                0x00003398                twi_releaseBus
  .text.__vector_33
-                0x000031ce      0x242 BSP/TWI/twi.o
-                0x000031ce                __vector_33
+                0x000033a4      0x242 BSP/TWI/twi.o
+                0x000033a4                __vector_33
  .text.rbuffer_init
-                0x00003410       0x18 BSP/UART/uart.o
-                0x00003410                rbuffer_init
+                0x000035e6       0x18 BSP/UART/uart.o
+                0x000035e6                rbuffer_init
  .text.rbuffer_empty
-                0x00003428       0x10 BSP/UART/uart.o
-                0x00003428                rbuffer_empty
+                0x000035fe       0x10 BSP/UART/uart.o
+                0x000035fe                rbuffer_empty
  .text.rbuffer_insert
-                0x00003438       0x28 BSP/UART/uart.o
-                0x00003438                rbuffer_insert
+                0x0000360e       0x28 BSP/UART/uart.o
+                0x0000360e                rbuffer_insert
  .text.rbuffer_remove
-                0x00003460       0x2a BSP/UART/uart.o
-                0x00003460                rbuffer_remove
+                0x00003636       0x2a BSP/UART/uart.o
+                0x00003636                rbuffer_remove
  .text.usart0_init
-                0x0000348a       0x38 BSP/UART/uart.o
-                0x0000348a                usart0_init
+                0x00003660       0x38 BSP/UART/uart.o
+                0x00003660                usart0_init
  .text.usart0_send_char
-                0x000034c2       0x20 BSP/UART/uart.o
-                0x000034c2                usart0_send_char
+                0x00003698       0x20 BSP/UART/uart.o
+                0x00003698                usart0_send_char
  .text.usart0_send_string
-                0x000034e2       0x1e BSP/UART/uart.o
-                0x000034e2                usart0_send_string
+                0x000036b8       0x1e BSP/UART/uart.o
+                0x000036b8                usart0_send_string
  .text.usart0_send_array
-                0x00003500       0x32 BSP/UART/uart.o
-                0x00003500                usart0_send_array
+                0x000036d6       0x32 BSP/UART/uart.o
+                0x000036d6                usart0_send_array
  .text.usart0_send_string_P
-                0x00003532       0x24 BSP/UART/uart.o
-                0x00003532                usart0_send_string_P
+                0x00003708       0x24 BSP/UART/uart.o
+                0x00003708                usart0_send_string_P
  .text.uart_get_uart0_rx_buffer_address
-                0x00003556        0xa BSP/UART/uart.o
-                0x00003556                uart_get_uart0_rx_buffer_address
+                0x0000372c        0xa BSP/UART/uart.o
+                0x0000372c                uart_get_uart0_rx_buffer_address
  .text.usart1_init
-                0x00003560       0x46 BSP/UART/uart.o
-                0x00003560                usart1_init
+                0x00003736       0x46 BSP/UART/uart.o
+                0x00003736                usart1_init
  .text.usart1_send_char
-                0x000035a6       0x28 BSP/UART/uart.o
-                0x000035a6                usart1_send_char
+                0x0000377c       0x28 BSP/UART/uart.o
+                0x0000377c                usart1_send_char
  .text.usart1_send_array
-                0x000035ce       0x32 BSP/UART/uart.o
-                0x000035ce                usart1_send_array
+                0x000037a4       0x32 BSP/UART/uart.o
+                0x000037a4                usart1_send_array
  .text.uart_get_uart1_rx_buffer_address
-                0x00003600        0xa BSP/UART/uart.o
-                0x00003600                uart_get_uart1_rx_buffer_address
+                0x000037d6        0xa BSP/UART/uart.o
+                0x000037d6                uart_get_uart1_rx_buffer_address
  .text.__vector_18
-                0x0000360a       0x88 BSP/UART/uart.o
-                0x0000360a                __vector_18
+                0x000037e0       0x88 BSP/UART/uart.o
+                0x000037e0                __vector_18
  .text.__vector_19
-                0x00003692       0x66 BSP/UART/uart.o
-                0x00003692                __vector_19
+                0x00003868       0x66 BSP/UART/uart.o
+                0x00003868                __vector_19
  .text.__vector_30
-                0x000036f8       0x8e BSP/UART/uart.o
-                0x000036f8                __vector_30
+                0x000038ce       0x8e BSP/UART/uart.o
+                0x000038ce                __vector_30
  .text.__vector_31
-                0x00003786       0x70 BSP/UART/uart.o
-                0x00003786                __vector_31
+                0x0000395c       0x70 BSP/UART/uart.o
+                0x0000395c                __vector_31
  .text.UARTvprintf
-                0x000037f6      0x6b0 BSP/UART/uart.o
-                0x000037f6                UARTvprintf
+                0x000039cc      0x6b0 BSP/UART/uart.o
+                0x000039cc                UARTvprintf
  .text.UARTprintf
-                0x00003ea6       0x20 BSP/UART/uart.o
-                0x00003ea6                UARTprintf
+                0x0000407c       0x20 BSP/UART/uart.o
+                0x0000407c                UARTprintf
  .text.BMP390_read_raw_calibration
-                0x00003ec6      0x118 Devices/BMP390/BMP390.o
-                0x00003ec6                BMP390_read_raw_calibration
+                0x0000409c      0x118 Devices/BMP390/BMP390.o
+                0x0000409c                BMP390_read_raw_calibration
  .text.BMP390_convert_calibration
-                0x00003fde      0x22e Devices/BMP390/BMP390.o
-                0x00003fde                BMP390_convert_calibration
+                0x000041b4      0x22e Devices/BMP390/BMP390.o
+                0x000041b4                BMP390_convert_calibration
  .text.BMP390_set_mode
-                0x0000420c       0x54 Devices/BMP390/BMP390.o
-                0x0000420c                BMP390_set_mode
+                0x000043e2       0x54 Devices/BMP390/BMP390.o
+                0x000043e2                BMP390_set_mode
  .text.BMP390_init
-                0x00004260       0x20 Devices/BMP390/BMP390.o
-                0x00004260                BMP390_init
+                0x00004436       0x20 Devices/BMP390/BMP390.o
+                0x00004436                BMP390_init
  .text.BMP390_read_raw_temp_press
-                0x00004280       0xba Devices/BMP390/BMP390.o
-                0x00004280                BMP390_read_raw_temp_press
+                0x00004456       0xba Devices/BMP390/BMP390.o
+                0x00004456                BMP390_read_raw_temp_press
  .text.BMP390_compensate_temperature
-                0x0000433a       0x90 Devices/BMP390/BMP390.o
-                0x0000433a                BMP390_compensate_temperature
+                0x00004510       0x90 Devices/BMP390/BMP390.o
+                0x00004510                BMP390_compensate_temperature
  .text.BMP390_compensate_pressure
-                0x000043ca      0x268 Devices/BMP390/BMP390.o
-                0x000043ca                BMP390_compensate_pressure
+                0x000045a0      0x268 Devices/BMP390/BMP390.o
+                0x000045a0                BMP390_compensate_pressure
  .text.BMP390_temp_press_update
-                0x00004632       0x1e Devices/BMP390/BMP390.o
-                0x00004632                BMP390_temp_press_update
+                0x00004808       0x1e Devices/BMP390/BMP390.o
+                0x00004808                BMP390_temp_press_update
  .text.get_BMP390_temperature
-                0x00004650       0x18 Devices/BMP390/BMP390.o
-                0x00004650                get_BMP390_temperature
+                0x00004826       0x18 Devices/BMP390/BMP390.o
+                0x00004826                get_BMP390_temperature
  .text.get_BMP390_pressure
-                0x00004668       0x18 Devices/BMP390/BMP390.o
-                0x00004668                get_BMP390_pressure
+                0x0000483e       0x18 Devices/BMP390/BMP390.o
+                0x0000483e                get_BMP390_pressure
  .text.lsm6dsox_write_register
-                0x00004680       0x2a Devices/LSM6DSOX/LSM6DSOX.o
-                0x00004680                lsm6dsox_write_register
+                0x00004856       0x2a Devices/LSM6DSOX/LSM6DSOX.o
+                0x00004856                lsm6dsox_write_register
  .text.lsm6dsox_read_register
-                0x000046aa       0x32 Devices/LSM6DSOX/LSM6DSOX.o
-                0x000046aa                lsm6dsox_read_register
+                0x00004880       0x32 Devices/LSM6DSOX/LSM6DSOX.o
+                0x00004880                lsm6dsox_read_register
  .text.lsm6dsox_init
-                0x000046dc       0x22 Devices/LSM6DSOX/LSM6DSOX.o
-                0x000046dc                lsm6dsox_init
+                0x000048b2       0x22 Devices/LSM6DSOX/LSM6DSOX.o
+                0x000048b2                lsm6dsox_init
  .text.read_accel
-                0x000046fe       0xc6 Devices/LSM6DSOX/LSM6DSOX.o
-                0x000046fe                read_accel
+                0x000048d4       0xc6 Devices/LSM6DSOX/LSM6DSOX.o
+                0x000048d4                read_accel
  .text.read_gyro
-                0x000047c4       0xea Devices/LSM6DSOX/LSM6DSOX.o
-                0x000047c4                read_gyro
+                0x0000499a       0xea Devices/LSM6DSOX/LSM6DSOX.o
+                0x0000499a                read_gyro
  .text.MCP4921_init
-                0x000048ae       0x10 Devices/MCP4921/MCP4921.o
-                0x000048ae                MCP4921_init
+                0x00004a84       0x10 Devices/MCP4921/MCP4921.o
+                0x00004a84                MCP4921_init
  .text.MCP4291_AssertSS
-                0x000048be       0x20 Devices/MCP4921/MCP4921.o
-                0x000048be                MCP4291_AssertSS
+                0x00004a94       0x20 Devices/MCP4921/MCP4921.o
+                0x00004a94                MCP4291_AssertSS
  .text.MCP4291_DeassertSS
-                0x000048de       0x20 Devices/MCP4921/MCP4921.o
-                0x000048de                MCP4291_DeassertSS
+                0x00004ab4       0x20 Devices/MCP4921/MCP4921.o
+                0x00004ab4                MCP4291_DeassertSS
  .text.MCP4291_assert_LDAC
-                0x000048fe        0x4 Devices/MCP4921/MCP4921.o
-                0x000048fe                MCP4291_assert_LDAC
+                0x00004ad4        0x4 Devices/MCP4921/MCP4921.o
+                0x00004ad4                MCP4291_assert_LDAC
  .text.MCP4291_deassert_LDAC
-                0x00004902        0x4 Devices/MCP4921/MCP4921.o
-                0x00004902                MCP4291_deassert_LDAC
+                0x00004ad8        0x4 Devices/MCP4921/MCP4921.o
+                0x00004ad8                MCP4291_deassert_LDAC
  .text.MCP4291_set_output
-                0x00004906      0x126 Devices/MCP4921/MCP4921.o
-                0x00004906                MCP4291_set_output
+                0x00004adc      0x126 Devices/MCP4921/MCP4921.o
+                0x00004adc                MCP4291_set_output
  .text.get_NTC_temperature_using_table
-                0x00004a2c       0x14 Devices/NTC/ntc_10k.o
-                0x00004a2c                get_NTC_temperature_using_table
+                0x00004c02       0x14 Devices/NTC/ntc_10k.o
+                0x00004c02                get_NTC_temperature_using_table
  .text.ringled_show
-                0x00004a40       0x66 Devices/LED_RING/SK6812.o
-                0x00004a40                ringled_show
+                0x00004c16       0x66 Devices/LED_RING/SK6812.o
+                0x00004c16                ringled_show
  .text.ringled_clear
-                0x00004aa6       0x24 Devices/LED_RING/SK6812.o
-                0x00004aa6                ringled_clear
+                0x00004c7c       0x24 Devices/LED_RING/SK6812.o
+                0x00004c7c                ringled_clear
  .text.ringled_init
-                0x00004aca       0x10 Devices/LED_RING/SK6812.o
-                0x00004aca                ringled_init
+                0x00004ca0       0x10 Devices/LED_RING/SK6812.o
+                0x00004ca0                ringled_init
  .text.ringled_set_RGBW
-                0x00004ada       0x30 Devices/LED_RING/SK6812.o
-                0x00004ada                ringled_set_RGBW
+                0x00004cb0       0x30 Devices/LED_RING/SK6812.o
+                0x00004cb0                ringled_set_RGBW
  .text.ringled_get_RGBW
-                0x00004b0a       0x12 Devices/LED_RING/SK6812.o
-                0x00004b0a                ringled_get_RGBW
+                0x00004ce0       0x12 Devices/LED_RING/SK6812.o
+                0x00004ce0                ringled_get_RGBW
  .text.TEC_init
-                0x00004b1c       0x12 Devices/TEC/TEC.o
-                0x00004b1c                TEC_init
+                0x00004cf2       0x12 Devices/TEC/TEC.o
+                0x00004cf2                TEC_init
  .text.TEC_enable
-                0x00004b2e       0x34 Devices/TEC/TEC.o
-                0x00004b2e                TEC_enable
+                0x00004d04       0x34 Devices/TEC/TEC.o
+                0x00004d04                TEC_enable
  .text.TEC_shutdown
-                0x00004b62       0x34 Devices/TEC/TEC.o
-                0x00004b62                TEC_shutdown
+                0x00004d38       0x34 Devices/TEC/TEC.o
+                0x00004d38                TEC_shutdown
  .text.TPL5010_init
-                0x00004b96        0xa Devices/TPL5010/TPL5010.o
-                0x00004b96                TPL5010_init
+                0x00004d6c        0xa Devices/TPL5010/TPL5010.o
+                0x00004d6c                TPL5010_init
  .text.TPL5010_done_pulse
-                0x00004ba0        0x6 Devices/TPL5010/TPL5010.o
-                0x00004ba0                TPL5010_done_pulse
+                0x00004d76        0x6 Devices/TPL5010/TPL5010.o
+                0x00004d76                TPL5010_done_pulse
  .text.SCH_Initialize
-                0x00004ba6       0x40 Scheduler/scheduler.o
-                0x00004ba6                SCH_Initialize
+                0x00004d7c       0x40 Scheduler/scheduler.o
+                0x00004d7c                SCH_Initialize
  .text.SCH_TIM_Start
-                0x00004be6       0x16 Scheduler/scheduler.o
-                0x00004be6                SCH_TIM_Start
+                0x00004dbc       0x16 Scheduler/scheduler.o
+                0x00004dbc                SCH_TIM_Start
  .text.SCH_TIM_HasCompleted
-                0x00004bfc       0x1a Scheduler/scheduler.o
-                0x00004bfc                SCH_TIM_HasCompleted
+                0x00004dd2       0x1a Scheduler/scheduler.o
+                0x00004dd2                SCH_TIM_HasCompleted
  .text.SCH_TASK_CreateTask
-                0x00004c16       0x68 Scheduler/scheduler.o
-                0x00004c16                SCH_TASK_CreateTask
+                0x00004dec       0x68 Scheduler/scheduler.o
+                0x00004dec                SCH_TASK_CreateTask
  .text.SCH_TIM_CreateTimer
-                0x00004c7e       0x62 Scheduler/scheduler.o
-                0x00004c7e                SCH_TIM_CreateTimer
+                0x00004e54       0x62 Scheduler/scheduler.o
+                0x00004e54                SCH_TIM_CreateTimer
  .text.SCH_TIM_RestartTimer
-                0x00004ce0       0x34 Scheduler/scheduler.o
-                0x00004ce0                SCH_TIM_RestartTimer
+                0x00004eb6       0x34 Scheduler/scheduler.o
+                0x00004eb6                SCH_TIM_RestartTimer
  .text.SCH_RunSystemTickTimer
-                0x00004d14      0x104 Scheduler/scheduler.o
-                0x00004d14                SCH_RunSystemTickTimer
+                0x00004eea      0x104 Scheduler/scheduler.o
+                0x00004eea                SCH_RunSystemTickTimer
  .text.SCH_StartSchedular
-                0x00004e18        0x6 Scheduler/scheduler.o
-                0x00004e18                SCH_StartSchedular
+                0x00004fee        0x6 Scheduler/scheduler.o
+                0x00004fee                SCH_StartSchedular
  .text.SCH_HandleScheduledTask
-                0x00004e1e       0xda Scheduler/scheduler.o
-                0x00004e1e                SCH_HandleScheduledTask
+                0x00004ff4       0xda Scheduler/scheduler.o
+                0x00004ff4                SCH_HandleScheduledTask
  .text.__vector_15
-                0x00004ef8       0x48 Scheduler/scheduler.o
-                0x00004ef8                __vector_15
+                0x000050ce       0x48 Scheduler/scheduler.o
+                0x000050ce                __vector_15
  .text.crc16_CCITT
-                0x00004f40       0x52 ThirdParty/libsfp/crc16.o
-                0x00004f40                crc16_CCITT
+                0x00005116       0x52 ThirdParty/libsfp/crc16.o
+                0x00005116                crc16_CCITT
  .text.fsp_init
-                0x00004f92        0xa ThirdParty/libsfp/fsp.o
-                0x00004f92                fsp_init
+                0x00005168        0xa ThirdParty/libsfp/fsp.o
+                0x00005168                fsp_init
  .text.fsp_gen_pkt
-                0x00004f9c       0x74 ThirdParty/libsfp/fsp.o
-                0x00004f9c                fsp_gen_pkt
+                0x00005172       0x74 ThirdParty/libsfp/fsp.o
+                0x00005172                fsp_gen_pkt
  .text.fsp_gen_cmd_w_data_pkt
-                0x00005010       0x3a ThirdParty/libsfp/fsp.o
-                0x00005010                fsp_gen_cmd_w_data_pkt
+                0x000051e6       0x3a ThirdParty/libsfp/fsp.o
+                0x000051e6                fsp_gen_cmd_w_data_pkt
  .text.fsp_encode
-                0x0000504a      0x1ce ThirdParty/libsfp/fsp.o
-                0x0000504a                fsp_encode
+                0x00005220      0x1ce ThirdParty/libsfp/fsp.o
+                0x00005220                fsp_encode
  .text.fsp_decode
-                0x00005218      0x116 ThirdParty/libsfp/fsp.o
-                0x00005218                fsp_decode
+                0x000053ee      0x116 ThirdParty/libsfp/fsp.o
+                0x000053ee                fsp_decode
  .text.avr-libc.fplib
-                0x0000532e        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(addsf3.o)
-                0x0000532e                __subsf3
-                0x00005330                __addsf3
+                0x00005504        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(addsf3.o)
+                0x00005504                __subsf3
+                0x00005506                __addsf3
  .text.avr-libc.fplib
-                0x0000533c       0xcc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(addsf3x.o)
-                0x0000535e                __addsf3x
+                0x00005512       0xcc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+                0x00005534                __addsf3x
  .text.avr-libc.fplib
-                0x00005408        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(divsf3.o)
-                0x00005408                __divsf3
+                0x000055de        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(divsf3.o)
+                0x000055de                __divsf3
  .text.avr-libc.fplib
-                0x00005410       0xdc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(divsf3x.o)
-                0x00005430                __divsf3x
-                0x00005436                __divsf3_pse
+                0x000055e6       0xdc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+                0x00005606                __divsf3x
+                0x0000560c                __divsf3_pse
  .text.avr-libc.fplib
-                0x000054ec        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
-                0x000054ec                __fixsfsi
+                0x000056c2        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
+                0x000056c2                __fixsfsi
  .text.avr-libc.fplib
-                0x000054fa       0x5e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
-                0x000054fa                __fixunssfsi
+                0x000056d0       0x5e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
+                0x000056d0                __fixunssfsi
  .text.avr-libc.fplib
-                0x00005558       0x7a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(floatsisf.o)
-                0x00005558                __floatunsisf
-                0x0000555c                __floatsisf
+                0x0000572e       0x7a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+                0x0000572e                __floatunsisf
+                0x00005732                __floatsisf
  .text.avr-libc.fplib
-                0x000055d2        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_inf.o)
-                0x000055d2                __fp_inf
+                0x000057a8        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_inf.o)
+                0x000057a8                __fp_inf
  .text.avr-libc.fplib
-                0x000055de        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_nan.o)
-                0x000055de                __fp_nan
+                0x000057b4        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_nan.o)
+                0x000057b4                __fp_nan
  .text.avr-libc.fplib
-                0x000055e4        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
-                0x000055e4                __fp_pscA
+                0x000057ba        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
+                0x000057ba                __fp_pscA
  .text.avr-libc.fplib
-                0x000055f2        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
-                0x000055f2                __fp_pscB
+                0x000057c8        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
+                0x000057c8                __fp_pscB
  .text.avr-libc.fplib
-                0x00005600       0x22 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_round.o)
-                0x00005600                __fp_round
+                0x000057d6       0x22 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_round.o)
+                0x000057d6                __fp_round
  .text.avr-libc.fplib
-                0x00005622       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_split3.o)
-                0x00005622                __fp_split3
-                0x00005632                __fp_splitA
+                0x000057f8       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_split3.o)
+                0x000057f8                __fp_split3
+                0x00005808                __fp_splitA
  .text.avr-libc.fplib
-                0x00005666        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_zero.o)
-                0x00005666                __fp_zero
-                0x00005668                __fp_szero
+                0x0000583c        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+                0x0000583c                __fp_zero
+                0x0000583e                __fp_szero
  .text.avr-libc.fplib
-                0x00005674        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(mulsf3.o)
-                0x00005674                __mulsf3
+                0x0000584a        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+                0x0000584a                __mulsf3
  .text.avr-libc.fplib
-                0x0000567c       0xd2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
-                0x0000569a                __mulsf3x
-                0x000056a0                __mulsf3_pse
+                0x00005852       0xd2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+                0x00005870                __mulsf3x
+                0x00005876                __mulsf3_pse
  .text.avr-libc
-                0x0000574e      0x6fa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libprintf_flt.a(vfprintf_flt.o)
-                0x0000574e                vfprintf
+                0x00005924      0x6fa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libprintf_flt.a(vfprintf_flt.o)
+                0x00005924                vfprintf
  .text.libgcc.mul
-                0x00005e48       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_mulsi3.o)
-                0x00005e48                __mulsi3
+                0x0000601e       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_mulsi3.o)
+                0x0000601e                __mulsi3
  .text.libgcc.div
-                0x00005e68       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
-                0x00005e68                __udivmodsi4
- .text.libgcc   0x00005eac        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
-                0x00005eac                __tablejump2__
+                0x0000603e       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
+                0x0000603e                __udivmodsi4
+ .text.libgcc   0x00006082        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+                0x00006082                __tablejump2__
  .text.libgcc.mul
-                0x00005eb8       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_muluhisi3.o)
-                0x00005eb8                __muluhisi3
+                0x0000608e       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_muluhisi3.o)
+                0x0000608e                __muluhisi3
  .text.libgcc.prologue
-                0x00005ece       0x38 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_prologue.o)
-                0x00005ece                __prologue_saves__
+                0x000060a4       0x38 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_prologue.o)
+                0x000060a4                __prologue_saves__
  .text.libgcc.prologue
-                0x00005f06       0x36 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_epilogue.o)
-                0x00005f06                __epilogue_restores__
+                0x000060dc       0x36 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_epilogue.o)
+                0x000060dc                __epilogue_restores__
  .text.libgcc.mul
-                0x00005f3c       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
-                0x00005f3c                __umulhisi3
+                0x00006112       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
+                0x00006112                __umulhisi3
  .text.avr-libc
-                0x00005f5a       0x3c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(atoi.o)
-                0x00005f5a                atoi
+                0x00006130       0x3c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(atoi.o)
+                0x00006130                atoi
  .text.avr-libc
-                0x00005f96      0x1b0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(ftoa_engine.o)
-                0x00005f96                __ftoa_engine
+                0x0000616c      0x1b0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(ftoa_engine.o)
+                0x0000616c                __ftoa_engine
  .text.avr-libc
-                0x00006146       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
-                0x00006146                strnlen_P
+                0x0000631c       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+                0x0000631c                strnlen_P
  .text.avr-libc
-                0x0000615c       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(strcmp.o)
-                0x0000615c                strcmp
+                0x00006332       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(strcmp.o)
+                0x00006332                strcmp
  .text.avr-libc
-                0x0000616e       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
-                0x0000616e                strnlen
+                0x00006344       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
+                0x00006344                strnlen
  .text.avr-libc
-                0x00006184       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(mul10.o)
-                0x00006184                __mulhi_const_10
+                0x0000635a       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(mul10.o)
+                0x0000635a                __mulhi_const_10
  .text.avr-libc
-                0x00006194       0x78 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(fputc.o)
-                0x00006194                fputc
+                0x0000636a       0x78 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(fputc.o)
+                0x0000636a                fputc
  .text.avr-libc
-                0x0000620c       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
-                0x0000620c                sprintf
+                0x000063e2       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
+                0x000063e2                sprintf
  .text.avr-libc
-                0x00006250       0xbc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
-                0x00006250                __ultoa_invert
-                0x0000630c                . = ALIGN (0x2)
+                0x00006426       0xbc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
+                0x00006426                __ultoa_invert
+                0x000064e2                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000630c        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x0000630c                _exit
-                0x0000630c                exit
+ .fini9         0x000064e2        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x000064e2                _exit
+                0x000064e2                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -2739,11 +2797,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000630c        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x000064e2        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00006310                _etext = .
+                0x000064e6                _etext = .
 
-.data           0x00800100      0x9ca load address 0x00006310
+.data           0x00800100      0xa04 load address 0x000064e6
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -2766,152 +2824,153 @@ END GROUP
  .data.s_pressure_task_context
                 0x008001ab        0x7 Application/Pressure/Pressure.o
  .data.s_Temperature_CurrentState
-                0x008001b2       0x2c Application/Temperature/temperature.o
+                0x008001b2       0x34 Application/Temperature/temperature.o
  .data.s_temperature_task_context
-                0x008001de        0x7 Application/Temperature/temperature.o
+                0x008001e6        0x7 Application/Temperature/temperature.o
  .data.s_WatchdogTimerContext
-                0x008001e5        0x6 Application/WATCHDOG/watchdog.o
+                0x008001ed        0x6 Application/WATCHDOG/watchdog.o
  .data.p_UART1_meta
-                0x008001eb        0x2 BSP/UART/uart.o
-                0x008001eb                p_UART1_meta
+                0x008001f3        0x2 BSP/UART/uart.o
+                0x008001f3                p_UART1_meta
  .data.p_UART0_meta
-                0x008001ed        0x2 BSP/UART/uart.o
-                0x008001ed                p_UART0_meta
+                0x008001f5        0x2 BSP/UART/uart.o
+                0x008001f5                p_UART0_meta
  *(.gnu.linkonce.d*)
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x008001ef       0x1c Application/Accel_Gyro/Accel_Gyro.o
+                0x008001f7       0x1c Application/Accel_Gyro/Accel_Gyro.o
  .rodata.str1.1
-                0x0080020b      0x7f5 Application/CMDLine/command.o
+                0x00800213      0x7f5 Application/CMDLine/command.o
                                 0x84d (size before relaxing)
  .rodata.str1.1
-                0x00800a00       0x18 Application/COPC/COPC.o
+                0x00800a08       0x18 Application/COPC/COPC.o
  .rodata.str1.1
-                0x00800a18       0x1a Application/Pressure/Pressure.o
+                0x00800a20       0x1a Application/Pressure/Pressure.o
  .rodata.str1.1
-                0x00800a32       0x80 Application/Temperature/temperature.o
+                0x00800a3a       0xb3 Application/Temperature/temperature.o
  .rodata.str1.1
-                0x00800ab2       0x17 BSP/UART/uart.o
+                0x00800aed       0x17 BSP/UART/uart.o
                                  0x19 (size before relaxing)
  *(.gnu.linkonce.r*)
-                0x00800aca                . = ALIGN (0x2)
- *fill*         0x00800ac9        0x1 
-                0x00800aca                _edata = .
-                0x00800aca                PROVIDE (__data_end, .)
+                0x00800b04                . = ALIGN (0x2)
+                0x00800b04                _edata = .
+                0x00800b04                PROVIDE (__data_end, .)
 
-.bss            0x00800aca      0x33c
-                0x00800aca                PROVIDE (__bss_start, .)
+.bss            0x00800b04      0x350
+                0x00800b04                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  .bss.g_ppcArgv
-                0x00800aca       0x12 Application/CMDLine/cmdline.o
+                0x00800b04       0x12 Application/CMDLine/cmdline.o
  .bss.s_commandBufferIndex
-                0x00800adc        0x1 Application/CMDLine/command.o
+                0x00800b16        0x1 Application/CMDLine/command.o
  .bss.s_commandBuffer
-                0x00800add       0x40 Application/CMDLine/command.o
+                0x00800b17       0x40 Application/CMDLine/command.o
  .bss.p_CommandRingBuffer
-                0x00800b1d        0x2 Application/CMDLine/command.o
+                0x00800b57        0x2 Application/CMDLine/command.o
  .bss.swap_byte
-                0x00800b1f        0x1 Application/COPC/COPC.o
-                0x00800b1f                swap_byte
+                0x00800b59        0x1 Application/COPC/COPC.o
+                0x00800b59                swap_byte
  .bss.s_pIOU_Sfp_Payload
-                0x00800b20        0x2 Application/COPC/COPC.o
+                0x00800b5a        0x2 Application/COPC/COPC.o
  .bss.s_pCOPC_Sfp_Payload
-                0x00800b22        0x2 Application/COPC/COPC.o
+                0x00800b5c        0x2 Application/COPC/COPC.o
  .bss.s_IOU_FspPacket
-                0x00800b24       0x33 Application/COPC/COPC.o
+                0x00800b5e       0x33 Application/COPC/COPC.o
  .bss.s_COPC_FspPacket
-                0x00800b57       0x33 Application/COPC/COPC.o
+                0x00800b91       0x33 Application/COPC/COPC.o
  .bss.p_COPCBuffer
-                0x00800b8a        0x2 Application/COPC/COPC.o
+                0x00800bc4        0x2 Application/COPC/COPC.o
  .bss.IR_led_DutyCycle_status
-                0x00800b8c        0x1 Application/LED/ir_led.o
+                0x00800bc6        0x1 Application/LED/ir_led.o
  .bss.s_led_display_status
-                0x00800b8d        0x3 Application/LED/status_led.o
+                0x00800bc7        0x3 Application/LED/status_led.o
  .bss.sPrintLog
-                0x00800b90        0x1 Application/Temperature/temperature.o
+                0x00800bca        0x1 Application/Temperature/temperature.o
+ .bss.sTemperatureTimeChange
+                0x00800bcb        0x8 Application/Temperature/temperature.o
  .bss.sTemperatureTimeCount
-                0x00800b91        0x4 Application/Temperature/temperature.o
+                0x00800bd3        0x8 Application/Temperature/temperature.o
  .bss.twi_error
-                0x00800b95        0x1 BSP/TWI/twi.o
+                0x00800bdb        0x1 BSP/TWI/twi.o
  .bss.twi_slv_rxBufferIndex
-                0x00800b96        0x1 BSP/TWI/twi.o
+                0x00800bdc        0x1 BSP/TWI/twi.o
  .bss.twi_slv_rxBuffer
-                0x00800b97        0x8 BSP/TWI/twi.o
+                0x00800bdd        0x8 BSP/TWI/twi.o
  .bss.twi_slv_txBufferLength
-                0x00800b9f        0x1 BSP/TWI/twi.o
+                0x00800be5        0x1 BSP/TWI/twi.o
  .bss.twi_slv_txBufferIndex
-                0x00800ba0        0x1 BSP/TWI/twi.o
+                0x00800be6        0x1 BSP/TWI/twi.o
  .bss.twi_slv_txBuffer
-                0x00800ba1        0x8 BSP/TWI/twi.o
+                0x00800be7        0x8 BSP/TWI/twi.o
  .bss.twi_master_rxBufferLength
-                0x00800ba9        0x1 BSP/TWI/twi.o
+                0x00800bef        0x1 BSP/TWI/twi.o
  .bss.twi_master_rxBufferIndex
-                0x00800baa        0x1 BSP/TWI/twi.o
+                0x00800bf0        0x1 BSP/TWI/twi.o
  .bss.twi_master_rxBuffer
-                0x00800bab        0x8 BSP/TWI/twi.o
+                0x00800bf1        0x8 BSP/TWI/twi.o
  .bss.twi_master_txBufferLength
-                0x00800bb3        0x1 BSP/TWI/twi.o
+                0x00800bf9        0x1 BSP/TWI/twi.o
  .bss.twi_master_txBufferIndex
-                0x00800bb4        0x1 BSP/TWI/twi.o
+                0x00800bfa        0x1 BSP/TWI/twi.o
  .bss.twi_master_txBuffer
-                0x00800bb5        0x8 BSP/TWI/twi.o
+                0x00800bfb        0x8 BSP/TWI/twi.o
  .bss.twi_onSlaveReceive
-                0x00800bbd        0x2 BSP/TWI/twi.o
+                0x00800c03        0x2 BSP/TWI/twi.o
  .bss.twi_onSlaveTransmit
-                0x00800bbf        0x2 BSP/TWI/twi.o
+                0x00800c05        0x2 BSP/TWI/twi.o
  .bss.twi_inRepStart
-                0x00800bc1        0x1 BSP/TWI/twi.o
+                0x00800c07        0x1 BSP/TWI/twi.o
  .bss.twi_sendStop
-                0x00800bc2        0x1 BSP/TWI/twi.o
+                0x00800c08        0x1 BSP/TWI/twi.o
  .bss.twi_slarw
-                0x00800bc3        0x1 BSP/TWI/twi.o
+                0x00800c09        0x1 BSP/TWI/twi.o
  .bss.twi_state
-                0x00800bc4        0x1 BSP/TWI/twi.o
+                0x00800c0a        0x1 BSP/TWI/twi.o
  .bss.s_NumOfTimers
-                0x00800bc5        0x1 Scheduler/scheduler.o
+                0x00800c0b        0x1 Scheduler/scheduler.o
  .bss.s_TimerContext
-                0x00800bc6       0x1e Scheduler/scheduler.o
+                0x00800c0c       0x1e Scheduler/scheduler.o
  .bss.s_NumOfTaskScheduled
-                0x00800be4        0x1 Scheduler/scheduler.o
+                0x00800c2a        0x1 Scheduler/scheduler.o
  .bss.s_TaskContext
-                0x00800be5       0x3c Scheduler/scheduler.o
+                0x00800c2b       0x3c Scheduler/scheduler.o
  .bss.fsp_decode_pos
-                0x00800c21        0x1 ThirdParty/libsfp/fsp.o
-                0x00800c21                fsp_decode_pos
+                0x00800c67        0x1 ThirdParty/libsfp/fsp.o
+                0x00800c67                fsp_decode_pos
  *(COMMON)
- COMMON         0x00800c22        0xc Application/Accel_Gyro/Accel_Gyro.o
-                0x00800c22                Gyro_Status
-                0x00800c28                Accel_Status
- COMMON         0x00800c2e       0x28 Application/CMDLine/command.o
-                0x00800c2e                colorMap
- COMMON         0x00800c56      0x110 BSP/UART/uart.o
-                0x00800c56                UART1_meta
-                0x00800cde                UART0_meta
- COMMON         0x00800d66       0x34 Data_struct/IOU_data.o
-                0x00800d66                IOU_data
- COMMON         0x00800d9a       0x60 Devices/BMP390/BMP390.o
-                0x00800d9a                tmp
-                0x00800d9c                TempPress_data
- COMMON         0x00800dfa        0x1 Devices/LSM6DSOX/LSM6DSOX.o
-                0x00800dfa                result
- COMMON         0x00800dfb        0x4 Devices/LED_RING/SK6812.o
-                0x00800dfb                status_rgbw_color
- COMMON         0x00800dff        0x6 Scheduler/scheduler.o
-                0x00800dff                s_SystemTick
-                0x00800e01                s_SoftTimers
- COMMON         0x00800e05        0x1 ThirdParty/libsfp/fsp.o
-                0x00800e05                fsp_my_adr
-                0x00800e06                PROVIDE (__bss_end, .)
-                0x00006310                __data_load_start = LOADADDR (.data)
-                0x00006cda                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x00800c68        0xc Application/Accel_Gyro/Accel_Gyro.o
+                0x00800c68                Gyro_Status
+                0x00800c6e                Accel_Status
+ COMMON         0x00800c74       0x28 Application/CMDLine/command.o
+                0x00800c74                colorMap
+ COMMON         0x00800c9c      0x110 BSP/UART/uart.o
+                0x00800c9c                UART1_meta
+                0x00800d24                UART0_meta
+ COMMON         0x00800dac       0x3c Data_struct/IOU_data.o
+                0x00800dac                IOU_data
+ COMMON         0x00800de8       0x60 Devices/BMP390/BMP390.o
+                0x00800de8                tmp
+                0x00800dea                TempPress_data
+ COMMON         0x00800e48        0x1 Devices/LSM6DSOX/LSM6DSOX.o
+                0x00800e48                result
+ COMMON         0x00800e49        0x4 Devices/LED_RING/SK6812.o
+                0x00800e49                status_rgbw_color
+ COMMON         0x00800e4d        0x6 Scheduler/scheduler.o
+                0x00800e4d                s_SystemTick
+                0x00800e4f                s_SoftTimers
+ COMMON         0x00800e53        0x1 ThirdParty/libsfp/fsp.o
+                0x00800e53                fsp_my_adr
+                0x00800e54                PROVIDE (__bss_end, .)
+                0x000064e6                __data_load_start = LOADADDR (.data)
+                0x00006eea                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800e06        0x0
+.noinit         0x00800e54        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800e06                _end = .
+                0x00800e54                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -3007,7 +3066,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x9a8
+.debug_aranges  0x00000000      0x9c0
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x40 Application/Accel_Gyro/Accel_Gyro.o
@@ -3028,48 +3087,48 @@ END GROUP
  .debug_aranges
                 0x000002c0       0x38 Application/Pressure/Pressure.o
  .debug_aranges
-                0x000002f8       0xc8 Application/Temperature/temperature.o
+                0x000002f8       0xe0 Application/Temperature/temperature.o
  .debug_aranges
-                0x000003c0       0x30 Application/WATCHDOG/watchdog.o
+                0x000003d8       0x30 Application/WATCHDOG/watchdog.o
  .debug_aranges
-                0x000003f0       0x30 BSP/ADC/AD.o
+                0x00000408       0x30 BSP/ADC/AD.o
  .debug_aranges
-                0x00000420       0x38 BSP/PWM/PWM.o
+                0x00000438       0x38 BSP/PWM/PWM.o
  .debug_aranges
-                0x00000458       0x30 BSP/SPI/spi.o
+                0x00000470       0x30 BSP/SPI/spi.o
  .debug_aranges
-                0x00000488       0x30 BSP/Timer/timer.o
+                0x000004a0       0x30 BSP/Timer/timer.o
  .debug_aranges
-                0x000004b8       0xf8 BSP/TWI/twi.o
+                0x000004d0       0xf8 BSP/TWI/twi.o
  .debug_aranges
-                0x000005b0      0x108 BSP/UART/uart.o
+                0x000005c8      0x108 BSP/UART/uart.o
  .debug_aranges
-                0x000006b8       0x18 Data_struct/IOU_data.o
+                0x000006d0       0x18 Data_struct/IOU_data.o
  .debug_aranges
-                0x000006d0       0x68 Devices/BMP390/BMP390.o
+                0x000006e8       0x68 Devices/BMP390/BMP390.o
  .debug_aranges
-                0x00000738       0x40 Devices/LSM6DSOX/LSM6DSOX.o
+                0x00000750       0x40 Devices/LSM6DSOX/LSM6DSOX.o
  .debug_aranges
-                0x00000778       0x48 Devices/MCP4921/MCP4921.o
+                0x00000790       0x48 Devices/MCP4921/MCP4921.o
  .debug_aranges
-                0x000007c0       0x38 Devices/NTC/ntc_10k.o
+                0x000007d8       0x38 Devices/NTC/ntc_10k.o
  .debug_aranges
-                0x000007f8       0x40 Devices/LED_RING/SK6812.o
+                0x00000810       0x40 Devices/LED_RING/SK6812.o
  .debug_aranges
-                0x00000838       0x30 Devices/TEC/TEC.o
+                0x00000850       0x30 Devices/TEC/TEC.o
  .debug_aranges
-                0x00000868       0x28 Devices/TPL5010/TPL5010.o
+                0x00000880       0x28 Devices/TPL5010/TPL5010.o
  .debug_aranges
-                0x00000890       0x90 Scheduler/scheduler.o
+                0x000008a8       0x90 Scheduler/scheduler.o
  .debug_aranges
-                0x00000920       0x20 ThirdParty/libsfp/crc16.o
+                0x00000938       0x20 ThirdParty/libsfp/crc16.o
  .debug_aranges
-                0x00000940       0x68 ThirdParty/libsfp/fsp.o
+                0x00000958       0x68 ThirdParty/libsfp/fsp.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x9b2c
+.debug_info     0x00000000     0x9bcb
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x780 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega64/avr5/crtatmega64.o
  .debug_info    0x00000780      0x363 Application/Accel_Gyro/Accel_Gyro.o
@@ -3078,28 +3137,28 @@ END GROUP
  .debug_info    0x000020ce     0x1a89 Application/COPC/COPC.o
  .debug_info    0x00003b57      0x12b Application/LED/ir_led.o
  .debug_info    0x00003c82      0x2aa Application/LED/ring_led.o
- .debug_info    0x00003f2c      0x628 Application/LED/status_led.o
- .debug_info    0x00004554      0x2d0 Application/main.o
- .debug_info    0x00004824      0x2c8 Application/Pressure/Pressure.o
- .debug_info    0x00004aec      0xbf3 Application/Temperature/temperature.o
- .debug_info    0x000056df      0x21b Application/WATCHDOG/watchdog.o
- .debug_info    0x000058fa      0x106 BSP/ADC/AD.o
- .debug_info    0x00005a00      0x166 BSP/PWM/PWM.o
- .debug_info    0x00005b66       0xcf BSP/SPI/spi.o
- .debug_info    0x00005c35       0xb3 BSP/Timer/timer.o
- .debug_info    0x00005ce8      0x94a BSP/TWI/twi.o
- .debug_info    0x00006632      0xc9b BSP/UART/uart.o
- .debug_info    0x000072cd      0x27c Data_struct/IOU_data.o
- .debug_info    0x00007549      0x82e Devices/BMP390/BMP390.o
- .debug_info    0x00007d77      0x483 Devices/LSM6DSOX/LSM6DSOX.o
- .debug_info    0x000081fa      0x2e7 Devices/MCP4921/MCP4921.o
- .debug_info    0x000084e1      0x255 Devices/NTC/ntc_10k.o
- .debug_info    0x00008736      0x275 Devices/LED_RING/SK6812.o
- .debug_info    0x000089ab       0xdf Devices/TEC/TEC.o
- .debug_info    0x00008a8a       0x9d Devices/TPL5010/TPL5010.o
- .debug_info    0x00008b27      0x882 Scheduler/scheduler.o
- .debug_info    0x000093a9       0xea ThirdParty/libsfp/crc16.o
- .debug_info    0x00009493      0x699 ThirdParty/libsfp/fsp.o
+ .debug_info    0x00003f2c      0x636 Application/LED/status_led.o
+ .debug_info    0x00004562      0x2d0 Application/main.o
+ .debug_info    0x00004832      0x2c8 Application/Pressure/Pressure.o
+ .debug_info    0x00004afa      0xc76 Application/Temperature/temperature.o
+ .debug_info    0x00005770      0x21b Application/WATCHDOG/watchdog.o
+ .debug_info    0x0000598b      0x106 BSP/ADC/AD.o
+ .debug_info    0x00005a91      0x166 BSP/PWM/PWM.o
+ .debug_info    0x00005bf7       0xcf BSP/SPI/spi.o
+ .debug_info    0x00005cc6       0xb3 BSP/Timer/timer.o
+ .debug_info    0x00005d79      0x94a BSP/TWI/twi.o
+ .debug_info    0x000066c3      0xc9b BSP/UART/uart.o
+ .debug_info    0x0000735e      0x28a Data_struct/IOU_data.o
+ .debug_info    0x000075e8      0x82e Devices/BMP390/BMP390.o
+ .debug_info    0x00007e16      0x483 Devices/LSM6DSOX/LSM6DSOX.o
+ .debug_info    0x00008299      0x2e7 Devices/MCP4921/MCP4921.o
+ .debug_info    0x00008580      0x255 Devices/NTC/ntc_10k.o
+ .debug_info    0x000087d5      0x275 Devices/LED_RING/SK6812.o
+ .debug_info    0x00008a4a       0xdf Devices/TEC/TEC.o
+ .debug_info    0x00008b29       0x9d Devices/TPL5010/TPL5010.o
+ .debug_info    0x00008bc6      0x882 Scheduler/scheduler.o
+ .debug_info    0x00009448       0xea ThirdParty/libsfp/crc16.o
+ .debug_info    0x00009532      0x699 ThirdParty/libsfp/fsp.o
 
 .debug_abbrev   0x00000000     0x2b52
  *(.debug_abbrev)
@@ -3133,7 +3192,7 @@ END GROUP
  .debug_abbrev  0x00002957       0x7f ThirdParty/libsfp/crc16.o
  .debug_abbrev  0x000029d6      0x17c ThirdParty/libsfp/fsp.o
 
-.debug_line     0x00000000     0x8f5a
+.debug_line     0x00000000     0x9082
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x16a C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega64/avr5/crtatmega64.o
  .debug_line    0x0000016a      0x4d4 Application/Accel_Gyro/Accel_Gyro.o
@@ -3145,27 +3204,27 @@ END GROUP
  .debug_line    0x0000286e      0x3d4 Application/LED/status_led.o
  .debug_line    0x00002c42      0x66c Application/main.o
  .debug_line    0x000032ae      0x43c Application/Pressure/Pressure.o
- .debug_line    0x000036ea      0x8e8 Application/Temperature/temperature.o
- .debug_line    0x00003fd2      0x35f Application/WATCHDOG/watchdog.o
- .debug_line    0x00004331      0x292 BSP/ADC/AD.o
- .debug_line    0x000045c3      0x2ff BSP/PWM/PWM.o
- .debug_line    0x000048c2      0x2cd BSP/SPI/spi.o
- .debug_line    0x00004b8f      0x28f BSP/Timer/timer.o
- .debug_line    0x00004e1e      0xa62 BSP/TWI/twi.o
- .debug_line    0x00005880      0xb78 BSP/UART/uart.o
- .debug_line    0x000063f8      0x147 Data_struct/IOU_data.o
- .debug_line    0x0000653f      0x73b Devices/BMP390/BMP390.o
- .debug_line    0x00006c7a      0x4ff Devices/LSM6DSOX/LSM6DSOX.o
- .debug_line    0x00007179      0x465 Devices/MCP4921/MCP4921.o
- .debug_line    0x000075de      0x3f0 Devices/NTC/ntc_10k.o
- .debug_line    0x000079ce      0x358 Devices/LED_RING/SK6812.o
- .debug_line    0x00007d26      0x317 Devices/TEC/TEC.o
- .debug_line    0x0000803d      0x29b Devices/TPL5010/TPL5010.o
- .debug_line    0x000082d8      0x666 Scheduler/scheduler.o
- .debug_line    0x0000893e      0x149 ThirdParty/libsfp/crc16.o
- .debug_line    0x00008a87      0x4d3 ThirdParty/libsfp/fsp.o
+ .debug_line    0x000036ea      0xa10 Application/Temperature/temperature.o
+ .debug_line    0x000040fa      0x35f Application/WATCHDOG/watchdog.o
+ .debug_line    0x00004459      0x292 BSP/ADC/AD.o
+ .debug_line    0x000046eb      0x2ff BSP/PWM/PWM.o
+ .debug_line    0x000049ea      0x2cd BSP/SPI/spi.o
+ .debug_line    0x00004cb7      0x28f BSP/Timer/timer.o
+ .debug_line    0x00004f46      0xa62 BSP/TWI/twi.o
+ .debug_line    0x000059a8      0xb78 BSP/UART/uart.o
+ .debug_line    0x00006520      0x147 Data_struct/IOU_data.o
+ .debug_line    0x00006667      0x73b Devices/BMP390/BMP390.o
+ .debug_line    0x00006da2      0x4ff Devices/LSM6DSOX/LSM6DSOX.o
+ .debug_line    0x000072a1      0x465 Devices/MCP4921/MCP4921.o
+ .debug_line    0x00007706      0x3f0 Devices/NTC/ntc_10k.o
+ .debug_line    0x00007af6      0x358 Devices/LED_RING/SK6812.o
+ .debug_line    0x00007e4e      0x317 Devices/TEC/TEC.o
+ .debug_line    0x00008165      0x29b Devices/TPL5010/TPL5010.o
+ .debug_line    0x00008400      0x666 Scheduler/scheduler.o
+ .debug_line    0x00008a66      0x149 ThirdParty/libsfp/crc16.o
+ .debug_line    0x00008baf      0x4d3 ThirdParty/libsfp/fsp.o
 
-.debug_frame    0x00000000     0x1a20
+.debug_frame    0x00000000     0x1a98
  *(.debug_frame)
  .debug_frame   0x00000000       0x8c Application/Accel_Gyro/Accel_Gyro.o
  .debug_frame   0x0000008c       0x40 Application/CMDLine/cmdline.o
@@ -3176,86 +3235,86 @@ END GROUP
  .debug_frame   0x00000774       0x60 Application/LED/status_led.o
  .debug_frame   0x000007d4       0x24 Application/main.o
  .debug_frame   0x000007f8       0x5c Application/Pressure/Pressure.o
- .debug_frame   0x00000854      0x298 Application/Temperature/temperature.o
- .debug_frame   0x00000aec       0x44 Application/WATCHDOG/watchdog.o
- .debug_frame   0x00000b30       0x44 BSP/ADC/AD.o
- .debug_frame   0x00000b74       0x64 BSP/PWM/PWM.o
- .debug_frame   0x00000bd8       0x44 BSP/SPI/spi.o
- .debug_frame   0x00000c1c       0x44 BSP/Timer/timer.o
- .debug_frame   0x00000c60      0x244 BSP/TWI/twi.o
- .debug_frame   0x00000ea4      0x3f4 BSP/UART/uart.o
- .debug_frame   0x00001298      0x1c4 Devices/BMP390/BMP390.o
- .debug_frame   0x0000145c       0xc8 Devices/LSM6DSOX/LSM6DSOX.o
- .debug_frame   0x00001524       0xac Devices/MCP4921/MCP4921.o
- .debug_frame   0x000015d0       0x54 Devices/NTC/ntc_10k.o
- .debug_frame   0x00001624       0x64 Devices/LED_RING/SK6812.o
- .debug_frame   0x00001688       0x44 Devices/TEC/TEC.o
- .debug_frame   0x000016cc       0x34 Devices/TPL5010/TPL5010.o
- .debug_frame   0x00001700      0x17c Scheduler/scheduler.o
- .debug_frame   0x0000187c       0x24 ThirdParty/libsfp/crc16.o
- .debug_frame   0x000018a0      0x180 ThirdParty/libsfp/fsp.o
+ .debug_frame   0x00000854      0x310 Application/Temperature/temperature.o
+ .debug_frame   0x00000b64       0x44 Application/WATCHDOG/watchdog.o
+ .debug_frame   0x00000ba8       0x44 BSP/ADC/AD.o
+ .debug_frame   0x00000bec       0x64 BSP/PWM/PWM.o
+ .debug_frame   0x00000c50       0x44 BSP/SPI/spi.o
+ .debug_frame   0x00000c94       0x44 BSP/Timer/timer.o
+ .debug_frame   0x00000cd8      0x244 BSP/TWI/twi.o
+ .debug_frame   0x00000f1c      0x3f4 BSP/UART/uart.o
+ .debug_frame   0x00001310      0x1c4 Devices/BMP390/BMP390.o
+ .debug_frame   0x000014d4       0xc8 Devices/LSM6DSOX/LSM6DSOX.o
+ .debug_frame   0x0000159c       0xac Devices/MCP4921/MCP4921.o
+ .debug_frame   0x00001648       0x54 Devices/NTC/ntc_10k.o
+ .debug_frame   0x0000169c       0x64 Devices/LED_RING/SK6812.o
+ .debug_frame   0x00001700       0x44 Devices/TEC/TEC.o
+ .debug_frame   0x00001744       0x34 Devices/TPL5010/TPL5010.o
+ .debug_frame   0x00001778      0x17c Scheduler/scheduler.o
+ .debug_frame   0x000018f4       0x24 ThirdParty/libsfp/crc16.o
+ .debug_frame   0x00001918      0x180 ThirdParty/libsfp/fsp.o
 
-.debug_str      0x00000000     0xe00a
+.debug_str      0x00000000     0xe2fa
  *(.debug_str)
  .debug_str     0x00000000      0x27e C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega64/avr5/crtatmega64.o
- .debug_str     0x0000027e     0x8cf5 Application/Accel_Gyro/Accel_Gyro.o
-                               0x8e4a (size before relaxing)
- .debug_str     0x00008f73      0x145 Application/CMDLine/cmdline.o
-                               0x7b32 (size before relaxing)
- .debug_str     0x000090b8     0x1a1a Application/CMDLine/command.o
-                               0xa488 (size before relaxing)
- .debug_str     0x0000aad2     0x14b6 Application/COPC/COPC.o
-                               0xa29f (size before relaxing)
- .debug_str     0x0000bf88       0x9c Application/LED/ir_led.o
-                               0x7610 (size before relaxing)
- .debug_str     0x0000c024       0x80 Application/LED/ring_led.o
-                               0x7926 (size before relaxing)
- .debug_str     0x0000c0a4      0x41f Application/LED/status_led.o
-                               0x7de4 (size before relaxing)
- .debug_str     0x0000c4c3       0xfb Application/main.o
-                               0x925d (size before relaxing)
- .debug_str     0x0000c5be       0xba Application/Pressure/Pressure.o
-                               0x88f5 (size before relaxing)
- .debug_str     0x0000c678      0x301 Application/Temperature/temperature.o
-                               0x8f36 (size before relaxing)
- .debug_str     0x0000c979      0x189 Application/WATCHDOG/watchdog.o
-                               0x7ee7 (size before relaxing)
- .debug_str     0x0000cb02       0x20 BSP/ADC/AD.o
+ .debug_str     0x0000027e     0x8f75 Application/Accel_Gyro/Accel_Gyro.o
+                               0x90ca (size before relaxing)
+ .debug_str     0x000091f3      0x145 Application/CMDLine/cmdline.o
+                               0x7db2 (size before relaxing)
+ .debug_str     0x00009338     0x1a79 Application/CMDLine/command.o
+                               0xa767 (size before relaxing)
+ .debug_str     0x0000adb1     0x14b6 Application/COPC/COPC.o
+                               0xa57e (size before relaxing)
+ .debug_str     0x0000c267       0x9c Application/LED/ir_led.o
+                               0x7890 (size before relaxing)
+ .debug_str     0x0000c303       0x80 Application/LED/ring_led.o
+                               0x7ba6 (size before relaxing)
+ .debug_str     0x0000c383      0x436 Application/LED/status_led.o
+                               0x807b (size before relaxing)
+ .debug_str     0x0000c7b9       0xeb Application/main.o
+                               0x953c (size before relaxing)
+ .debug_str     0x0000c8a4       0xca Application/Pressure/Pressure.o
+                               0x8b75 (size before relaxing)
+ .debug_str     0x0000c96e      0x2fb Application/Temperature/temperature.o
+                               0x9226 (size before relaxing)
+ .debug_str     0x0000cc69      0x189 Application/WATCHDOG/watchdog.o
+                               0x8167 (size before relaxing)
+ .debug_str     0x0000cdf2       0x20 BSP/ADC/AD.o
                                0x6b8e (size before relaxing)
- .debug_str     0x0000cb22       0x71 BSP/PWM/PWM.o
-                               0x718a (size before relaxing)
- .debug_str     0x0000cb93       0x2b BSP/SPI/spi.o
-                               0x71ab (size before relaxing)
- .debug_str     0x0000cbbe       0x93 BSP/Timer/timer.o
+ .debug_str     0x0000ce12       0x71 BSP/PWM/PWM.o
+                               0x740a (size before relaxing)
+ .debug_str     0x0000ce83       0x2b BSP/SPI/spi.o
+                               0x742b (size before relaxing)
+ .debug_str     0x0000ceae       0x93 BSP/Timer/timer.o
                                0x6f01 (size before relaxing)
- .debug_str     0x0000cc51      0x42b BSP/TWI/twi.o
+ .debug_str     0x0000cf41      0x42b BSP/TWI/twi.o
                                0x7e8e (size before relaxing)
- .debug_str     0x0000d07c      0x480 BSP/UART/uart.o
-                               0x98fb (size before relaxing)
- .debug_str     0x0000d4fc       0x1a Data_struct/IOU_data.o
-                               0x3fd2 (size before relaxing)
- .debug_str     0x0000d516      0x378 Devices/BMP390/BMP390.o
-                               0x8daf (size before relaxing)
- .debug_str     0x0000d88e       0xad Devices/LSM6DSOX/LSM6DSOX.o
-                               0x8a52 (size before relaxing)
- .debug_str     0x0000d93b       0xe5 Devices/MCP4921/MCP4921.o
-                               0x7701 (size before relaxing)
- .debug_str     0x0000da20       0xe9 Devices/NTC/ntc_10k.o
-                               0x90f9 (size before relaxing)
- .debug_str     0x0000db09       0x55 Devices/LED_RING/SK6812.o
-                               0x78ff (size before relaxing)
- .debug_str     0x0000db5e       0x20 Devices/TEC/TEC.o
-                               0x711b (size before relaxing)
- .debug_str     0x0000db7e       0x1d Devices/TPL5010/TPL5010.o
-                               0x711b (size before relaxing)
- .debug_str     0x0000db9b      0x37a Scheduler/scheduler.o
+ .debug_str     0x0000d36c      0x480 BSP/UART/uart.o
+                               0x9b6b (size before relaxing)
+ .debug_str     0x0000d7ec       0x1a Data_struct/IOU_data.o
+                               0x3fe9 (size before relaxing)
+ .debug_str     0x0000d806      0x378 Devices/BMP390/BMP390.o
+                               0x902f (size before relaxing)
+ .debug_str     0x0000db7e       0xad Devices/LSM6DSOX/LSM6DSOX.o
+                               0x8cc2 (size before relaxing)
+ .debug_str     0x0000dc2b       0xe5 Devices/MCP4921/MCP4921.o
+                               0x7971 (size before relaxing)
+ .debug_str     0x0000dd10       0xe9 Devices/NTC/ntc_10k.o
+                               0x9379 (size before relaxing)
+ .debug_str     0x0000ddf9       0x55 Devices/LED_RING/SK6812.o
+                               0x7b7f (size before relaxing)
+ .debug_str     0x0000de4e       0x20 Devices/TEC/TEC.o
+                               0x739b (size before relaxing)
+ .debug_str     0x0000de6e       0x1d Devices/TPL5010/TPL5010.o
+                               0x739b (size before relaxing)
+ .debug_str     0x0000de8b      0x37a Scheduler/scheduler.o
                                0x7b26 (size before relaxing)
- .debug_str     0x0000df15       0x3c ThirdParty/libsfp/crc16.o
+ .debug_str     0x0000e205       0x3c ThirdParty/libsfp/crc16.o
                                0x3272 (size before relaxing)
- .debug_str     0x0000df51       0xb9 ThirdParty/libsfp/fsp.o
+ .debug_str     0x0000e241       0xb9 ThirdParty/libsfp/fsp.o
                                0x3c7b (size before relaxing)
 
-.debug_loc      0x00000000     0x6aa3
+.debug_loc      0x00000000     0x6b35
  *(.debug_loc)
  .debug_loc     0x00000000       0xb2 Application/Accel_Gyro/Accel_Gyro.o
  .debug_loc     0x000000b2      0x194 Application/CMDLine/cmdline.o
@@ -3264,21 +3323,21 @@ END GROUP
  .debug_loc     0x0000225a       0x4f Application/LED/ir_led.o
  .debug_loc     0x000022a9       0x2f Application/LED/status_led.o
  .debug_loc     0x000022d8       0x22 Application/Pressure/Pressure.o
- .debug_loc     0x000022fa      0x8d2 Application/Temperature/temperature.o
- .debug_loc     0x00002bcc       0x42 BSP/ADC/AD.o
- .debug_loc     0x00002c0e      0x182 BSP/PWM/PWM.o
- .debug_loc     0x00002d90       0x1f BSP/SPI/spi.o
- .debug_loc     0x00002daf      0x849 BSP/TWI/twi.o
- .debug_loc     0x000035f8      0xf4b BSP/UART/uart.o
- .debug_loc     0x00004543      0x7a7 Devices/BMP390/BMP390.o
- .debug_loc     0x00004cea      0x31f Devices/LSM6DSOX/LSM6DSOX.o
- .debug_loc     0x00005009      0x1bb Devices/MCP4921/MCP4921.o
- .debug_loc     0x000051c4      0x1ab Devices/NTC/ntc_10k.o
- .debug_loc     0x0000536f      0x146 Devices/LED_RING/SK6812.o
- .debug_loc     0x000054b5      0x10a Devices/TEC/TEC.o
- .debug_loc     0x000055bf      0x71b Scheduler/scheduler.o
- .debug_loc     0x00005cda       0xdf ThirdParty/libsfp/crc16.o
- .debug_loc     0x00005db9      0xcea ThirdParty/libsfp/fsp.o
+ .debug_loc     0x000022fa      0x964 Application/Temperature/temperature.o
+ .debug_loc     0x00002c5e       0x42 BSP/ADC/AD.o
+ .debug_loc     0x00002ca0      0x182 BSP/PWM/PWM.o
+ .debug_loc     0x00002e22       0x1f BSP/SPI/spi.o
+ .debug_loc     0x00002e41      0x849 BSP/TWI/twi.o
+ .debug_loc     0x0000368a      0xf4b BSP/UART/uart.o
+ .debug_loc     0x000045d5      0x7a7 Devices/BMP390/BMP390.o
+ .debug_loc     0x00004d7c      0x31f Devices/LSM6DSOX/LSM6DSOX.o
+ .debug_loc     0x0000509b      0x1bb Devices/MCP4921/MCP4921.o
+ .debug_loc     0x00005256      0x1ab Devices/NTC/ntc_10k.o
+ .debug_loc     0x00005401      0x146 Devices/LED_RING/SK6812.o
+ .debug_loc     0x00005547      0x10a Devices/TEC/TEC.o
+ .debug_loc     0x00005651      0x71b Scheduler/scheduler.o
+ .debug_loc     0x00005d6c       0xdf ThirdParty/libsfp/crc16.o
+ .debug_loc     0x00005e4b      0xcea ThirdParty/libsfp/fsp.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -3298,7 +3357,7 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x828
+.debug_ranges   0x00000000      0x840
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x30 Application/Accel_Gyro/Accel_Gyro.o
  .debug_ranges  0x00000030       0x10 Application/CMDLine/cmdline.o
@@ -3309,117 +3368,119 @@ END GROUP
  .debug_ranges  0x00000208       0x28 Application/LED/status_led.o
  .debug_ranges  0x00000230       0x10 Application/main.o
  .debug_ranges  0x00000240       0x28 Application/Pressure/Pressure.o
- .debug_ranges  0x00000268       0xb8 Application/Temperature/temperature.o
- .debug_ranges  0x00000320       0x20 Application/WATCHDOG/watchdog.o
- .debug_ranges  0x00000340       0x20 BSP/ADC/AD.o
- .debug_ranges  0x00000360       0x28 BSP/PWM/PWM.o
- .debug_ranges  0x00000388       0x20 BSP/SPI/spi.o
- .debug_ranges  0x000003a8       0x20 BSP/Timer/timer.o
- .debug_ranges  0x000003c8      0x100 BSP/TWI/twi.o
- .debug_ranges  0x000004c8      0x128 BSP/UART/uart.o
- .debug_ranges  0x000005f0       0x58 Devices/BMP390/BMP390.o
- .debug_ranges  0x00000648       0x30 Devices/LSM6DSOX/LSM6DSOX.o
- .debug_ranges  0x00000678       0x38 Devices/MCP4921/MCP4921.o
- .debug_ranges  0x000006b0       0x28 Devices/NTC/ntc_10k.o
- .debug_ranges  0x000006d8       0x30 Devices/LED_RING/SK6812.o
- .debug_ranges  0x00000708       0x20 Devices/TEC/TEC.o
- .debug_ranges  0x00000728       0x18 Devices/TPL5010/TPL5010.o
- .debug_ranges  0x00000740       0x80 Scheduler/scheduler.o
- .debug_ranges  0x000007c0       0x10 ThirdParty/libsfp/crc16.o
- .debug_ranges  0x000007d0       0x58 ThirdParty/libsfp/fsp.o
+ .debug_ranges  0x00000268       0xd0 Application/Temperature/temperature.o
+ .debug_ranges  0x00000338       0x20 Application/WATCHDOG/watchdog.o
+ .debug_ranges  0x00000358       0x20 BSP/ADC/AD.o
+ .debug_ranges  0x00000378       0x28 BSP/PWM/PWM.o
+ .debug_ranges  0x000003a0       0x20 BSP/SPI/spi.o
+ .debug_ranges  0x000003c0       0x20 BSP/Timer/timer.o
+ .debug_ranges  0x000003e0      0x100 BSP/TWI/twi.o
+ .debug_ranges  0x000004e0      0x128 BSP/UART/uart.o
+ .debug_ranges  0x00000608       0x58 Devices/BMP390/BMP390.o
+ .debug_ranges  0x00000660       0x30 Devices/LSM6DSOX/LSM6DSOX.o
+ .debug_ranges  0x00000690       0x38 Devices/MCP4921/MCP4921.o
+ .debug_ranges  0x000006c8       0x28 Devices/NTC/ntc_10k.o
+ .debug_ranges  0x000006f0       0x30 Devices/LED_RING/SK6812.o
+ .debug_ranges  0x00000720       0x20 Devices/TEC/TEC.o
+ .debug_ranges  0x00000740       0x18 Devices/TPL5010/TPL5010.o
+ .debug_ranges  0x00000758       0x80 Scheduler/scheduler.o
+ .debug_ranges  0x000007d8       0x10 ThirdParty/libsfp/crc16.o
+ .debug_ranges  0x000007e8       0x58 ThirdParty/libsfp/fsp.o
 
-.debug_macro    0x00000000     0x6160
+.debug_macro    0x00000000     0x61f1
  *(.debug_macro)
- .debug_macro   0x00000000      0x1a4 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x000001a4      0xa4e Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x00000bf2      0x1c9 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x00000dbb      0x2fc Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x000010b7       0x58 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x0000110f       0x10 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x0000111f       0x97 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x000011b6       0xf2 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x000012a8       0x22 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x000012ca       0x88 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x00001352       0xaa Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x000013fc     0x1543 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x0000293f      0x203 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x00002b42       0xbd Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x00002bff       0x34 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x00002c33       0x18 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x00002c4b       0x6c Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x00002cb7       0xd7 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x00002d8e       0xf6 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x00002e84       0x22 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x00002ea6      0x166 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x0000300c       0x10 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x0000301c       0x1c Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x00003038       0x35 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x0000306d       0x60 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x000030cd       0x69 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x00003136       0x10 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x00003146       0x3a Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x00003180       0x16 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x00003196       0x28 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x000031be      0x160 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x0000331e       0x3a Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x00003358       0x28 Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x00003380       0x1c Application/Accel_Gyro/Accel_Gyro.o
- .debug_macro   0x0000339c       0xfd Application/CMDLine/cmdline.o
- .debug_macro   0x00003499       0x16 Application/CMDLine/cmdline.o
- .debug_macro   0x000034af       0x28 Application/CMDLine/cmdline.o
- .debug_macro   0x000034d7       0x10 Application/CMDLine/cmdline.o
- .debug_macro   0x000034e7      0x302 Application/CMDLine/cmdline.o
- .debug_macro   0x000037e9       0x9e Application/CMDLine/cmdline.o
- .debug_macro   0x00003887       0x20 Application/CMDLine/cmdline.o
- .debug_macro   0x000038a7      0x22c Application/CMDLine/command.o
- .debug_macro   0x00003ad3      0x16d Application/CMDLine/command.o
- .debug_macro   0x00003c40       0x1c Application/CMDLine/command.o
- .debug_macro   0x00003c5c       0xdd Application/CMDLine/command.o
- .debug_macro   0x00003d39      0x160 Application/CMDLine/command.o
- .debug_macro   0x00003e99       0x10 Application/CMDLine/command.o
- .debug_macro   0x00003ea9       0x40 Application/CMDLine/command.o
- .debug_macro   0x00003ee9       0x5a Application/CMDLine/command.o
- .debug_macro   0x00003f43       0x2e Application/CMDLine/command.o
- .debug_macro   0x00003f71       0x4c Application/CMDLine/command.o
- .debug_macro   0x00003fbd       0x10 Application/CMDLine/command.o
- .debug_macro   0x00003fcd       0x8e Application/CMDLine/command.o
- .debug_macro   0x0000405b       0x10 Application/CMDLine/command.o
- .debug_macro   0x0000406b       0xe2 Application/CMDLine/command.o
- .debug_macro   0x0000414d      0x20f Application/COPC/COPC.o
- .debug_macro   0x0000435c      0x179 Application/COPC/COPC.o
- .debug_macro   0x000044d5       0xd4 Application/LED/ir_led.o
- .debug_macro   0x000045a9       0xeb Application/LED/ring_led.o
- .debug_macro   0x00004694      0x106 Application/LED/status_led.o
- .debug_macro   0x0000479a      0x10e Application/LED/status_led.o
- .debug_macro   0x000048a8       0x66 Application/LED/status_led.o
- .debug_macro   0x0000490e       0x86 Application/LED/status_led.o
- .debug_macro   0x00004994      0x250 Application/main.o
- .debug_macro   0x00004be4      0x193 Application/Pressure/Pressure.o
- .debug_macro   0x00004d77      0x1d0 Application/Temperature/temperature.o
- .debug_macro   0x00004f47       0x10 Application/Temperature/temperature.o
- .debug_macro   0x00004f57      0x129 Application/WATCHDOG/watchdog.o
- .debug_macro   0x00005080       0x91 BSP/ADC/AD.o
- .debug_macro   0x00005111       0xb5 BSP/PWM/PWM.o
- .debug_macro   0x000051c6       0xa8 BSP/SPI/spi.o
- .debug_macro   0x0000526e       0xa0 BSP/Timer/timer.o
- .debug_macro   0x0000530e       0x63 BSP/Timer/timer.o
- .debug_macro   0x00005371       0xfe BSP/TWI/twi.o
- .debug_macro   0x0000546f      0x151 BSP/UART/uart.o
- .debug_macro   0x000055c0       0x12 BSP/UART/uart.o
- .debug_macro   0x000055d2       0x2e BSP/UART/uart.o
- .debug_macro   0x00005600       0x62 Data_struct/IOU_data.o
- .debug_macro   0x00005662      0x1ac Devices/BMP390/BMP390.o
- .debug_macro   0x0000580e      0x166 Devices/LSM6DSOX/LSM6DSOX.o
- .debug_macro   0x00005974       0x97 Devices/LSM6DSOX/LSM6DSOX.o
- .debug_macro   0x00005a0b       0xdd Devices/MCP4921/MCP4921.o
- .debug_macro   0x00005ae8      0x168 Devices/NTC/ntc_10k.o
- .debug_macro   0x00005c50       0x16 Devices/NTC/ntc_10k.o
- .debug_macro   0x00005c66       0xc9 Devices/LED_RING/SK6812.o
- .debug_macro   0x00005d2f       0xa3 Devices/TEC/TEC.o
- .debug_macro   0x00005dd2       0xa9 Devices/TPL5010/TPL5010.o
- .debug_macro   0x00005e7b       0xf0 Scheduler/scheduler.o
- .debug_macro   0x00005f6b       0x2e ThirdParty/libsfp/crc16.o
- .debug_macro   0x00005f99       0x54 ThirdParty/libsfp/fsp.o
- .debug_macro   0x00005fed      0x173 ThirdParty/libsfp/fsp.o
+ .debug_macro   0x00000000      0x1a3 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x000001a3      0xa4e Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x00000bf1      0x1c9 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x00000dba      0x2fc Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x000010b6       0x58 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x0000110e       0x10 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x0000111e       0x97 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x000011b5       0xf2 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x000012a7       0x22 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x000012c9       0x88 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x00001351       0xaa Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x000013fb     0x1543 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x0000293e      0x203 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x00002b41       0xbd Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x00002bfe       0x34 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x00002c32       0x18 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x00002c4a       0x6c Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x00002cb6       0xd7 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x00002d8d       0xf6 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x00002e83       0x22 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x00002ea5      0x166 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x0000300b       0x10 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x0000301b       0x1c Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x00003037       0x35 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x0000306c       0x60 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x000030cc       0x69 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x00003135       0x10 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x00003145       0x3a Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x0000317f       0x16 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x00003195       0x10 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x000031a5       0x28 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x000031cd      0x1f6 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x000033c3       0x3a Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x000033fd       0x28 Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x00003425       0x1c Application/Accel_Gyro/Accel_Gyro.o
+ .debug_macro   0x00003441       0xfc Application/CMDLine/cmdline.o
+ .debug_macro   0x0000353d       0x16 Application/CMDLine/cmdline.o
+ .debug_macro   0x00003553       0x28 Application/CMDLine/cmdline.o
+ .debug_macro   0x0000357b       0x10 Application/CMDLine/cmdline.o
+ .debug_macro   0x0000358b      0x302 Application/CMDLine/cmdline.o
+ .debug_macro   0x0000388d       0x9e Application/CMDLine/cmdline.o
+ .debug_macro   0x0000392b       0x20 Application/CMDLine/cmdline.o
+ .debug_macro   0x0000394b      0x22a Application/CMDLine/command.o
+ .debug_macro   0x00003b75      0x16d Application/CMDLine/command.o
+ .debug_macro   0x00003ce2       0x1c Application/CMDLine/command.o
+ .debug_macro   0x00003cfe       0xdd Application/CMDLine/command.o
+ .debug_macro   0x00003ddb      0x160 Application/CMDLine/command.o
+ .debug_macro   0x00003f3b       0x10 Application/CMDLine/command.o
+ .debug_macro   0x00003f4b       0x40 Application/CMDLine/command.o
+ .debug_macro   0x00003f8b       0x5a Application/CMDLine/command.o
+ .debug_macro   0x00003fe5       0x2e Application/CMDLine/command.o
+ .debug_macro   0x00004013       0x4c Application/CMDLine/command.o
+ .debug_macro   0x0000405f       0x22 Application/CMDLine/command.o
+ .debug_macro   0x00004081       0x10 Application/CMDLine/command.o
+ .debug_macro   0x00004091       0x8e Application/CMDLine/command.o
+ .debug_macro   0x0000411f       0x10 Application/CMDLine/command.o
+ .debug_macro   0x0000412f       0xe2 Application/CMDLine/command.o
+ .debug_macro   0x00004211      0x20d Application/COPC/COPC.o
+ .debug_macro   0x0000441e      0x179 Application/COPC/COPC.o
+ .debug_macro   0x00004597       0xd3 Application/LED/ir_led.o
+ .debug_macro   0x0000466a       0xea Application/LED/ring_led.o
+ .debug_macro   0x00004754      0x105 Application/LED/status_led.o
+ .debug_macro   0x00004859      0x10e Application/LED/status_led.o
+ .debug_macro   0x00004967       0x66 Application/LED/status_led.o
+ .debug_macro   0x000049cd       0x86 Application/LED/status_led.o
+ .debug_macro   0x00004a53      0x254 Application/main.o
+ .debug_macro   0x00004ca7      0x192 Application/Pressure/Pressure.o
+ .debug_macro   0x00004e39      0x1b6 Application/Temperature/temperature.o
+ .debug_macro   0x00004fef       0x10 Application/Temperature/temperature.o
+ .debug_macro   0x00004fff      0x128 Application/WATCHDOG/watchdog.o
+ .debug_macro   0x00005127       0x91 BSP/ADC/AD.o
+ .debug_macro   0x000051b8       0xb4 BSP/PWM/PWM.o
+ .debug_macro   0x0000526c       0xa7 BSP/SPI/spi.o
+ .debug_macro   0x00005313       0xa0 BSP/Timer/timer.o
+ .debug_macro   0x000053b3       0x63 BSP/Timer/timer.o
+ .debug_macro   0x00005416       0xfe BSP/TWI/twi.o
+ .debug_macro   0x00005514      0x14a BSP/UART/uart.o
+ .debug_macro   0x0000565e       0x12 BSP/UART/uart.o
+ .debug_macro   0x00005670       0x2e BSP/UART/uart.o
+ .debug_macro   0x0000569e       0x62 Data_struct/IOU_data.o
+ .debug_macro   0x00005700      0x1ab Devices/BMP390/BMP390.o
+ .debug_macro   0x000058ab      0x165 Devices/LSM6DSOX/LSM6DSOX.o
+ .debug_macro   0x00005a10       0x97 Devices/LSM6DSOX/LSM6DSOX.o
+ .debug_macro   0x00005aa7       0xd6 Devices/MCP4921/MCP4921.o
+ .debug_macro   0x00005b7d      0x167 Devices/NTC/ntc_10k.o
+ .debug_macro   0x00005ce4       0x16 Devices/NTC/ntc_10k.o
+ .debug_macro   0x00005cfa       0xc8 Devices/LED_RING/SK6812.o
+ .debug_macro   0x00005dc2       0xa2 Devices/TEC/TEC.o
+ .debug_macro   0x00005e64       0xa8 Devices/TPL5010/TPL5010.o
+ .debug_macro   0x00005f0c       0xf0 Scheduler/scheduler.o
+ .debug_macro   0x00005ffc       0x2e ThirdParty/libsfp/crc16.o
+ .debug_macro   0x0000602a       0x54 ThirdParty/libsfp/fsp.o
+ .debug_macro   0x0000607e      0x173 ThirdParty/libsfp/fsp.o
 OUTPUT(IOUFirmware.elf elf32-avr)
 LOAD linker stubs
