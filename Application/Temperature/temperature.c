@@ -16,7 +16,7 @@ const	uint16_t Kp = 2;
 
 #define	INCREASE_DECREASE_TIMES		500
 #define TEMPERATURE_LOG_PERIOD		1000
-#define TEC_OUT_DEFAULT				50	//	(1V)
+#define TEC_OUT_DEFAULT				50	//	(0.5V)
 void	temperature_TEC_hysteris_control_heating(uint16_t	NTC_temperature, uint8_t NTC_channel, uint8_t	double_output);
 void	temperature_TEC_hysteris_control_cooling(uint16_t	NTC_temperature, uint8_t NTC_channel, uint8_t	double_output);
 static	void	temperature_task_update(void);
